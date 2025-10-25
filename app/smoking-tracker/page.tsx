@@ -7,6 +7,22 @@ import GetGitHub from "@/public/images/projects/images/github.webp";
 import Image from "next/image";
 import {getLatestVersion} from "@/utils/Utils";
 import {Screenshot, screenshotsST} from "@/utils/Assets";
+import Link from "next/link";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: "Smoking Tracker - Gašper Pintar",
+    description: "Smoking Tracker is a program that allows the user to easily track the number of cigarettes smoked. It also enables the display of data on weekly, monthly and yearly graphs",
+    icons: {
+        icon:  [
+            {
+                url: "/logo/favicon-st.ico",
+                sizes: "32x32",
+                type: "image/x-icon"
+            }
+        ]
+    }
+};
 
 const SmokingTracker: React.FC = (): JSX.Element => {
 
@@ -37,7 +53,7 @@ const SmokingTracker: React.FC = (): JSX.Element => {
                     <div className={"row text-center mb-5"}>
                         <h2 className={"h5 fw-bold mb-3"}>Download</h2>
                         <div className={"d-flex justify-content-center flex-wrap gap-3"}>
-                            <a
+                            <Link
                                 key={"github"}
                                 href={"https://github.com/pintargasper/SmokingTracker/releases/latest"}
                                 target={"_blank"}
@@ -48,11 +64,11 @@ const SmokingTracker: React.FC = (): JSX.Element => {
                                     alt={"GitHub logo"}
                                     width={25}
                                     height={25}
-                                    className={"img-github"}
+                                    className={"img-assets"}
                                 />
                                 <span>GitHub</span>
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 key={"google play store"}
                                 href={"https://play.google.com/store/apps/details?id=com.gasperpintar.smokingtracker"}
                                 target={"_blank"}
@@ -65,7 +81,7 @@ const SmokingTracker: React.FC = (): JSX.Element => {
                                     height={80}
                                     className={"img-play"}
                                 />
-                            </a>
+                            </Link>
                         </div>
                     </div>
 

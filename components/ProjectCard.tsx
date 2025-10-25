@@ -2,20 +2,18 @@ import React, { type JSX } from "react";
 import Link from "next/link";
 import {ProjectData, TLink} from "@/utils/Assets";
 import Image from "next/image";
+import GetGitHub from "@/public/images/projects/images/github.webp";
 
 interface ProjectCardProps {
     project: ProjectData;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }: ProjectCardProps): JSX.Element => {
-
     return (
         <div className={"project-card mb-0"}>
             <div className={"d-flex justify-content-center mb-md-0 me-md-3 ms-md-3"}>
                 <Image
-                    src={project?.image}
-                    //srcSet={project?.imageSrcSet}
-                    sizes={"70vw, 100vw, 150vw"}
+                    src={project.image}
                     alt={`${project?.title} logo`}
                     width={100}
                     height={100}
@@ -36,7 +34,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }: ProjectCardProps):
                             {...(link.url.startsWith("http") ? { target: "_blank" } : {})}
                             className={"button"}
                         >
-                            {link.label}
+                            {link.url.startsWith("http") && (
+                                <Image
+                                    src={GetGitHub}
+                                    alt={"GitHub logo"}
+                                    width={25}
+                                    height={25}
+                                    loading={"eager"}
+                                    className={"img-assets"}
+                                />
+                            )}
+                            <span>{link.label}</span>
                         </Link>
                     ))}
                 </div>

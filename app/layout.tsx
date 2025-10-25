@@ -1,12 +1,6 @@
 import React, {JSX} from "react";
-import {Metadata} from "next";
-import "@/styles/globals.css";
 import Footer from "@/components/Footer";
-
-export const metadata: Metadata = {
-    title: "Gašper Pintar",
-    description: "Gašper Pintar - Personal Website",
-};
+import "@/styles/globals.css";
 
 interface NodeProps {
     children: React.ReactNode;

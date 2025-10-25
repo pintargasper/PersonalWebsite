@@ -6,9 +6,23 @@ import ContactButtons from "@/components/ContactButtons";
 import ProfilePicture250 from "@/public/images/home/profile_250x250.webp";
 import {ProjectData, projects} from "@/utils/Assets";
 import Image from "next/image";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: "Gašper Pintar",
+    description: "Gašper Pintar - Personal Website",
+    icons: {
+        icon:  [
+            {
+                url: "/logo/favicon.ico",
+                sizes: "32x32",
+                type: "image/x-icon"
+            }
+        ]
+    }
+};
 
 const HomePage: React.FC = (): JSX.Element => {
-
     return (
         <>
             <div className={"container mt-5"}>

@@ -6,6 +6,22 @@ import Image from "next/image";
 import {getLatestVersion} from "@/utils/Utils";
 import {Screenshot, screenshotsCG} from "@/utils/Assets";
 import GetGitHub from "@/public/images/projects/images/github.webp";
+import Link from "next/link";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: "Card Generator - Gašper Pintar",
+    description: "Card Generator allows the creation of any card and also its generation in png format. It also allows downloading images in pdf mode",
+    icons: {
+        icon:  [
+            {
+                url: "/logo/favicon-cg.ico",
+                sizes: "32x32",
+                type: "image/x-icon"
+            }
+        ]
+    }
+};
 
 const SmokingTracker: React.FC = (): JSX.Element => {
 
@@ -36,7 +52,7 @@ const SmokingTracker: React.FC = (): JSX.Element => {
                     <div className={"row text-center mb-5"}>
                         <h2 className={"h5 fw-bold mb-3"}>Download</h2>
                         <div className={"d-flex justify-content-center flex-wrap gap-3"}>
-                            <a
+                            <Link
                                 key={"github"}
                                 href={"https://github.com/pintargasper/CardGenerator/releases/latest"}
                                 target={"_blank"}
@@ -47,10 +63,11 @@ const SmokingTracker: React.FC = (): JSX.Element => {
                                     alt={"GitHub logo"}
                                     width={25}
                                     height={25}
-                                    className={"img-github"}
+                                    loading={"eager"}
+                                    className={"img-assets"}
                                 />
                                 <span>GitHub</span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
 

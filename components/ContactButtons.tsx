@@ -1,18 +1,28 @@
 import React, { type JSX } from "react";
 import {contacts, TLink} from "@/utils/Assets";
+import Link from "next/link";
+import Image from "next/image";
 
 const ContactButtons: React.FC = (): JSX.Element => {
     return (
         <div className={"d-flex flex-wrap gap-2 mt-3 justify-content-center justify-content-md-start"}>
             {contacts.map((contact: TLink): JSX.Element => (
-                <a
+                <Link
                     key={contact.label}
                     href={contact.url}
                     {...(contact.label !== "Email" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className={"button"}
                 >
-                    {contact.label}
-                </a>
+                    <Image
+                        src={contact.img ?? ""}
+                        alt={contact.label}
+                        width={25}
+                        height={25}
+                        loading={"eager"}
+                        className={"img-assets"}
+                    />
+                    <span>{contact.label}</span>
+                </Link>
             ))}
         </div>
     );

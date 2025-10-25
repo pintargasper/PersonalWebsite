@@ -43,13 +43,15 @@
     height: auto;
 }
 
-.project-page-container .img-play {
+.img-play {
     width: auto;
     max-height: 40px;
 }
 
-.project-page-container .img-github {
+.img-assets {
     margin: -3px 3px 0 0;
+    width: auto;
+    max-height: 25px;
 }
 
 @media (max-width: 767px) {
