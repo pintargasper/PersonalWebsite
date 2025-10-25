@@ -1,0 +1,91 @@
+import React, {JSX} from "react";
+
+import CardLogo150 from "@/public/images/projects/card-generator/logo_150x150.webp";
+
+import Image from "next/image";
+import {getLatestVersion} from "@/utils/Utils";
+import {Screenshot, screenshotsCG} from "@/utils/Assets";
+import GetGitHub from "@/public/images/projects/images/github.webp";
+
+const SmokingTracker: React.FC = (): JSX.Element => {
+
+    const appVersion: Promise<string> = getLatestVersion("card-generator");
+
+    return (
+        <>
+            <div className={"project-page-container py-4"}>
+                <div className={"container"}>
+                    <div className={"row align-items-center mb-4"}>
+                        <div className={"col-md-4 text-center mb-3 mb-md-0"}>
+                            <Image
+                                src={CardLogo150}
+                                alt={"Smoking Tracker logo"}
+                                width={250}
+                                height={250}
+                                loading={"eager"}
+                                className={"img-fluid rounded-circle shadow-sm"}
+                            />
+                        </div>
+                        <div className={"col-md-8"}>
+                            <h1 className={"display-5 fw-bold"}>Card Generator</h1>
+                            <p className={"lead"}>Card Generator allows the creation of any card and also its generation in png format. It also allows downloading images in pdf mode</p>
+                            <p className={"mb-0"}>Version : {appVersion}</p>
+                        </div>
+                    </div>
+
+                    <div className={"row text-center mb-5"}>
+                        <h2 className={"h5 fw-bold mb-3"}>Download</h2>
+                        <div className={"d-flex justify-content-center flex-wrap gap-3"}>
+                            <a
+                                key={"github"}
+                                href={"https://github.com/pintargasper/CardGenerator/releases/latest"}
+                                target={"_blank"}
+                                className={"button"}
+                            >
+                                <Image
+                                    src={GetGitHub}
+                                    alt={"GitHub logo"}
+                                    width={25}
+                                    height={25}
+                                    className={"img-github"}
+                                />
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div className={"row mb-3"}>
+                        <div className={"col text-center"}>
+                            <h3 className={"h5 fw-bold mb-3"}>Supported languages</h3>
+                            <ul className={"list-unstyled d-inline-block text-start"}>
+                                <li>English</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className={"row"}>
+                        <div className={"col text-center"}>
+                            <h3 className={"h5 fw-bold mb-1"}>Preview</h3>
+                            <div className={"d-flex flex-column flex-md-row justify-content-center flex-wrap gap-4 mt-1"}>
+                                {screenshotsCG.map((shot: Screenshot, index: number): JSX.Element => (
+                                    <div key={index} className={`${!shot.isHorizontal ? "screenshoots " : ""} text-center`}>
+                                        <Image
+                                            src={shot.src}
+                                            alt={shot.alt}
+                                            width={1900}
+                                            height={1080}
+                                            className={"img-fluid shadow-sm rounded mt-0"}
+                                        />
+                                        <p className={"mt-1"}>{shot.alt}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default SmokingTracker;

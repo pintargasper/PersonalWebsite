@@ -1,0 +1,59 @@
+.project-page-container {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.project-page-container h1,
+.project-page-container h2,
+.project-page-container h3,
+.project-page-container h5 {
+    color: var(--text-color);
+}
+
+.project-page-container a {
+    color: var(--button-color);
+}
+
+.project-page-container a:hover {
+    color: var(--button-hover-color);
+}
+
+.project-page-container .btn-outline-primary {
+    border-color: var(--button-border);
+    color: var(--button-color);
+}
+
+.project-page-container .btn-outline-primary:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-color);
+}
+
+.project-page-container .btn-outline-success {
+    border-color: var(--button-border);
+    color: var(--button-color);
+}
+
+.project-page-container .btn-outline-success:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-color);
+}
+
+.project-page-container .screenshoots img {
+    max-width: 250px;
+    height: auto;
+}
+
+.project-page-container .img-play {
+    width: auto;
+    max-height: 40px;
+}
+
+.project-page-container .img-github {
+    margin: -3px 3px 0 0;
+}
+
+@media (max-width: 767px) {
+    .project-page-container {
+        text-align: center;
+    }
+}

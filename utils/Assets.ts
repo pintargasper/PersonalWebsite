@@ -5,6 +5,10 @@ import CardLogo70 from "@/public/images/projects/card-generator/logo_70x70.webp"
 import CardLogo100 from "@/public/images/projects/card-generator/logo_100x100.webp";
 import CardLogo150 from "@/public/images/projects/card-generator/logo_150x150.webp";
 import ProfilePicture250 from "@/public/images/home/profile_250x250.webp";
+import ScreenshotHome from "@/public/images/projects/smoking-tracker/screenshots/home.webp";
+import ScreenshotGraph from "@/public/images/projects/smoking-tracker/screenshots/graph.webp";
+import ScreenshotSettings from "@/public/images/projects/smoking-tracker/screenshots/settings.webp";
+import ScreenshotGenerator from "@/public/images/projects/card-generator/screenshots/generator.webp";
 
 interface TLink {
     label: string;
@@ -24,6 +28,12 @@ interface Card {
     alt: string;
     link: string;
     image: string;
+}
+
+interface Screenshot {
+    src: string;
+    alt: string;
+    isHorizontal: boolean;
 }
 
 const projects: ProjectData[] = [
@@ -62,14 +72,27 @@ const cards: Card[] = [
     { title: "Card Generator", alt: "Card Generator logo", link: "/card-generator", image: CardLogo70.src }
 ];
 
+const screenshotsST: Screenshot[] = [
+    { src: ScreenshotHome.src, alt: "Home page", isHorizontal: false },
+    { src: ScreenshotGraph.src, alt: "Graph page", isHorizontal: false },
+    { src: ScreenshotSettings.src, alt: "Settings page", isHorizontal: false },
+];
+
+const screenshotsCG: Screenshot[] = [
+    { src: ScreenshotGenerator.src, alt: "Generator", isHorizontal: true },
+];
+
 export {
     projects,
     contacts,
-    cards
+    cards,
+    screenshotsST,
+    screenshotsCG
 }
 
 export type {
     TLink,
     ProjectData,
-    Card
+    Card,
+    Screenshot
 }

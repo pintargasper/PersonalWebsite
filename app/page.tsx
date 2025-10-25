@@ -1,12 +1,9 @@
 import React, {JSX} from "react";
 
-import ProjectCard from "../components/ProjectCard";
-import ContactButtons from "../components/ContactButtons";
-import styles from "@/app/page.module.css";
+import ProjectCard from "@/components/ProjectCard";
+import ContactButtons from "@/components/ContactButtons";
 
 import ProfilePicture250 from "@/public/images/home/profile_250x250.webp";
-import ProfilePicture300 from "@/public/images/home/profile_300x300.webp";
-import ProfilePicture400 from "@/public/images/home/profile_400x400.webp";
 import {ProjectData, projects} from "@/utils/Assets";
 import Image from "next/image";
 
@@ -19,8 +16,6 @@ const HomePage: React.FC = (): JSX.Element => {
                     <div className={"col-md-4 text-center mb-3 mb-md-0"}>
                         <Image
                             src={ProfilePicture250.src}
-                            //srcSet={`${ProfilePicture250.src} 250w, ${ProfilePicture300.src} 300w, ${ProfilePicture400.src} 400w`}
-                            sizes={"(max-width: 768px) 50vw, 250px"}
                             alt={"Profile"}
                             width={250}
                             height={250}
