@@ -2,6 +2,7 @@
 @import "@/styles/components.css";
 @import "@/styles/errors.css";
 @import "@/styles/projects.css";
+@import "@/styles/document.css";
 
 :root {
     font-family: "Times New Roman", serif;
@@ -15,6 +16,26 @@
 
     --bg-color: rgba(255, 255, 255, 0.87);
     --text-color: #242424;
+    --button-bg: transparent;
+    --button-border: #48628a;
+    --button-color: #546b8d;
+    --button-hover-bg: #48628a;
+    --button-hover-color: #ffffff;
+}
+
+:root[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #213547;
+    --button-bg: transparent;
+    --button-border: #48628a;
+    --button-color: #546b8d;
+    --button-hover-bg: #48628a;
+    --button-hover-color: #ffffff;
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #242424;
+    --text-color: rgba(255, 255, 255, 0.87);
     --button-bg: transparent;
     --button-border: #48628a;
     --button-color: #546b8d;

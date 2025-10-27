@@ -70,6 +70,34 @@
     text-align: center;
 }
 
+.no-outline:focus,
+.no-outline:focus-visible,
+.no-outline:focus-within {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.dropdown-item:active,
+.dropdown-item:focus,
+.dropdown-item:focus-visible {
+    background-color: transparent !important;
+    color: inherit !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.dropdown-toggle {
+    margin-left: 8px;
+}
+
+.dropstart .dropdown-toggle::before {
+    display: none !important;
+}
+
+.content-wrapper {
+    padding-top: 50px;
+}
+
 @media (min-width: 768px) {
     .project-card {
         flex-direction: row;
@@ -82,14 +110,8 @@
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
     .components-showcase-card {
         min-width: 100%;
-    }
-}
-
-@media (min-width: 992px) {
-    .content-wrapper {
-        padding-top: 70px;
     }
 }
