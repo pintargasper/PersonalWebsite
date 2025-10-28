@@ -1,6 +1,7 @@
 import React, {JSX} from "react";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
+import CookieNotice from "@/components/CookieNotice";
 import "@/styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -44,6 +45,7 @@ const RootLayout: (props: Readonly<NodeProps>) => React.JSX.Element = ({children
             <body>
                 <div className={"app-wrapper d-flex flex-column min-vh-100"}>
                     <Navigation />
+                    <CookieNotice />
                     <div className={"flex-fill content-wrapper"}>
                         {children}
                     </div>
