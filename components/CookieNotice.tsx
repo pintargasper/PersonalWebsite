@@ -32,7 +32,7 @@ const CookieNotice: React.FC = (): JSX.Element | null => {
                 onClick={handleClose}
                 className={"button"}
             >
-                Zapri
+                Close
             </button>
         </div>
     );
