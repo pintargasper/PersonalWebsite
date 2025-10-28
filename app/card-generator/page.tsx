@@ -95,9 +95,9 @@ export const viewport: Viewport = {
     userScalable: false
 };
 
-const SmokingTracker: React.FC = (): JSX.Element => {
+const CardGenerator: () => Promise<JSX.Element> = async (): Promise<JSX.Element> => {
 
-    const appVersion: Promise<string> = getLatestVersion("card-generator");
+    const appVersion: string = await getLatestVersion("card-generator");
 
     return (
         <>
@@ -177,4 +177,4 @@ const SmokingTracker: React.FC = (): JSX.Element => {
     );
 };
 
-export default SmokingTracker;
+export default CardGenerator;

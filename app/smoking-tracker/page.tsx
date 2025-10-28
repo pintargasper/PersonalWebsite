@@ -89,9 +89,9 @@ export const metadata: Metadata = {
     }
 };
 
-const SmokingTracker: React.FC = (): JSX.Element => {
+const SmokingTracker: () => Promise<JSX.Element> = async (): Promise<JSX.Element> => {
 
-    const appVersion: Promise<string> = getLatestVersion("smoking-tracker");
+    const appVersion: string = await getLatestVersion("smoking-tracker");
 
     return (
         <>
