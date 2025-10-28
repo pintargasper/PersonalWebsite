@@ -7,20 +7,92 @@ import {getLatestVersion} from "@/utils/Utils";
 import {Screenshot, screenshotsCG} from "@/utils/Assets";
 import GetGitHub from "@/public/images/projects/images/github.webp";
 import Link from "next/link";
-import {Metadata} from "next";
+import {Metadata, Viewport} from "next";
 
 export const metadata: Metadata = {
     title: "Card Generator - Gašper Pintar",
     description: "Card Generator allows the creation of any card and also its generation in png format. It also allows downloading images in pdf mode",
+    applicationName: "Card Generator - Gašper Pintar",
+
+    keywords: ["Gasper Pintar", "Cards", "Card Generator", "Application"],
+
+    authors: [
+        { name: "Gašper Pintar", url: "https://gasperpintar.com" }
+    ],
+    creator: "Gašper Pintar",
+    publisher: "Gašper Pintar",
+
+    robots: {
+        index: true,
+        follow: true,
+        nocache: false,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: false,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1
+        }
+    },
+
     icons: {
-        icon:  [
+        icon: [
+            { url: "/logo/favicon-cg.ico", sizes: "32x32", type: "image/x-icon" }
+        ],
+        apple: "/logo/logo192-cg.webp",
+        shortcut: "/logo/favicon-cg.ico"
+    },
+
+    openGraph: {
+        title: "Gašper Pintar",
+        description: "Card Generator allows the creation of any card and also its generation in png format. It also allows downloading images in pdf mode",
+        url: "https://gasperpintar.com/card-generator",
+        siteName: "Card Generator - Gašper Pintar",
+        type: "website",
+        locale: "en",
+        images: [
             {
-                url: "/logo/favicon-cg.ico",
-                sizes: "32x32",
-                type: "image/x-icon"
+                url: "https://gasperpintar.com/logo/logo192-cg.webp",
+                width: 1200,
+                height: 630,
+                alt: "Card Generator - Open Graph Image"
             }
         ]
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Card Generator - Gašper Pintar",
+        description: "Card Generator allows the creation of any card and also its generation in png format. It also allows downloading images in pdf mode",
+        images: ["https://gasperpintar.com/logo/logo192-cg.webp"]
+    },
+
+    alternates: {
+        canonical: "https://gasperpintar.com/card-generator",
+        languages: {
+            "en": "https://gasperpintar.com/card-generator",
+            "sl-SI": "https://gasperpintar.com/card-generator"
+        }
+    },
+
+    category: "technology",
+    referrer: "origin-when-cross-origin",
+
+    metadataBase: new URL("https://gasperpintar.com/card-generator"),
+    appLinks: {
+        web: {
+            url: "https://gasperpintar.com/card-generator",
+            should_fallback: true,
+        }
     }
+};
+
+export const viewport: Viewport = {
+    width: "device-width",
+    initialScale: 1.0,
+    maximumScale: 1.0,
+    userScalable: false
 };
 
 const SmokingTracker: React.FC = (): JSX.Element => {

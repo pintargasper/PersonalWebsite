@@ -1,17 +1,82 @@
 import React, {JSX} from "react";
-import {Metadata} from "next";
+import {Metadata, Viewport} from "next";
 
 export const metadata: Metadata = {
     title: "Smoking Tracker - Privacy Policy",
-    description: "Smoking Tracker Privacy Policy",
+    description: "Smoking Tracker Privacy Policy document outlining data handling and user privacy practices",
+    applicationName: "Smoking Tracker - Gašper Pintar",
+
+    keywords: ["Gasper Pintar", "Tracker", "Smoking Tracker", "Application", "Privacy Policy"],
+
+    authors: [
+        { name: "Gašper Pintar", url: "https://gasperpintar.com" }
+    ],
+    creator: "Gašper Pintar",
+    publisher: "Gašper Pintar",
+
+    robots: {
+        index: true,
+        follow: true,
+        nocache: false,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: false,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1
+        }
+    },
+
     icons: {
-        icon:  [
+        icon: [
+            { url: "/logo/favicon-st.ico", sizes: "32x32", type: "image/x-icon" }
+        ],
+        apple: "/logo/logo192-st.webp",
+        shortcut: "/logo/favicon-st.ico"
+    },
+
+    openGraph: {
+        title: "Smoking Tracker - Privacy Policy",
+        description: "Smoking Tracker Privacy Policy document outlining data handling and user privacy practices",
+        url: "https://gasperpintar.com/smoking-tracker/privacy-policy",
+        siteName: "Smoking Tracker - Gašper Pintar",
+        type: "website",
+        locale: "en",
+        images: [
             {
-                url: "/logo/favicon-st.ico",
-                sizes: "32x32",
-                type: "image/x-icon"
+                url: "https://gasperpintar.com/logo/logo192-st.webp",
+                width: 1200,
+                height: 630,
+                alt: "Smoking Tracker - Open Graph Image"
             }
         ]
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Smoking Tracker - Privacy Policy",
+        description: "Smoking Tracker Privacy Policy document outlining data handling and user privacy practices",
+        images: ["https://gasperpintar.com/logo/logo192-st.webp"]
+    },
+
+    alternates: {
+        canonical: "https://gasperpintar.com/smoking-tracker/privacy-policy",
+        languages: {
+            "en": "https://gasperpintar.com/smoking-tracker/privacy-policy",
+            "sl-SI": "https://gasperpintar.com/smoking-tracker/privacy-policy"
+        }
+    },
+
+    category: "technology",
+    referrer: "origin-when-cross-origin",
+
+    metadataBase: new URL("https://gasperpintar.com/smoking-tracker"),
+    appLinks: {
+        web: {
+            url: "https://gasperpintar.com/smoking-tracker/privacy-policy",
+            should_fallback: true,
+        }
     }
 };
 

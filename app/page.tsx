@@ -9,16 +9,81 @@ import Image from "next/image";
 import {Metadata} from "next";
 
 export const metadata: Metadata = {
-    title: "Gašper Pintar",
-    description: "Gašper Pintar - Personal Website",
+    title: "Personal Website - Gašper Pintar | Projects & Applications",
+    description: "Personal page of Gašper Pintar. Learn about my projects and interests, and connect with me | Signal, LinkedIn, GitHub, Email",
+    applicationName: "Personal Website - Gašper Pintar",
+
+    keywords: ["Gasper Pintar", "Portfolio", "Applications", "Personal Website"],
+
+    authors: [
+        { name: "Gašper Pintar", url: "https://gasperpintar.com" }
+    ],
+    creator: "Gašper Pintar",
+    publisher: "Gašper Pintar",
+
+    robots: {
+        index: true,
+        follow: true,
+        nocache: false,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: false,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1
+        }
+    },
+
     icons: {
-        icon:  [
+        icon: [
+            { url: "/logo/favicon.ico", sizes: "32x32", type: "image/x-icon" }
+        ],
+        apple: "/logo/logo192.webp",
+        shortcut: "/logo/favicon.ico"
+    },
+
+    openGraph: {
+        title: "Gašper Pintar",
+        description: "Personal page of Gašper Pintar. Learn about my projects and interests, and connect with me | Signal, LinkedIn, GitHub, Email",
+        url: "https://gasperpintar.com",
+        siteName: "Gasper Pintar",
+        type: "website",
+        locale: "en",
+        images: [
             {
-                url: "/logo/favicon.ico",
-                sizes: "32x32",
-                type: "image/x-icon"
+                url: "https://gasperpintar.com/logo/logo192.webp",
+                width: 1200,
+                height: 630,
+                alt: "Gasper Pintar - Open Graph Image"
             }
         ]
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Gašper Pintar",
+        description: "Personal page of Gašper Pintar. Learn about my projects and interests, and connect with me | Signal, LinkedIn, GitHub, Email",
+        images: ["https://gasperpintar.com/logo/logo192.webp"]
+    },
+
+    alternates: {
+        canonical: "https://gasperpintar.com",
+        languages: {
+            "en": "https://gasperpintar.com",
+            "sl-SI": "https://gasperpintar.com"
+        }
+    },
+
+    category: "technology",
+    referrer: "origin-when-cross-origin",
+
+    metadataBase: new URL("https://gasperpintar.com"),
+    appLinks: {
+        web: {
+            url: "https://gasperpintar.com",
+            should_fallback: true,
+        }
     }
 };
 

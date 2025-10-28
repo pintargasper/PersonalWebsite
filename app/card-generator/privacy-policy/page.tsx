@@ -3,15 +3,80 @@ import {Metadata} from "next";
 
 export const metadata: Metadata = {
     title: "Card Generator - Privacy Policy",
-    description: "Card Generator Privacy Policy",
+    description: "Card Generator Privacy Policy document outlining data handling and user privacy practices",
+    applicationName: "Card Generator - Gašper Pintar",
+
+    keywords: ["Gasper Pintar", "Cards", "Card Generator", "Application", "Privacy Policy"],
+
+    authors: [
+        { name: "Gašper Pintar", url: "https://gasperpintar.com" }
+    ],
+    creator: "Gašper Pintar",
+    publisher: "Gašper Pintar",
+
+    robots: {
+        index: true,
+        follow: true,
+        nocache: false,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: false,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1
+        }
+    },
+
     icons: {
-        icon:  [
+        icon: [
+            { url: "/logo/favicon-cg.ico", sizes: "32x32", type: "image/x-icon" }
+        ],
+        apple: "/logo/logo192-cg.webp",
+        shortcut: "/logo/favicon-cg.ico"
+    },
+
+    openGraph: {
+        title: "Card Generator - Privacy Policy",
+        description: "Card Generator Privacy Policy document outlining data handling and user privacy practices",
+        url: "https://gasperpintar.com/card-generator/privacy-policy",
+        siteName: "Card Generator - Gašper Pintar",
+        type: "website",
+        locale: "en",
+        images: [
             {
-                url: "/logo/favicon-cg.ico",
-                sizes: "32x32",
-                type: "image/x-icon"
+                url: "https://gasperpintar.com/logo/logo192-cg.webp",
+                width: 1200,
+                height: 630,
+                alt: "Card Generator - Open Graph Image"
             }
         ]
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Card Generator - Privacy Policy",
+        description: "Card Generator Privacy Policy document outlining data handling and user privacy practices",
+        images: ["https://gasperpintar.com/logo/logo192-cg.webp"]
+    },
+
+    alternates: {
+        canonical: "https://gasperpintar.com/card-generator/privacy-policy",
+        languages: {
+            "en": "https://gasperpintar.com/card-generator/privacy-policy",
+            "sl-SI": "https://gasperpintar.com/card-generator/privacy-policy"
+        }
+    },
+
+    category: "technology",
+    referrer: "origin-when-cross-origin",
+
+    metadataBase: new URL("https://gasperpintar.com/card-generator"),
+    appLinks: {
+        web: {
+            url: "https://gasperpintar.com/card-generator/privacy-policy",
+            should_fallback: true,
+        }
     }
 };
 

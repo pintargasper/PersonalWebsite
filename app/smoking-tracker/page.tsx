@@ -12,15 +12,80 @@ import {Metadata} from "next";
 
 export const metadata: Metadata = {
     title: "Smoking Tracker - Gašper Pintar",
-    description: "Smoking Tracker is a program that allows the user to easily track the number of cigarettes smoked. It also enables the display of data on weekly, monthly and yearly graphs",
+    description: "Smoking Tracker is a program that allows the user to easily track the number of cigarettes smoked and display the data on weekly, monthly, and yearly graphs",
+    applicationName: "Smoking Tracker - Gašper Pintar",
+
+    keywords: ["Gasper Pintar", "Tracker", "Smoking Tracker", "Application"],
+
+    authors: [
+        { name: "Gašper Pintar", url: "https://gasperpintar.com" }
+    ],
+    creator: "Gašper Pintar",
+    publisher: "Gašper Pintar",
+
+    robots: {
+        index: true,
+        follow: true,
+        nocache: false,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: false,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1
+        }
+    },
+
     icons: {
-        icon:  [
+        icon: [
+            { url: "/logo/favicon-st.ico", sizes: "32x32", type: "image/x-icon" }
+        ],
+        apple: "/logo/logo192-st.webp",
+        shortcut: "/logo/favicon-st.ico"
+    },
+
+    openGraph: {
+        title: "Gašper Pintar",
+        description: "Smoking Tracker is a program that allows the user to easily track the number of cigarettes smoked and display the data on weekly, monthly, and yearly graphs",
+        url: "https://gasperpintar.com/smoking-tracker",
+        siteName: "Smoking Tracker - Gašper Pintar",
+        type: "website",
+        locale: "en",
+        images: [
             {
-                url: "/logo/favicon-st.ico",
-                sizes: "32x32",
-                type: "image/x-icon"
+                url: "https://gasperpintar.com/logo/logo192-st.webp",
+                width: 1200,
+                height: 630,
+                alt: "Smoking Tracker - Open Graph Image"
             }
         ]
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Smoking Tracker - Gašper Pintar",
+        description: "Smoking Tracker is a program that allows the user to easily track the number of cigarettes smoked and display the data on weekly, monthly, and yearly graphs",
+        images: ["https://gasperpintar.com/logo/logo192-st.webp"]
+    },
+
+    alternates: {
+        canonical: "https://gasperpintar.com/smoking-tracker",
+        languages: {
+            "en": "https://gasperpintar.com/smoking-tracker",
+            "sl-SI": "https://gasperpintar.com/smoking-tracker"
+        }
+    },
+
+    category: "technology",
+    referrer: "origin-when-cross-origin",
+
+    metadataBase: new URL("https://gasperpintar.com/smoking-tracker"),
+    appLinks: {
+        web: {
+            url: "https://gasperpintar.com/smoking-tracker",
+            should_fallback: true,
+        }
     }
 };
 

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const ContactButtons: React.FC = (): JSX.Element => {
     return (
-        <div className={"d-flex flex-wrap gap-2 mt-3 justify-content-center justify-content-md-start"}>
+        <div className={"d-flex flex-wrap gap-1 mt-3 justify-content-center justify-content-md-start"}>
             {contacts.map((contact: TLink): JSX.Element => (
                 <Link
                     key={contact.label}
