@@ -1,0 +1,41 @@
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9
+        https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <url>
+        <loc>https://gasperpintar.com</loc>
+        <priority>1.00</priority>
+    </url>
+
+    <url>
+        <loc>https://gasperpintar.com/smoking-tracker</loc>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://gasperpintar.com/smoking-tracker/terms-of-service</loc>
+        <priority>0.50</priority>
+    </url>
+
+    <url>
+        <loc>https://gasperpintar.com/smoking-tracker/privacy-policy</loc>
+        <priority>0.50</priority>
+    </url>
+
+    <url>
+        <loc>https://gasperpintar.com/card-generator</loc>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://gasperpintar.com/card-generator/terms-of-service</loc>
+        <priority>0.50</priority>
+    </url>
+
+    <url>
+        <loc>https://gasperpintar.com/card-generator/privacy-policy</loc>
+        <priority>0.50</priority>
+    </url>
+
+</urlset>
