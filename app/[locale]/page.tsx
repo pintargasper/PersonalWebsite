@@ -101,7 +101,7 @@ const HomePage: React.FC = (): JSX.Element => {
                     <div className={"col-md-4 text-center mb-3 mb-md-0"}>
                         <Image
                             src={ProfilePicture250.src}
-                            alt={"Profile"}
+                            alt={"Profile photo of Gašper Pintar"}
                             width={250}
                             height={250}
                             loading={"eager"}

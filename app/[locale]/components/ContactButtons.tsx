@@ -15,7 +15,7 @@ const ContactButtons: React.FC = (): JSX.Element => {
                 >
                     <Image
                         src={contact.img ?? ""}
-                        alt={contact.label}
+                        alt={contact.alt ?? contact.label}
                         width={25}
                         height={25}
                         loading={"eager"}

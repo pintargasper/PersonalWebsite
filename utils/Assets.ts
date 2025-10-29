@@ -68,7 +68,7 @@ const contacts: TLink[] = [
 ];
 
 const cards: Card[] = [
-    { title: "home.title", image: ProfilePicture250.src, alt: "Profile picture", link: "/" },
+    { title: "home.title", image: ProfilePicture250.src, alt: "Profile photo of Gašper Pintar", link: "/" },
     { title: "smoking-tracker.title", image: SmokingLogo70.src, alt: "Smoking Tracker logo", link: "/smoking-tracker" },
     { title: "card-generator.title", image: CardLogo70.src, alt: "Card Generator logo", link: "/card-generator" }
 ];
