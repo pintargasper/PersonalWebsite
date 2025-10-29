@@ -1,6 +1,8 @@
 "use client";
 
 import React, { JSX, useState, type RefObject, useRef, MouseEvent, useEffect } from "react";
+import { useLocale } from "next-intl";
+import { usePathname, useRouter } from '@/i18n/navigation';
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faGlobe, faMoon, faFolder } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +11,9 @@ import Image from "next/image";
 
 import SmokingLogo70 from "@/public/images/projects/smoking-tracker/logo_70x70.webp";
 import CardLogo70 from "@/public/images/projects/card-generator/logo_70x70.webp";
+
+import {useTranslations} from "next-intl";
+import {TranslationFunction} from "@/app/[locale]/layout";
 
 const Navigation: React.FC = (): JSX.Element => {
 
@@ -19,6 +24,13 @@ const Navigation: React.FC = (): JSX.Element => {
 
     const navbarRef: RefObject<HTMLDivElement | null> = useRef<HTMLDivElement | null>(null);
 
+    const locale: string = useLocale();
+    const router: ReturnType<typeof useRouter> = useRouter();
+    const pathname: string = usePathname();
+
+    const t: TranslationFunction = useTranslations("components") as TranslationFunction;
+    const t1: TranslationFunction = useTranslations("projects") as TranslationFunction;
+
     const handleClickOutside: (event: MouseEvent<Document>) => void = (event: MouseEvent<Document>): void => {
         if (navbarRef.current && !navbarRef.current.contains(event.target as Node)) {
             setIsProjectDropdownOpen(false);
@@ -26,6 +38,13 @@ const Navigation: React.FC = (): JSX.Element => {
             setIsLanguageDropdownOpen(false);
         }
     };
+
+    const changeLocale: (newLocale: string) => void = (newLocale: string): void => {
+        if (newLocale !== locale) {
+            router.replace(pathname, { locale: newLocale });
+            router.refresh();
+        }
+    }
 
     useEffect((): () => void => {
         document.addEventListener("click", handleClickOutside as unknown as EventListener);
@@ -43,7 +62,7 @@ const Navigation: React.FC = (): JSX.Element => {
             ref={navbarRef}
         >
             <Container fluid={true}>
-                <Navbar.Brand as={Link} href={"/"}>Home</Navbar.Brand>
+                <Navbar.Brand as={Link} href={"/"}>{t("navbar.brand")}</Navbar.Brand>
 
                 <Navbar.Toggle
                     aria-controls={"basic-navbar-nav"}
@@ -54,26 +73,26 @@ const Navigation: React.FC = (): JSX.Element => {
                 <Navbar.Collapse id={"basic-navbar-nav"}>
                     <Nav className={"me-auto"}>
                         <NavDropdown
-                            title={<><FontAwesomeIcon icon={faFolder} className={"me-2"} />Project</>}
+                            title={<><FontAwesomeIcon icon={faFolder} className={"me-2"} />{t("navbar.projects")}</>}
                             id={"project-dropdown"}
                             show={isProjectDropdownOpen}
                             onClick={(): void => setIsProjectDropdownOpen((previous: boolean): boolean => !previous)}
                         >
                             <NavDropdown.Item as={Link} href={"/smoking-tracker"}>
                                 <Image src={SmokingLogo70} alt={"Smoking Tracker logo"} width={25} height={25} className={"me-2 mb-1"} />
-                                <span>Smoking Tracker</span>
+                                <span>{t1("smoking-tracker.title")}</span>
                             </NavDropdown.Item>
                             <NavDropdown.Item as={Link} href={"/card-generator"}>
-                                <Image src={CardLogo70} alt={"Smoking Tracker logo"} width={25} height={25} className={"me-2 mb-1"} />
-                                Card Generator
+                                <Image src={CardLogo70} alt={"Card Generator logo"} width={25} height={25} className={"me-2 mb-1"} />
+                                {t1("card-generator.title")}
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
 
-                    {/*<Nav className={"ms-auto"}>
+                    <Nav className={"ms-auto"}>
                         <NavDropdown
                             id={"settings-dropdown"}
-                            title={<><FontAwesomeIcon icon={faCog} className={"me-2"} />Settings</>}
+                            title={<><FontAwesomeIcon icon={faCog} className={"me-2"} />{t("navbar.settings")}</>}
                             align={"end"}
                             show={isSettingsDropdownOpen}
                             onClick={(): void => {
@@ -83,7 +102,7 @@ const Navigation: React.FC = (): JSX.Element => {
                         >
                             <NavDropdown
                                 id={"language-dropdown"}
-                                title={<><FontAwesomeIcon icon={faGlobe} className={"me-2"} />Language</>}
+                                title={<><FontAwesomeIcon icon={faGlobe} className={"me-2"} />{t("navbar.language")}</>}
                                 drop={"start"}
                                 show={isLanguageDropdownOpen}
                                 onClick={(event: MouseEvent<HTMLDivElement>): void => {
@@ -91,16 +110,16 @@ const Navigation: React.FC = (): JSX.Element => {
                                     setIsLanguageDropdownOpen((previous: boolean): boolean => !previous);
                                 }}
                             >
-                                <NavDropdown.Item href={"#english"}>English</NavDropdown.Item>
-                                <NavDropdown.Item href={"#slovenian"}>Slovenščina</NavDropdown.Item>
+                                <NavDropdown.Item onClick={(): void => changeLocale("en")}>English</NavDropdown.Item>
+                                <NavDropdown.Item onClick={(): void => changeLocale("sl")}>Slovenščina</NavDropdown.Item>
                             </NavDropdown>
 
-                            <NavDropdown.Item href={"#theme"}>
+                            {/*<NavDropdown.Item href={"#theme"}>
                                 <FontAwesomeIcon icon={faMoon} className={"me-2"} />
                                 Dark
-                            </NavDropdown.Item>
+                            </NavDropdown.Item>*/}
                         </NavDropdown>
-                    </Nav>*/}
+                    </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

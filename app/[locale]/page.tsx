@@ -8,7 +8,8 @@ import {ProjectData, projects} from "@/utils/Assets";
 import Image from "next/image";
 import {Metadata} from "next";
 
-import { useTranslations } from "next-intl";
+import {useTranslations} from "next-intl";
+import {TranslationFunction} from "@/app/[locale]/layout";
 
 export const metadata: Metadata = {
     title: "Personal Website - Gašper Pintar | Projects & Applications",
@@ -91,7 +92,7 @@ export const metadata: Metadata = {
 
 const HomePage: React.FC = (): JSX.Element => {
 
-    const t = useTranslations("home");
+    const t: TranslationFunction = useTranslations("pages") as TranslationFunction;
 
     return (
         <>
@@ -109,13 +110,13 @@ const HomePage: React.FC = (): JSX.Element => {
                     </div>
                     <div className={"col-md-8"}>
                         <h1 className={"display-5"}>Gašper Pintar</h1>
-                        <p className={"lead"}>{t("lead")}</p>
-                        <p>{t("description")}</p>
+                        <p className={"lead"}>{t("home.lead")}</p>
+                        <p>{t("home.description")}</p>
                         <ContactButtons />
                     </div>
                 </div>
 
-                <h2 className={"text-center"}>Projects</h2>
+                <h2 className={"text-center"}>{t("home.projects")}</h2>
                 <div className={"row justify-content-center g-0"}>
                     {projects.map((projectData: ProjectData): JSX.Element => (
                         <ProjectCard

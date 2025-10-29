@@ -15,6 +15,7 @@ interface TLink {
     img?: string;
     alt?: string;
     url: string;
+    t?: boolean;
 }
 
 interface ProjectData {
@@ -40,20 +41,20 @@ interface Screenshot {
 
 const projects: ProjectData[] = [
     {
-        title: "Smoking Tracker",
+        title: "smoking-tracker.title",
         image: SmokingLogo70.src,
-        description: "Smoking Tracker is a program that allows the user to easily track the number of cigarettes smoked. It also enables the display of data on weekly, monthly and yearly graphs",
+        description: "smoking-tracker.description",
         links: [
-            { label: "View", url: "/smoking-tracker" },
+            { label: "view", url: "/smoking-tracker", t: true },
             { label: "GitHub", url: "https://github.com/pintargasper/SmokingTracker" }
         ]
     },
     {
-        title: "Card Generator",
+        title: "card-generator.title",
         image: CardLogo70.src,
-        description: "Card Generator allows the creation of any card and also its generation in png format. It also allows downloading images in pdf mode",
+        description: "card-generator.description",
         links: [
-            { label: "View", url: "/card-generator" },
+            { label: "view", url: "/card-generator", t: true },
             { label: "GitHub", url: "https://github.com/pintargasper/CardGenerator" }
         ]
     }

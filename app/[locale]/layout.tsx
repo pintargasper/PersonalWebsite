@@ -21,7 +21,12 @@ export const viewport: Viewport = {
     userScalable: false
 };
 
-export default async function RootLayout({children, params}: {
+type TranslationFunction = <Key extends string>(
+    key: Key,
+    values?: Record<string, React.ReactNode>
+) => string;
+
+async function RootLayout({children, params}: {
     children: React.ReactNode;
     params: Promise<{locale: string}>;
 }): Promise<JSX.Element> {
@@ -66,3 +71,9 @@ export default async function RootLayout({children, params}: {
         </html>
     );
 };
+
+export type {
+    TranslationFunction
+}
+
+export default RootLayout;

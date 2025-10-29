@@ -1,6 +1,21 @@
 {
-  "home": {
-    "description": "Živjo, jaz sem Gašper iz Slovenije",
-    "lead": "Študent na Fakulteti za informacijske študije Novo mesto"
+  "components": {},
+  "pages": {
+    "home": {
+      "description": "Živijo, sem Gašper iz Slovenije",
+      "lead": "Študent na Fakulteti za informacijske študije Novo mesto",
+      "projects": "Projekti"
+    }
+  },
+  "projects": {
+    "card-generator": {
+      "description": "Generator Kart omogoča ustvarjanje poljubne karte in njeno generiranje v formatu png. Omogoča tudi prenos slik v načinu pdf",
+      "title": "Generator Kart"
+    },
+    "smoking-tracker": {
+      "description": "Sledilnik kajenja je program, ki uporabniku omogoča enostavno sledenje številu pokajenih cigaret. Omogoča tudi prikaz podatkov v obliki tedenskih, mesečnih in letnih grafov",
+      "title": "Sledilnik Kajenja"
+    },
+    "view": "Poglej"
   }
 }
