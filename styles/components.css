@@ -90,7 +90,7 @@
     margin-left: 8px;
 }
 
-.dropstart .dropdown-toggle::before {
+.dropdown-toggle::before, .dropdown-toggle::after {
     display: none !important;
 }
 
