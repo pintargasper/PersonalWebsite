@@ -21,14 +21,10 @@ export const viewport: Viewport = {
     userScalable: false
 };
 
-interface NodeProps {
-    children: React.ReactNode;
-}
-
 export default async function RootLayout({children, params}: {
     children: React.ReactNode;
     params: Promise<{locale: string}>;
-}) {
+}): Promise<JSX.Element> {
 
     const {locale} = await params;
     if (!hasLocale(routing.locales, locale)) {
@@ -36,7 +32,7 @@ export default async function RootLayout({children, params}: {
     }
 
     return (
-        <html lang={"en"}
+        <html lang={locale}
               data-scroll-behavior={"smooth"}
         >
             <head>
@@ -56,6 +52,7 @@ export default async function RootLayout({children, params}: {
                 </Script>
             </head>
             <body>
+                <NextIntlClientProvider>
                 <div className={"app-wrapper d-flex flex-column min-vh-100"}>
                     <Navigation />
                     <CookieNotice />
@@ -64,6 +61,7 @@ export default async function RootLayout({children, params}: {
                     </div>
                     <Footer />
                 </div>
+                </NextIntlClientProvider>
             </body>
         </html>
     );

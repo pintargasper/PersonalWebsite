@@ -1,15 +1,16 @@
-import {getRequestConfig} from "next-intl/server";
+import {getRequestConfig, GetRequestConfigParams} from "next-intl/server";
 import {hasLocale} from "next-intl";
-import {routing} from "./routing";
+import {routing} from "@/i18n/routing";
 
-export default getRequestConfig(async ({requestLocale}) => {
-    const requested = await requestLocale;
-    const locale = hasLocale(routing.locales, requested)
-        ? requested
+export default getRequestConfig(async ({ requestLocale }: GetRequestConfigParams): Promise<{ locale: "en" | "sl"; messages: Record<string, string> }> => {
+    const requestedLocale: string | undefined = await requestLocale;
+
+    const validatedLocale: "en" | "sl" = hasLocale(routing.locales, requestedLocale)
+        ? requestedLocale as "en" | "sl"
         : routing.defaultLocale;
 
     return {
-        locale,
-        messages: (await import(`../messages/${locale}.json`)).default
+        locale: validatedLocale,
+        messages: (await import(`../messages/${validatedLocale}.json`)).default as Record<string, string>
     };
 });
