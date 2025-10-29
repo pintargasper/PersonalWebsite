@@ -6,7 +6,7 @@ import { usePathname, useRouter } from '@/i18n/navigation';
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faGlobe, faMoon, faFolder } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
+import {Link} from "@/i18n/navigation";
 import Image from "next/image";
 
 import SmokingLogo70 from "@/public/images/projects/smoking-tracker/logo_70x70.webp";

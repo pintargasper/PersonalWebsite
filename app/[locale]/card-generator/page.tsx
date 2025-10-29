@@ -6,7 +6,7 @@ import Image from "next/image";
 import {getLatestVersion} from "@/utils/Utils";
 import {Screenshot, screenshotsCG} from "@/utils/Assets";
 import GetGitHub from "@/public/images/projects/images/github.webp";
-import Link from "next/link";
+import {Link} from "@/i18n/navigation";
 import {Metadata, Viewport} from "next";
 import {TranslationFunction} from "@/app/[locale]/layout";
 import {getTranslations} from "next-intl/server";

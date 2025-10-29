@@ -1,5 +1,5 @@
 import React, { type JSX } from "react";
-import Link from "next/link";
+import {Link} from "@/i18n/navigation";
 import {ProjectData, TLink} from "@/utils/Assets";
 import Image from "next/image";
 import GetGitHub from "@/public/images/projects/images/github.webp";

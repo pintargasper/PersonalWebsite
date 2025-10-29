@@ -1,4 +1,4 @@
-import Link from "next/link";
+import {Link} from "@/i18n/navigation";
 import React, { type JSX } from "react";
 import {Card, cards} from "@/utils/Assets";
 import Image from "next/image";

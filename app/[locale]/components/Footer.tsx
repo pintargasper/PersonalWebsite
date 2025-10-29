@@ -2,7 +2,7 @@
 
 import React, { type JSX } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Link from "next/link";
+import {Link} from "@/i18n/navigation";
 import { usePathname } from "next/navigation";
 import {TranslationFunction} from "@/app/[locale]/layout";
 import {useTranslations} from "next-intl";

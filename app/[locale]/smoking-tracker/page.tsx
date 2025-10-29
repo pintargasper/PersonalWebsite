@@ -1,17 +1,16 @@
 import React, {JSX} from "react";
 
 import SmokingLogo150 from "@/public/images/projects/smoking-tracker/logo_150x150.webp";
-import GetEnglish from "@/public/images/projects/images/play-store/english.webp";
 import GetGitHub from "@/public/images/projects/images/github.webp";
 
 import Image from "next/image";
 import {getLatestVersion} from "@/utils/Utils";
 import {Screenshot, screenshotsST} from "@/utils/Assets";
-import Link from "next/link";
+import {Link} from "@/i18n/navigation";
 import {Metadata} from "next";
 import {TranslationFunction} from "@/app/[locale]/layout";
-import {useTranslations} from "next-intl";
 import {getTranslations} from "next-intl/server";
+import GooglePlayButton from "@/app/[locale]/components/GooglePlayButton";
 
 export const metadata: Metadata = {
     title: "Smoking Tracker - Gašper Pintar",
@@ -92,7 +91,11 @@ export const metadata: Metadata = {
     }
 };
 
-const SmokingTracker: () => Promise<JSX.Element> = async (): Promise<JSX.Element> => {
+interface SmokingTrackerProps {
+    params: { locale: string };
+}
+
+const SmokingTracker: ({ params } : SmokingTrackerProps) => void = async ({ params }: SmokingTrackerProps): Promise<JSX.Element> => {
 
     const appVersion: string = await getLatestVersion("smoking-tracker");
 
@@ -146,13 +149,7 @@ const SmokingTracker: () => Promise<JSX.Element> = async (): Promise<JSX.Element
                                 target={"_blank"}
                                 rel="noopener noreferrer"
                             >
-                                <Image
-                                    src={GetEnglish}
-                                    alt={"Get it on Google Play"}
-                                    width={270}
-                                    height={80}
-                                    className={"img-play"}
-                                />
+                                <GooglePlayButton />
                             </Link>
                         </div>
                     </div>

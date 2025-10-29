@@ -1,7 +1,7 @@
 import React, { type JSX } from "react";
 import {contacts, TLink} from "@/utils/Assets";
-import Link from "next/link";
 import Image from "next/image";
+import {Link} from "@/i18n/navigation"
 
 const ContactButtons: React.FC = (): JSX.Element => {
     return (
