@@ -36,7 +36,15 @@ const Navigation: React.FC = (): JSX.Element => {
             setIsProjectDropdownOpen(false);
             setIsSettingsDropdownOpen(false);
             setIsLanguageDropdownOpen(false);
+            setIsNavbarExpanded(false);
         }
+    };
+
+    const closeAll: () => void = (): void => {
+        setIsNavbarExpanded(false);
+        setIsProjectDropdownOpen(false);
+        setIsSettingsDropdownOpen(false);
+        setIsLanguageDropdownOpen(false);
     };
 
     const changeLocale: (newLocale: string) => void = (newLocale: string): void => {
@@ -62,7 +70,7 @@ const Navigation: React.FC = (): JSX.Element => {
             ref={navbarRef}
         >
             <Container fluid={true}>
-                <Navbar.Brand as={Link} href={"/"}>{t("navbar.brand")}</Navbar.Brand>
+                <Navbar.Brand as={Link} href={"/"} onClick={closeAll}>{t("navbar.brand")}</Navbar.Brand>
 
                 <Navbar.Toggle
                     aria-controls={"basic-navbar-nav"}
@@ -76,13 +84,13 @@ const Navigation: React.FC = (): JSX.Element => {
                             title={<><FontAwesomeIcon icon={faFolder} className={"me-2"} />{t("navbar.projects")}</>}
                             id={"project-dropdown"}
                             show={isProjectDropdownOpen}
-                            onClick={(): void => setIsProjectDropdownOpen((previous: boolean): boolean => !previous)}
+                            onToggle={(isOpen: boolean): void => setIsProjectDropdownOpen(isOpen)}
                         >
-                            <NavDropdown.Item as={Link} href={"/smoking-tracker"}>
+                            <NavDropdown.Item as={Link} href={"/smoking-tracker"} onClick={closeAll}>
                                 <Image src={SmokingLogo70} alt={"Smoking Tracker logo"} width={25} height={25} className={"me-2 mb-1"} />
                                 <span>{t1("smoking-tracker.title")}</span>
                             </NavDropdown.Item>
-                            <NavDropdown.Item as={Link} href={"/card-generator"}>
+                            <NavDropdown.Item as={Link} href={"/card-generator"} onClick={closeAll}>
                                 <Image src={CardLogo70} alt={"Card Generator logo"} width={25} height={25} className={"me-2 mb-1"} />
                                 {t1("card-generator.title")}
                             </NavDropdown.Item>
@@ -95,20 +103,14 @@ const Navigation: React.FC = (): JSX.Element => {
                             title={<><FontAwesomeIcon icon={faCog} className={"me-2"} />{t("navbar.settings")}</>}
                             align={"end"}
                             show={isSettingsDropdownOpen}
-                            onClick={(): void => {
-                                setIsSettingsDropdownOpen((previous: boolean): boolean => !previous);
-                                setIsLanguageDropdownOpen(false);
-                            }}
+                            onToggle={(isOpen: boolean): void => setIsSettingsDropdownOpen(isOpen)}
                         >
                             <NavDropdown
                                 id={"language-dropdown"}
                                 title={<><FontAwesomeIcon icon={faGlobe} className={"me-2"} />{t("navbar.language")}</>}
                                 drop={"start"}
                                 show={isLanguageDropdownOpen}
-                                onClick={(event: MouseEvent<HTMLDivElement>): void => {
-                                    event.stopPropagation();
-                                    setIsLanguageDropdownOpen((previous: boolean): boolean => !previous);
-                                }}
+                                onToggle={(isOpen: boolean): void => setIsLanguageDropdownOpen(isOpen)}
                             >
                                 <NavDropdown.Item onClick={(): void => changeLocale("en")}>English</NavDropdown.Item>
                                 <NavDropdown.Item onClick={(): void => changeLocale("sl")}>Slovenščina</NavDropdown.Item>
