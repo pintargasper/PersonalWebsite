@@ -1,13 +1,17 @@
 import React, {JSX} from "react";
-import Footer from "@/components/Footer";
-import Navigation from "@/components/Navigation";
-import CookieNotice from "@/components/CookieNotice";
+import Footer from "@/app/[locale]/components/Footer";
+import Navigation from "@/app/[locale]/components/Navigation";
+import CookieNotice from "@/app/[locale]/components/CookieNotice";
 import "@/styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+
+import {NextIntlClientProvider, hasLocale} from "next-intl";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
 import {Viewport} from "next";
 import Script from "next/script";
+import {routing} from "@/i18n/routing";
+import {notFound} from "next/navigation";
 config.autoAddCss = false;
 
 export const viewport: Viewport = {
@@ -21,7 +25,16 @@ interface NodeProps {
     children: React.ReactNode;
 }
 
-const RootLayout: (props: Readonly<NodeProps>) => React.JSX.Element = ({children}: Readonly<NodeProps>): JSX.Element => {
+export default async function RootLayout({children, params}: {
+    children: React.ReactNode;
+    params: Promise<{locale: string}>;
+}) {
+
+    const {locale} = await params;
+    if (!hasLocale(routing.locales, locale)) {
+        notFound();
+    }
+
     return (
         <html lang={"en"}
               data-scroll-behavior={"smooth"}
@@ -55,5 +68,3 @@ const RootLayout: (props: Readonly<NodeProps>) => React.JSX.Element = ({children
         </html>
     );
 };
-
-export default RootLayout;

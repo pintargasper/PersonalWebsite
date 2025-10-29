@@ -1,12 +1,14 @@
 import React, {JSX} from "react";
 
-import ProjectCard from "@/components/ProjectCard";
-import ContactButtons from "@/components/ContactButtons";
+import ProjectCard from "@/app/[locale]/components/ProjectCard";
+import ContactButtons from "@/app/[locale]/components/ContactButtons";
 
 import ProfilePicture250 from "@/public/images/home/profile_250x250.webp";
 import {ProjectData, projects} from "@/utils/Assets";
 import Image from "next/image";
 import {Metadata} from "next";
+
+import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
     title: "Personal Website - Gašper Pintar | Projects & Applications",
@@ -88,6 +90,9 @@ export const metadata: Metadata = {
 };
 
 const HomePage: React.FC = (): JSX.Element => {
+
+    const t = useTranslations("home");
+
     return (
         <>
             <div className={"container mt-5"}>
@@ -104,8 +109,8 @@ const HomePage: React.FC = (): JSX.Element => {
                     </div>
                     <div className={"col-md-8"}>
                         <h1 className={"display-5"}>Gašper Pintar</h1>
-                        <p className={"lead"}>Student at faculty of information studies Novo mesto</p>
-                        <p>Hi, I am Gašper from Slovenia</p>
+                        <p className={"lead"}>{t("lead")}</p>
+                        <p>{t("description")}</p>
                         <ContactButtons />
                     </div>
                 </div>
