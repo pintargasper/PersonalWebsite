@@ -69,7 +69,7 @@ export const metadata: Metadata = {
         canonical: "https://gasperpintar.com/lost-in-space",
         languages: {
             "en": "https://gasperpintar.com/lost-in-space",
-            "sl-SI": "https://gasperpintar.com/lost-in-space"
+            "sl": "https://gasperpintar.com/lost-in-space"
         }
     },
 

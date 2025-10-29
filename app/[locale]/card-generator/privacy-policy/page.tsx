@@ -64,7 +64,7 @@ export const metadata: Metadata = {
         canonical: "https://gasperpintar.com/card-generator/privacy-policy",
         languages: {
             "en": "https://gasperpintar.com/card-generator/privacy-policy",
-            "sl-SI": "https://gasperpintar.com/card-generator/privacy-policy"
+            "sl": "https://gasperpintar.com/card-generator/privacy-policy"
         }
     },
 

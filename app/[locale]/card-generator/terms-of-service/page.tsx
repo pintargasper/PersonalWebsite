@@ -64,7 +64,7 @@ export const metadata: Metadata = {
         canonical: "https://gasperpintar.com/card-generator/terms-of-service",
         languages: {
             "en": "https://gasperpintar.com/card-generator/terms-of-service",
-            "sl-SI": "https://gasperpintar.com/card-generator/terms-of-service"
+            "sl": "https://gasperpintar.com/card-generator/terms-of-service"
         }
     },
 

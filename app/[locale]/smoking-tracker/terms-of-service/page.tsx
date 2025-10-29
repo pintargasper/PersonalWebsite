@@ -64,7 +64,7 @@ export const metadata: Metadata = {
         canonical: "https://gasperpintar.com/smoking-tracker/terms-of-service",
         languages: {
             "en": "https://gasperpintar.com/smoking-tracker/terms-of-service",
-            "sl-SI": "https://gasperpintar.com/smoking-tracker/terms-of-service"
+            "sl": "https://gasperpintar.com/smoking-tracker/terms-of-service"
         }
     },
 

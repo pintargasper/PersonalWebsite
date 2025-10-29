@@ -74,7 +74,7 @@ export const metadata: Metadata = {
         canonical: "https://gasperpintar.com/card-generator",
         languages: {
             "en": "https://gasperpintar.com/card-generator",
-            "sl-SI": "https://gasperpintar.com/card-generator"
+            "sl": "https://gasperpintar.com/card-generator"
         }
     },
 
@@ -113,7 +113,7 @@ const CardGenerator: () => Promise<JSX.Element> = async (): Promise<JSX.Element>
                         <div className={"col-md-4 text-center mb-3 mb-md-0"}>
                             <Image
                                 src={CardLogo150}
-                                alt={"Smoking Tracker logo"}
+                                alt={"Card Generator logo"}
                                 width={250}
                                 height={250}
                                 loading={"eager"}

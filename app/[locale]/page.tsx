@@ -74,7 +74,7 @@ export const metadata: Metadata = {
         canonical: "https://gasperpintar.com",
         languages: {
             "en": "https://gasperpintar.com",
-            "sl-SI": "https://gasperpintar.com"
+            "sl": "https://gasperpintar.com"
         }
     },
 

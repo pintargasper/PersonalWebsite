@@ -75,7 +75,7 @@ export const metadata: Metadata = {
         canonical: "https://gasperpintar.com/smoking-tracker",
         languages: {
             "en": "https://gasperpintar.com/smoking-tracker",
-            "sl-SI": "https://gasperpintar.com/smoking-tracker"
+            "sl": "https://gasperpintar.com/smoking-tracker"
         }
     },
 
