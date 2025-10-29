@@ -2,12 +2,16 @@
 
 import React, {JSX, useEffect, useState} from "react";
 import Cookies from "js-cookie";
+import {TranslationFunction} from "@/app/[locale]/layout";
+import {useTranslations} from "next-intl";
 
 const COOKIE_NOTICE_KEY = "cookie-notice";
 
 const CookieNotice: React.FC = (): JSX.Element | null => {
 
     const [visible, setVisible] = useState<undefined | boolean>(undefined);
+
+    const t: TranslationFunction = useTranslations("pages") as TranslationFunction;
 
     useEffect((): void => {
         const dismissed: string | undefined = Cookies.get(COOKIE_NOTICE_KEY);
@@ -26,13 +30,13 @@ const CookieNotice: React.FC = (): JSX.Element | null => {
     return (
         <div className={"cookie-notice"}>
             <span className={"cookie-notice-text"}>
-                This website uses cookies to analyze and improve your user experience. By continuing to use the site, you agree to the use of cookies
+                {t("cookie-notice.message")}
             </span>
             <button
                 onClick={handleClose}
                 className={"button"}
             >
-                Close
+                {t("cookie-notice.close")}
             </button>
         </div>
     );

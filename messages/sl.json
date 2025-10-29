@@ -22,6 +22,10 @@
       "description": "Generator Kart omogoča ustvarjanje poljubne karte in njeno generiranje v formatu png. Omogoča tudi prenos slik v načinu pdf",
       "title": "Generator Kart"
     },
+    "cookie-notice": {
+      "close": "Zapri",
+      "message": "To spletno mesto uporablja piškotke za analizo in izboljšanje vaše uporabniške izkušnje. Z nadaljnjo uporabo spletnega mesta se strinjate z uporabo piškotkov"
+    },
     "footer": {
       "privacy-policy": "Politika zasebnosti",
       "terms-of-service": "Pogoji storitve"
