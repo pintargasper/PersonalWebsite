@@ -4,6 +4,8 @@ import React, { type JSX } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {TranslationFunction} from "@/app/[locale]/layout";
+import {useTranslations} from "next-intl";
 
 const Footer: React.FC = (): JSX.Element => {
 
@@ -16,6 +18,8 @@ const Footer: React.FC = (): JSX.Element => {
     ];
 
     const isFooterLinksVisible: boolean = pathname ? visibleFooterRoutes.includes(pathname) : false;
+
+    const t: TranslationFunction = useTranslations("pages") as TranslationFunction;
 
     return (
         <footer className={"footer border-top mt-auto py-3"}>
@@ -36,13 +40,13 @@ const Footer: React.FC = (): JSX.Element => {
                                 href={`${pathname}/terms-of-service`}
                                 className={"footer-link me-3"}
                             >
-                                Terms of Service
+                                {t("footer.terms-of-service")}
                             </Link>
                             <Link
                                 href={`${pathname}/privacy-policy`}
                                 className={"footer-link"}
                             >
-                                Privacy Policy
+                                {t("footer.privacy-policy")}
                             </Link>
                         </Col>
                     )}

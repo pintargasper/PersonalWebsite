@@ -8,6 +8,8 @@ import {Screenshot, screenshotsCG} from "@/utils/Assets";
 import GetGitHub from "@/public/images/projects/images/github.webp";
 import Link from "next/link";
 import {Metadata, Viewport} from "next";
+import {TranslationFunction} from "@/app/[locale]/layout";
+import {getTranslations} from "next-intl/server";
 
 export const metadata: Metadata = {
     title: "Card Generator - Gašper Pintar",
@@ -99,6 +101,10 @@ const CardGenerator: () => Promise<JSX.Element> = async (): Promise<JSX.Element>
 
     const appVersion: string = await getLatestVersion("card-generator");
 
+    const t: TranslationFunction = await getTranslations("pages") as TranslationFunction;
+    const t1: TranslationFunction = await getTranslations("projects") as TranslationFunction;
+    const t2: TranslationFunction = await getTranslations("images") as TranslationFunction;
+
     return (
         <>
             <div className={"project-page-container py-4"}>
@@ -115,14 +121,14 @@ const CardGenerator: () => Promise<JSX.Element> = async (): Promise<JSX.Element>
                             />
                         </div>
                         <div className={"col-md-8"}>
-                            <h1 className={"display-5 fw-bold"}>Card Generator</h1>
-                            <p className={"lead"}>Card Generator allows the creation of any card and also its generation in png format. It also allows downloading images in pdf mode</p>
-                            <p className={"mb-0"}>Version : {appVersion}</p>
+                            <h1 className={"display-5 fw-bold"}>{t("card-generator.title")}</h1>
+                            <p className={"lead"}>{t("card-generator.description")}</p>
+                            <p className={"mb-0"}>{t1("version")} : {appVersion}</p>
                         </div>
                     </div>
 
                     <div className={"row text-center mb-5"}>
-                        <h2 className={"h5 fw-bold mb-3"}>Download</h2>
+                        <h2 className={"h5 fw-bold mb-3"}>{t1("download")}</h2>
                         <div className={"d-flex justify-content-center flex-wrap gap-3"}>
                             <Link
                                 key={"github"}
@@ -145,7 +151,7 @@ const CardGenerator: () => Promise<JSX.Element> = async (): Promise<JSX.Element>
 
                     <div className={"row mb-3"}>
                         <div className={"col text-center"}>
-                            <h3 className={"h5 fw-bold mb-3"}>Supported languages</h3>
+                            <h3 className={"h5 fw-bold mb-3"}>{t1("supported-languages")}</h3>
                             <ul className={"list-unstyled d-inline-block text-start"}>
                                 <li>English</li>
                             </ul>
@@ -154,18 +160,18 @@ const CardGenerator: () => Promise<JSX.Element> = async (): Promise<JSX.Element>
 
                     <div className={"row"}>
                         <div className={"col text-center"}>
-                            <h3 className={"h5 fw-bold mb-1"}>Preview</h3>
+                            <h3 className={"h5 fw-bold mb-1"}>{t1("preview")}</h3>
                             <div className={"d-flex flex-column flex-md-row justify-content-center flex-wrap gap-4 mt-1"}>
                                 {screenshotsCG.map((shot: Screenshot, index: number): JSX.Element => (
                                     <div key={index} className={`${!shot.isHorizontal ? "screenshoots " : ""} text-center`}>
                                         <Image
                                             src={shot.src}
-                                            alt={shot.alt}
+                                            alt={t2(shot.alt)}
                                             width={1900}
                                             height={1080}
                                             className={"img-fluid shadow-sm rounded mt-0"}
                                         />
-                                        <p className={"mt-1"}>{shot.alt}</p>
+                                        <p className={"mt-1"}>{t2(shot.alt)}</p>
                                     </div>
                                 ))}
                             </div>

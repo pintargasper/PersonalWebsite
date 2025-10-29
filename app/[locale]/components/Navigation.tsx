@@ -29,7 +29,7 @@ const Navigation: React.FC = (): JSX.Element => {
     const pathname: string = usePathname();
 
     const t: TranslationFunction = useTranslations("components") as TranslationFunction;
-    const t1: TranslationFunction = useTranslations("projects") as TranslationFunction;
+    const t1: TranslationFunction = useTranslations("pages") as TranslationFunction;
 
     const handleClickOutside: (event: MouseEvent<Document>) => void = (event: MouseEvent<Document>): void => {
         if (navbarRef.current && !navbarRef.current.contains(event.target as Node)) {

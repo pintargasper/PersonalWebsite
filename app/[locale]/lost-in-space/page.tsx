@@ -3,6 +3,8 @@ import React, { type JSX } from "react";
 import {Card, cards} from "@/utils/Assets";
 import Image from "next/image";
 import {Metadata} from "next";
+import {TranslationFunction} from "@/app/[locale]/layout";
+import {useTranslations} from "next-intl";
 
 export const metadata: Metadata = {
     title: "Lost in space - Gašper Pintar",
@@ -84,11 +86,14 @@ export const metadata: Metadata = {
 };
 
 const NotFoundPage: React.FC = (): JSX.Element => {
+
+    const t: TranslationFunction = useTranslations("pages") as TranslationFunction;
+
     return (
         <>
             <div className={"notfound-container"}>
-                <h1 className={"notfound-title"}>Lost in space</h1>
-                <p className={"notfound-text"}>Looks like you drifted off course</p>
+                <h1 className={"notfound-title"}>{t("not-found.title")}</h1>
+                <p className={"notfound-text"}>{t("not-found.description")}</p>
 
                 <div className={"cards-wrapper"}>
                     {cards.map((card: Card, index: number): JSX.Element => (
@@ -103,7 +108,7 @@ const NotFoundPage: React.FC = (): JSX.Element => {
                                     loading={"eager"}
                                 />
                             )}
-                            <span>{card.title}</span>
+                            <span>{t(card.title)}</span>
                         </Link>
                     ))}
                 </div>

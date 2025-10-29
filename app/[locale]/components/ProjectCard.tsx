@@ -12,7 +12,8 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }: ProjectCardProps): JSX.Element => {
 
-    const t: TranslationFunction = useTranslations("projects") as TranslationFunction;
+    const t: TranslationFunction = useTranslations("pages") as TranslationFunction;
+    const t1: TranslationFunction = useTranslations("projects") as TranslationFunction;
 
     return (
         <div className={"project-card mb-0"}>
@@ -49,7 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }: ProjectCardProps):
                                     className={"img-assets"}
                                 />
                             )}
-                            <span>{link.t ? t(link.label) : link.label}</span>
+                            <span>{link.t ? t1(link.label) : link.label}</span>
                         </Link>
                     ))}
                 </div>

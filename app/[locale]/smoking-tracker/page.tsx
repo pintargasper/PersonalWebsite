@@ -9,6 +9,9 @@ import {getLatestVersion} from "@/utils/Utils";
 import {Screenshot, screenshotsST} from "@/utils/Assets";
 import Link from "next/link";
 import {Metadata} from "next";
+import {TranslationFunction} from "@/app/[locale]/layout";
+import {useTranslations} from "next-intl";
+import {getTranslations} from "next-intl/server";
 
 export const metadata: Metadata = {
     title: "Smoking Tracker - Gašper Pintar",
@@ -93,6 +96,10 @@ const SmokingTracker: () => Promise<JSX.Element> = async (): Promise<JSX.Element
 
     const appVersion: string = await getLatestVersion("smoking-tracker");
 
+    const t: TranslationFunction = await getTranslations("pages") as TranslationFunction;
+    const t1: TranslationFunction = await getTranslations("projects") as TranslationFunction;
+    const t2: TranslationFunction = await getTranslations("images") as TranslationFunction;
+
     return (
         <>
             <div className={"project-page-container py-4"}>
@@ -109,14 +116,14 @@ const SmokingTracker: () => Promise<JSX.Element> = async (): Promise<JSX.Element
                             />
                         </div>
                         <div className={"col-md-8"}>
-                            <h1 className={"display-5 fw-bold"}>Smoking Tracker</h1>
-                            <p className={"lead"}>Smoking Tracker is a program that allows the user to easily track the number of cigarettes smoked. It also enables the display of data on weekly, monthly and yearly graphs</p>
-                            <p className={"mb-0"}>Version : {appVersion}</p>
+                            <h1 className={"display-5 fw-bold"}>{t("smoking-tracker.title")}</h1>
+                            <p className={"lead"}>{t("smoking-tracker.description")}</p>
+                            <p className={"mb-0"}>{t1("version")} : {appVersion}</p>
                         </div>
                     </div>
 
                     <div className={"row text-center mb-5"}>
-                        <h2 className={"h5 fw-bold mb-3"}>Download</h2>
+                        <h2 className={"h5 fw-bold mb-3"}>{t1("download")}</h2>
                         <div className={"d-flex justify-content-center flex-wrap gap-3"}>
                             <Link
                                 key={"github"}
@@ -152,7 +159,7 @@ const SmokingTracker: () => Promise<JSX.Element> = async (): Promise<JSX.Element
 
                     <div className={"row mb-3"}>
                         <div className={"col text-center"}>
-                            <h3 className={"h5 fw-bold mb-3"}>Supported languages</h3>
+                            <h3 className={"h5 fw-bold mb-3"}>{t1("supported-languages")}</h3>
                             <ul className={"list-unstyled d-inline-block text-start"}>
                                 <li>English</li>
                                 <li>Slovenščina</li>
@@ -162,19 +169,19 @@ const SmokingTracker: () => Promise<JSX.Element> = async (): Promise<JSX.Element
 
                     <div className={"screenshoots row"}>
                         <div className={"col text-center"}>
-                            <h3 className={"h5 fw-bold mb-1"}>Preview</h3>
+                            <h3 className={"h5 fw-bold mb-1"}>{t1("preview")}</h3>
                             <div className={"d-flex flex-column flex-md-row justify-content-center flex-wrap gap-4 mt-1"}>
                                 {screenshotsST.map((shot: Screenshot, index: number): JSX.Element => (
                                     <div key={index} className={"text-center"}>
                                         <Image
                                             src={shot.src}
-                                            alt={shot.alt}
+                                            alt={t2(shot.alt)}
                                             width={1080}
                                             height={720}
                                             loading={"eager"}
                                             className={"img-fluid shadow-sm rounded mt-0"}
                                         />
-                                        <p className={"mt-1"}>{shot.alt}</p>
+                                        <p className={"mt-1"}>{t2(shot.alt)}</p>
                                     </div>
                                 ))}
                             </div>

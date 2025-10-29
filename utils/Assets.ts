@@ -68,19 +68,19 @@ const contacts: TLink[] = [
 ];
 
 const cards: Card[] = [
-    { title: "Home", image: ProfilePicture250.src, alt: "Profile picture", link: "/" },
-    { title: "Smoking Tracker", image: SmokingLogo70.src, alt: "Smoking Tracker logo", link: "/smoking-tracker" },
-    { title: "Card Generator", image: CardLogo70.src, alt: "Card Generator logo", link: "/card-generator" }
+    { title: "home.title", image: ProfilePicture250.src, alt: "Profile picture", link: "/" },
+    { title: "smoking-tracker.title", image: SmokingLogo70.src, alt: "Smoking Tracker logo", link: "/smoking-tracker" },
+    { title: "card-generator.title", image: CardLogo70.src, alt: "Card Generator logo", link: "/card-generator" }
 ];
 
 const screenshotsST: Screenshot[] = [
-    { src: ScreenshotHome.src, alt: "Home page", isHorizontal: false },
-    { src: ScreenshotGraph.src, alt: "Graph page", isHorizontal: false },
-    { src: ScreenshotSettings.src, alt: "Settings page", isHorizontal: false },
+    { src: ScreenshotHome.src, alt: "smoking-tracker.home-page", isHorizontal: false },
+    { src: ScreenshotGraph.src, alt: "smoking-tracker.graph-page", isHorizontal: false },
+    { src: ScreenshotSettings.src, alt: "smoking-tracker.settings-page", isHorizontal: false },
 ];
 
 const screenshotsCG: Screenshot[] = [
-    { src: ScreenshotGenerator.src, alt: "Generator", isHorizontal: true },
+    { src: ScreenshotGenerator.src, alt: "card-generator.generator-page", isHorizontal: true },
 ];
 
 export {

@@ -1,21 +1,51 @@
 {
-  "components": {},
-  "pages": {
-    "home": {
-      "description": "Živijo, sem Gašper iz Slovenije",
-      "lead": "Študent na Fakulteti za informacijske študije Novo mesto",
-      "projects": "Projekti"
+  "images": {
+    "card-generator": {
+      "generator-page": "Stran generatorja"
+    },
+    "smoking-tracker": {
+      "graph-page": "Stran z grafom",
+      "home-page": "Domača stran",
+      "settings-page": "Stran z nastavitvami"
     }
   },
-  "projects": {
+  "components": {
+    "navbar": {
+      "brand": "Domov",
+      "language": "Jezik",
+      "projects": "Projekti",
+      "settings": "Nastavitve"
+    }
+  },
+  "pages": {
     "card-generator": {
       "description": "Generator Kart omogoča ustvarjanje poljubne karte in njeno generiranje v formatu png. Omogoča tudi prenos slik v načinu pdf",
       "title": "Generator Kart"
     },
-    "smoking-tracker": {
-      "description": "Sledilnik kajenja je program, ki uporabniku omogoča enostavno sledenje številu pokajenih cigaret. Omogoča tudi prikaz podatkov v obliki tedenskih, mesečnih in letnih grafov",
-      "title": "Sledilnik Kajenja"
+    "footer": {
+      "privacy-policy": "Politika zasebnosti",
+      "terms-of-service": "Pogoji storitve"
     },
+    "home": {
+      "description": "Živijo, sem Gašper iz Slovenije",
+      "lead": "Študent na Fakulteti za informacijske študije Novo mesto",
+      "projects": "Projekti",
+      "title": "Domov"
+    },
+    "not-found": {
+      "description": "Videti je da si zašel s poti",
+      "title": "Izgubljen v vesolju"
+    },
+    "smoking-tracker": {
+      "description": "Sledilnik Kajenja je program, ki uporabniku omogoča enostavno sledenje številu pokajenih cigaret. Omogoča tudi prikaz podatkov v obliki tedenskih, mesečnih in letnih grafov",
+      "title": "Sledilnik Kajenja"
+    }
+  },
+  "projects": {
+    "download": "Prenesi",
+    "preview": "Predogled",
+    "supported-languages": "Podprti jeziki",
+    "version": "Različica",
     "view": "Poglej"
   }
 }
