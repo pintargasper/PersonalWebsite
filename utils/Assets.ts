@@ -1,14 +1,14 @@
-import SmokingLogo70 from "@/public/images/projects/smoking-tracker/logo_70x70.webp";
-import CardLogo70 from "@/public/images/projects/card-generator/logo_70x70.webp";
-import ProfilePicture250 from "@/public/images/home/profile_250x250.webp";
-import ScreenshotHome from "@/public/images/projects/smoking-tracker/screenshots/home.webp";
-import ScreenshotGraph from "@/public/images/projects/smoking-tracker/screenshots/graph.webp";
-import ScreenshotSettings from "@/public/images/projects/smoking-tracker/screenshots/settings.webp";
-import ScreenshotGenerator from "@/public/images/projects/card-generator/screenshots/generator.webp";
-import GetSignal from "@/public/images/projects/images/signal.webp";
-import GetGitHub from "@/public/images/projects/images/github.webp";
-import GetLinkedIn from "@/public/images/projects/images/linkedin.webp";
-import GetEmail from "@/public/images/projects/images/email.webp";
+import SmokingLogo70 from "@/public/images/projects/smoking-tracker/smoking-tracker-photo-size-70x70.webp";
+import CardLogo70 from "@/public/images/projects/card-generator/card-generator-photo-size-70x70.webp";
+import ProfilePicture250 from "@/public/images/home/profile-photo-size-250x250.webp";
+import ScreenshotHome from "@/public/images/projects/smoking-tracker/screenshots/home-page-preview.webp";
+import ScreenshotGraph from "@/public/images/projects/smoking-tracker/screenshots/graph-page-preview.webp";
+import ScreenshotSettings from "@/public/images/projects/smoking-tracker/screenshots/settings-page-preview.webp";
+import ScreenshotGenerator from "@/public/images/projects/card-generator/screenshots/generator-page-preview.webp";
+import GetSignal from "@/public/images/projects/images/signal-photo.webp";
+import GetGitHub from "@/public/images/projects/images/github-photo.webp";
+import GetLinkedIn from "@/public/images/projects/images/linkedin-photo.webp";
+import GetEmail from "@/public/images/projects/images/email-photo.webp";
 
 interface TLink {
     label: string;

@@ -3,8 +3,8 @@
 import React, {type JSX} from "react";
 import Image from "next/image";
 
-import GetEnglish from "@/public/images/projects/images/play-store/english.webp";
-import GetSlovenian from "@/public/images/projects/images/play-store/slovenian.webp";
+import GetEnglish from "@/public/images/projects/images/play-store/get-it-on-google-play-english.webp";
+import GetSlovenian from "@/public/images/projects/images/play-store/get-it-on-google-play-slovenian.webp";
 
 import {useLocale} from "next-intl";
 

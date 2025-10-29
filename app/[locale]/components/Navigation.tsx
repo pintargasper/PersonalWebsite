@@ -9,8 +9,8 @@ import { faCog, faGlobe, faMoon, faFolder } from "@fortawesome/free-solid-svg-ic
 import {Link} from "@/i18n/navigation";
 import Image from "next/image";
 
-import SmokingLogo70 from "@/public/images/projects/smoking-tracker/logo_70x70.webp";
-import CardLogo70 from "@/public/images/projects/card-generator/logo_70x70.webp";
+import SmokingLogo70 from "@/public/images/projects/smoking-tracker/smoking-tracker-photo-size-70x70.webp";
+import CardLogo70 from "@/public/images/projects/card-generator/card-generator-photo-size-70x70.webp";
 
 import {useTranslations} from "next-intl";
 import {TranslationFunction} from "@/app/[locale]/layout";

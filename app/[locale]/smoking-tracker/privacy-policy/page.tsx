@@ -1,5 +1,5 @@
 import React, {JSX} from "react";
-import {Metadata, Viewport} from "next";
+import {Metadata} from "next";
 
 export const metadata: Metadata = {
     title: "Smoking Tracker - Privacy Policy",

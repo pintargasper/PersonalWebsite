@@ -1,11 +1,11 @@
 import React, {JSX} from "react";
 
-import CardLogo150 from "@/public/images/projects/card-generator/logo_150x150.webp";
+import CardLogo150 from "@/public/images/projects/card-generator/card-generator-photo-size-150x150.webp";
 
 import Image from "next/image";
 import {getLatestVersion} from "@/utils/Utils";
 import {Screenshot, screenshotsCG} from "@/utils/Assets";
-import GetGitHub from "@/public/images/projects/images/github.webp";
+import GetGitHub from "@/public/images/projects/images/github-photo.webp";
 import {Link} from "@/i18n/navigation";
 import {Metadata, Viewport} from "next";
 import {TranslationFunction} from "@/app/[locale]/layout";

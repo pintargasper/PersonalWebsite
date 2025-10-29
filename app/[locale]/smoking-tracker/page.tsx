@@ -1,7 +1,7 @@
 import React, {JSX} from "react";
 
-import SmokingLogo150 from "@/public/images/projects/smoking-tracker/logo_150x150.webp";
-import GetGitHub from "@/public/images/projects/images/github.webp";
+import SmokingLogo150 from "@/public/images/projects/smoking-tracker/smoking-tracker-photo-size-150x150.webp";
+import GetGitHub from "@/public/images/projects/images/github-photo.webp";
 
 import Image from "next/image";
 import {getLatestVersion} from "@/utils/Utils";
@@ -91,11 +91,7 @@ export const metadata: Metadata = {
     }
 };
 
-interface SmokingTrackerProps {
-    params: { locale: string };
-}
-
-const SmokingTracker: ({ params } : SmokingTrackerProps) => void = async ({ params }: SmokingTrackerProps): Promise<JSX.Element> => {
+const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
 
     const appVersion: string = await getLatestVersion("smoking-tracker");
 
