@@ -1,20 +1,20 @@
 import React, {JSX} from "react";
 
 import SmokingLogo150 from "@/public/images/projects/smoking-tracker/smoking-tracker-photo-size-150x150.webp";
-import GetGitHub from "@/public/images/projects/images/github-photo.webp";
 
 import Image from "next/image";
 import {getLatestVersion} from "@/utils/Utils";
 import {Screenshot, screenshotsST} from "@/utils/Assets";
-import {Link} from "@/i18n/navigation";
 import {Metadata} from "next";
 import {TranslationFunction} from "@/app/[locale]/layout";
 import {getTranslations} from "next-intl/server";
-import GooglePlayButton from "@/app/[locale]/components/GooglePlayButton";
+import {SmokingTrackerButtons} from "@/app/[locale]/components/ContactButtons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faChartLine, faCloudArrowUp, faDatabase, faGlobe, faMobileScreen} from "@fortawesome/free-solid-svg-icons";
 
 export const metadata: Metadata = {
     title: "Smoking Tracker - Gašper Pintar",
-    description: "Smoking Tracker is a program that allows the user to easily track the number of cigarettes smoked and display the data on weekly, monthly, and yearly graphs",
+    description: "Smoking Tracker is an easy-to-use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
     applicationName: "Smoking Tracker - Gašper Pintar",
 
     keywords: ["Gasper Pintar", "Tracker", "Smoking Tracker", "Application"],
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 
     openGraph: {
         title: "Gašper Pintar",
-        description: "Smoking Tracker is a program that allows the user to easily track the number of cigarettes smoked and display the data on weekly, monthly, and yearly graphs",
+        description: "Smoking Tracker is an easy-to-use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
         url: "https://gasperpintar.com/smoking-tracker",
         siteName: "Smoking Tracker - Gašper Pintar",
         type: "website",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Smoking Tracker - Gašper Pintar",
-        description: "Smoking Tracker is a program that allows the user to easily track the number of cigarettes smoked and display the data on weekly, monthly, and yearly graphs",
+        description: "Smoking Tracker is an easy-to-use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
         images: ["https://gasperpintar.com/logo/logo192-st.webp"]
     },
 
@@ -101,9 +101,9 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
 
     return (
         <>
-            <div className={"project-page-container py-4"}>
+            <div className={"project-page-container mt-5"}>
                 <div className={"container"}>
-                    <div className={"row align-items-center mb-4"}>
+                    <div className={"row align-items-center justify-content-center text-center text-md-start mb-4"}>
                         <div className={"col-md-4 text-center mb-3 mb-md-0"}>
                             <Image
                                 src={SmokingLogo150}
@@ -116,46 +116,51 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
                         </div>
                         <div className={"col-md-8"}>
                             <h1 className={"display-5 fw-bold"}>{t("smoking-tracker.title")}</h1>
-                            <p className={"lead"}>{t("smoking-tracker.description")}</p>
-                            <p className={"mb-0"}>{t1("version")} : {appVersion}</p>
+                            <p className={"mb-0"}>
+                                {t1("version")} : {appVersion}
+                                <span className={"d-block text-muted"}>{t1("available")} Android 8+</span>
+                            </p>
+                            <SmokingTrackerButtons />
                         </div>
                     </div>
 
-                    <div className={"row text-center mb-5"}>
-                        <h2 className={"h5 fw-bold mb-3"}>{t1("download")}</h2>
-                        <div className={"d-flex justify-content-center flex-wrap gap-3"}>
-                            <Link
-                                key={"github"}
-                                href={"https://github.com/pintargasper/SmokingTracker/releases/latest"}
-                                target={"_blank"}
-                                className={"button"}
-                            >
-                                <Image
-                                    src={GetGitHub}
-                                    alt={"GitHub logo"}
-                                    width={25}
-                                    height={25}
-                                    className={"img-assets"}
-                                />
-                                <span>GitHub</span>
-                            </Link>
-                            <Link
-                                key={"google play store"}
-                                href={"https://play.google.com/store/apps/details?id=com.gasperpintar.smokingtracker"}
-                                target={"_blank"}
-                                rel="noopener noreferrer"
-                            >
-                                <GooglePlayButton />
-                            </Link>
+                    <div className={"row mb-4 text-justify"}>
+                        <div className={"col"}>
+                            <h3 className={"h4 fw-bold mb-3"}>{t("smoking-tracker.text1.title")}</h3>
+
+                            <p className={"lead mb-3"}>
+                                <strong>{t("smoking-tracker.title")}</strong> {t("smoking-tracker.text1.description1")}
+                            </p>
+
+                            <p className={"mb-3"}>
+                                {t("smoking-tracker.text1.description2")}
+                            </p>
+
+                            <p className={"mb-3"}>
+                                {t("smoking-tracker.text1.description3")}
+                            </p>
+
+                            <p className={"mb-3"}>
+                                {t("smoking-tracker.text1.description4")}
+                            </p>
+
+                            <div className={"text-center"}>
+                                <u className={"mb-3 fw-bold"}>
+                                    {t("smoking-tracker.text2.description")}
+                                </u>
+                            </div>
                         </div>
                     </div>
 
-                    <div className={"row mb-3"}>
-                        <div className={"col text-center"}>
-                            <h3 className={"h5 fw-bold mb-3"}>{t1("supported-languages")}</h3>
-                            <ul className={"list-unstyled d-inline-block text-start"}>
-                                <li>English</li>
-                                <li>Slovenščina</li>
+                    <div className={"row my-5 text-start"}>
+                        <div className={"col"}>
+                            <h3 className={"h4 fw-bold mb-3"}>{t("smoking-tracker.title")}: {t("smoking-tracker.text3.description1")}</h3>
+                            <ul className={"list-group list-group-flush"}>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faDatabase} className="me-2" /> {t("smoking-tracker.text3.benefits1")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faChartLine} className="me-2" /> {t("smoking-tracker.text3.benefits2")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faCloudArrowUp} className="me-2" /> {t("smoking-tracker.text3.benefits3")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faGlobe} className="me-2" /> {t("smoking-tracker.text3.benefits4")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faMobileScreen} className="me-2" /> {t("smoking-tracker.text3.benefits5")}</li>
                             </ul>
                         </div>
                     </div>

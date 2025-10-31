@@ -121,6 +121,10 @@
     flex: 1;
 }
 
+.text-justify {
+    text-align: justify;
+}
+
 @media (min-width: 768px) {
     .project-card {
         flex-direction: row;

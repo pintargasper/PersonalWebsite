@@ -7,7 +7,7 @@ import {TranslationFunction} from "@/app/[locale]/layout";
 import {useTranslations} from "next-intl";
 
 export const metadata: Metadata = {
-    title: "Lost in space - Gašper Pintar",
+    title: "Lost in Space - Gašper Pintar",
     description: "The page you are looking for does not exist. Explore Gašper Pintar's projects, portfolio, and contact information",
     applicationName: "Personal Website - Gašper Pintar",
 
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     },
 
     openGraph: {
-        title: "Lost in space - Gašper Pintar",
+        title: "Lost in Space - Gašper Pintar",
         description: "The page you are looking for does not exist. Explore Gašper Pintar's projects, portfolio, and contact information",
         url: "https://gasperpintar.com/lost-in-space",
         siteName: "Gasper Pintar",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
 
     twitter: {
         card: "summary_large_image",
-        title: "Lost in space - Gašper Pintar",
+        title: "Lost in Space - Gašper Pintar",
         description: "The page you are looking for does not exist. Explore Gašper Pintar's projects, portfolio, and contact information",
         images: ["https://gasperpintar.com/logo/logo192.webp"]
     },

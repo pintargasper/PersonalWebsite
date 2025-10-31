@@ -41,13 +41,32 @@
       "title": "Izgubljen v vesolju"
     },
     "smoking-tracker": {
-      "description": "Sledilnik Kajenja je program, ki uporabniku omogoča enostavno sledenje številu pokajenih cigaret. Omogoča tudi prikaz podatkov v obliki tedenskih, mesečnih in letnih grafov",
+      "description": "Sledilnik kajenja je enostavna aplikacija za sledenje kajenju, ki vam pomaga razumeti vaše navade in napredek pri opuščanju kajenja. Vsaka cigareta, ki jo pokadite, je jasno zabeležena, kar vam daje podroben vpogled v vaše dnevne, tedenske in mesečne vzorce",
+      "text1": {
+        "description1": "je preprosta aplikacija za sledenje kajenju, ki vam pomaga razumeti vaše navade in napredek pri opuščanju kajenja. Vsaka cigareta, ki jo pokadite, je jasno zabeležena, kar vam daje podroben vpogled v vaše dnevne, tedenske in mesečne vzorce",
+        "description2": "Aplikacija vam omogoča vizualizacijo podatkov s tedenskimi, mesečnimi in letnimi grafi, tako da lahko hitro prepoznate svoje navade. Na podlagi teh podatkov se lahko bolj informirano odločite o tem, kako zmanjšati ali nadzorovati število pokajenih cigaret",
+        "description3": "Vsi podatki so shranjeni lokalno na vaši napravi, kar zagotavlja zasebnost in varnost. Po želji lahko omogočite tudi samodejno varnostno kopiranje, da bodo vaši podatki varni tudi ob menjavi naprave. Aplikacija podpira večjezičnost in je na voljo v slovenščini in angleščini, z intuitivnim uporabniškim vmesnikom, ki je prijazen tako začetnikom kot naprednim uporabnikom",
+        "description4": "Poleg sledenja in vizualizacije napredka vam aplikacija pomaga razumeti dolgoročne trende in vzorce kajenja, kar je ključnega pomena za načrtovanje sprememb in doseganje ciljev. Že samo sledenje dnevne porabe vam omogoča boljši nadzor nad vašimi navadami",
+        "title": "Kaj je Sledilnik Kajenja?"
+      },
+      "text2": {
+        "description": "Prenesite aplikacijo še danes in začnite spremljati svojo porabo!"
+      },
+      "text3": {
+        "benefits1": "Lokalno shranjevanje podatkov za večjo zasebnost",
+        "benefits2": "Dnevna, mesečna in letna statistika z grafi",
+        "benefits3": "Samodejne varnostne kopije (odvisno od naprave)",
+        "benefits4": "Večjezična podpora: angleščina in slovenščina",
+        "benefits5": "Preprost in intuitiven uporabniški vmesnik",
+        "description1": "Ključne prednosti"
+      },
       "title": "Sledilnik Kajenja"
     }
   },
   "projects": {
+    "available": "Na voljo na",
     "download": "Prenesi",
-    "preview": "Predogled",
+    "preview": "Predogled aplikacije",
     "supported-languages": "Podprti jeziki",
     "version": "Različica",
     "view": "Poglej"

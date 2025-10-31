@@ -41,13 +41,32 @@
       "title": "Lost in Space"
     },
     "smoking-tracker": {
-      "description": "Smoking Tracker is a program that allows the user to easily track the number of cigarettes smoked. It also enables the display of data on weekly, monthly and yearly graphs",
+      "description": "Smoking Tracker is an easy-to-use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
+      "text1": {
+        "description1": "is an easy-to-use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
+        "description2": "The app allows you to visualize your data through weekly, monthly, and yearly graphs, so you can quickly identify your habits. Based on this data, you can make more informed decisions about how to reduce or control the number of cigarettes you smoke",
+        "description3": "All data is stored locally on your device, ensuring privacy and security. If desired, you can also enable automatic backups to keep your data safe even when you change devices. The application supports multilingualism and is available in Slovenian and English, with an intuitive user interface that is friendly to both beginners and advanced users",
+        "description4": "In addition to tracking and visualizing your progress, the app helps you understand long-term trends and smoking patterns, which is key to planning changes and achieving your goals. Simply tracking your daily consumption gives you better control over your habits",
+        "title": "What is Smoking Tracker?"
+      },
+      "text2": {
+        "description": "Download the app today and start tracking your consumption!"
+      },
+      "text3": {
+        "benefits1": "Local data storage for greater privacy",
+        "benefits2": "Daily, monthly and yearly statistics with graphs",
+        "benefits3": "Automatic backups (depending on device)",
+        "benefits4": "Multi-language support: English and Slovenian",
+        "benefits5": "Simple and intuitive user interface",
+        "description1": "Key benefits"
+      },
       "title": "Smoking Tracker"
     }
   },
   "projects": {
+    "available": "Available on",
     "download": "Download",
-    "preview": "Preview",
+    "preview": "App preview",
     "supported-languages": "Supported Languages",
     "version": "Version",
     "view": "View"
