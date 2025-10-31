@@ -29,8 +29,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }: ProjectCardProps):
 
             <div className={"flex-grow-1"}>
                 <h3 className={"project-title fw-bold mb-2"}>{t(project.title)}</h3>
-                <p className={"project-description"}>
-                    {t(project?.description)}
+                <p className={"project-description text-justify"}>
+                    <strong>{t(project.title)}</strong> {t(project?.description)}
                 </p>
                 <div className={"d-flex flex-wrap gap-2 mt-2 justify-content-center justify-content-md-start"}>
                     {project?.links.map((link: TLink): JSX.Element => (

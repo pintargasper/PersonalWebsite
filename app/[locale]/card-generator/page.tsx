@@ -5,15 +5,23 @@ import CardLogo150 from "@/public/images/projects/card-generator/card-generator-
 import Image from "next/image";
 import {getLatestVersion} from "@/utils/Utils";
 import {Screenshot, screenshotsCG} from "@/utils/Assets";
-import GetGitHub from "@/public/images/projects/images/github-photo.webp";
-import {Link} from "@/i18n/navigation";
 import {Metadata, Viewport} from "next";
 import {TranslationFunction} from "@/app/[locale]/layout";
 import {getTranslations} from "next-intl/server";
+import {CardGeneratorButtons} from "@/app/[locale]/components/ContactButtons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {
+    faChartLine,
+    faCloudArrowUp,
+    faDatabase, faFileCode,
+    faFileExcel, faFileExport, faFilePdf,
+    faGlobe,
+    faMobileScreen
+} from "@fortawesome/free-solid-svg-icons";
 
 export const metadata: Metadata = {
     title: "Card Generator - Gašper Pintar",
-    description: "Card Generator allows the creation of any card and also its generation in png format. It also allows downloading images in pdf mode",
+    description: "Card Generator is a desktop application for creating and generating custom playing cards. Using Excel spreadsheets and customizable fxml templates, you can quickly create entire decks of playing cards without having to design each card individually",
     applicationName: "Card Generator - Gašper Pintar",
 
     keywords: ["Gasper Pintar", "Cards", "Card Generator", "Application"],
@@ -48,7 +56,7 @@ export const metadata: Metadata = {
 
     openGraph: {
         title: "Gašper Pintar",
-        description: "Card Generator allows the creation of any card and also its generation in png format. It also allows downloading images in pdf mode",
+        description: "Card Generator is a desktop application for creating and generating custom playing cards. Using Excel spreadsheets and customizable fxml templates, you can quickly create entire decks of playing cards without having to design each card individually",
         url: "https://gasperpintar.com/card-generator",
         siteName: "Card Generator - Gašper Pintar",
         type: "website",
@@ -66,7 +74,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Card Generator - Gašper Pintar",
-        description: "Card Generator allows the creation of any card and also its generation in png format. It also allows downloading images in pdf mode",
+        description: "Card Generator is a desktop application for creating and generating custom playing cards. Using Excel spreadsheets and customizable fxml templates, you can quickly create entire decks of playing cards without having to design each card individually",
         images: ["https://gasperpintar.com/logo/logo192-cg.webp"]
     },
 
@@ -97,7 +105,7 @@ export const viewport: Viewport = {
     userScalable: false
 };
 
-const CardGenerator: () => Promise<JSX.Element> = async (): Promise<JSX.Element> => {
+const CardGenerator: () => void = async (): Promise<JSX.Element> => {
 
     const appVersion: string = await getLatestVersion("card-generator");
 
@@ -107,9 +115,9 @@ const CardGenerator: () => Promise<JSX.Element> = async (): Promise<JSX.Element>
 
     return (
         <>
-            <div className={"project-page-container py-4"}>
+            <div className={"project-page-container mt-5"}>
                 <div className={"container"}>
-                    <div className={"row align-items-center mb-4"}>
+                    <div className={"row align-items-center justify-content-center text-center text-md-start mb-4"}>
                         <div className={"col-md-4 text-center mb-3 mb-md-0"}>
                             <Image
                                 src={CardLogo150}
@@ -122,38 +130,47 @@ const CardGenerator: () => Promise<JSX.Element> = async (): Promise<JSX.Element>
                         </div>
                         <div className={"col-md-8"}>
                             <h1 className={"display-5 fw-bold"}>{t("card-generator.title")}</h1>
-                            <p className={"lead"}>{t("card-generator.description")}</p>
-                            <p className={"mb-0"}>{t1("version")} : {appVersion}</p>
+                            <p className={"mb-0"}>
+                                {t1("version")}: {appVersion}
+                                <span className={"d-block text-muted"}>{t1("available1")}</span>
+                            </p>
+                            <CardGeneratorButtons />
                         </div>
                     </div>
 
-                    <div className={"row text-center mb-5"}>
-                        <h2 className={"h5 fw-bold mb-3"}>{t1("download")}</h2>
-                        <div className={"d-flex justify-content-center flex-wrap gap-3"}>
-                            <Link
-                                key={"github"}
-                                href={"https://github.com/pintargasper/CardGenerator/releases/latest"}
-                                target={"_blank"}
-                                className={"button"}
-                            >
-                                <Image
-                                    src={GetGitHub}
-                                    alt={"GitHub logo"}
-                                    width={25}
-                                    height={25}
-                                    loading={"eager"}
-                                    className={"img-assets"}
-                                />
-                                <span>GitHub</span>
-                            </Link>
+                    <div className={"row mb-4 text-justify"}>
+                        <div className={"col"}>
+                            <h3 className={"h4 fw-bold mb-3"}>{t("projects.text1.title")} {t("card-generator.title")}?</h3>
+
+                            <p className={"lead mb-3"}>
+                                <strong>{t("card-generator.title")}</strong> {t("card-generator.description")}
+                            </p>
+
+                            <p className={"mb-3"}>
+                                {t("card-generator.text1.description2")}
+                            </p>
+
+                            <p className={"mb-3"}>
+                                <strong>{t("card-generator.title")}</strong> {t("card-generator.text1.description3")}
+                            </p>
+
+                            <div className={"text-center"}>
+                                <u className={"mb-3 fw-bold"}>
+                                    {t("card-generator.text2.description")}!
+                                </u>
+                            </div>
                         </div>
                     </div>
 
-                    <div className={"row mb-3"}>
-                        <div className={"col text-center"}>
-                            <h3 className={"h5 fw-bold mb-3"}>{t1("supported-languages")}</h3>
-                            <ul className={"list-unstyled d-inline-block text-start"}>
-                                <li>English</li>
+                    <div className={"row my-5 text-start"}>
+                        <div className={"col"}>
+                            <h3 className={"h4 fw-bold mb-3"}>{t("card-generator.title")}: {t("projects.description1")}</h3>
+                            <ul className={"list-group list-group-flush"}>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faFileExcel} className="me-2" /> {t("card-generator.text3.benefits1")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faFileCode} className="me-2" /> {t("card-generator.text3.benefits2")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faFileExport} className="me-2" /> {t("card-generator.text3.benefits3")}</li>
+                                {/*<li className={"list-group-item"}><FontAwesomeIcon icon={faGlobe} className="me-2" /> {t("card-generator.text3.benefits4")}</li>*/}
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faMobileScreen} className="me-2" /> {t("projects.benefits1")}</li>
                             </ul>
                         </div>
                     </div>

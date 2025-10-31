@@ -19,7 +19,20 @@
   },
   "pages": {
     "card-generator": {
-      "description": "Card Generator allows the creation of any card and also its generation in png format. It also allows downloading images in pdf mode",
+      "description": "is a desktop application for creating and generating custom cards. Using Excel spreadsheets and customizable fxml templates, you can quickly create entire sets of cards without having to design each card individually",
+      "text1": {
+        "description2": "You enter all the data, such as name, power, description and special features, into Excel, and the application automatically generates professionally designed cards based on your fxml template. You can export the finished cards as png images or download the entire set as a pdf file",
+        "description3": "is designed with an intuitive user interface, real-time visual preview, and full control over element layout. Projects and templates are stored locally, ensuring privacy and reliability while working"
+      },
+      "text2": {
+        "description": "Create themed board game kits and prototypes quickly, efficiently, and fully customized"
+      },
+      "text3": {
+        "benefits1": "Excel based data input for automatic card generation",
+        "benefits2": "Fully customizable fxml template",
+        "benefits3": "Export cards as png images or as a pdf file",
+        "description1": "Key features"
+      },
       "title": "Card Generator"
     },
     "cookie-notice": {
@@ -40,14 +53,19 @@
       "description": "Looks like you drifted off course",
       "title": "Lost in Space"
     },
-    "smoking-tracker": {
-      "description": "Smoking Tracker is an easy-to-use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
+    "projects": {
+      "benefits1": "Simple and intuitive user interface",
+      "description1": "Key features",
       "text1": {
-        "description1": "is an easy-to-use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
+        "title": "What is"
+      }
+    },
+    "smoking-tracker": {
+      "description": "is an easy to use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
+      "text1": {
         "description2": "The app allows you to visualize your data through weekly, monthly, and yearly graphs, so you can quickly identify your habits. Based on this data, you can make more informed decisions about how to reduce or control the number of cigarettes you smoke",
         "description3": "All data is stored locally on your device, ensuring privacy and security. If desired, you can also enable automatic backups to keep your data safe even when you change devices. The application supports multilingualism and is available in Slovenian and English, with an intuitive user interface that is friendly to both beginners and advanced users",
-        "description4": "In addition to tracking and visualizing your progress, the app helps you understand long-term trends and smoking patterns, which is key to planning changes and achieving your goals. Simply tracking your daily consumption gives you better control over your habits",
-        "title": "What is Smoking Tracker?"
+        "description4": "In addition to tracking and visualizing your progress, the app helps you understand long-term trends and smoking patterns, which is key to planning changes and achieving your goals. Simply tracking your daily consumption gives you better control over your habits"
       },
       "text2": {
         "description": "Download the app today and start tracking your consumption!"
@@ -56,15 +74,14 @@
         "benefits1": "Local data storage for greater privacy",
         "benefits2": "Daily, monthly and yearly statistics with graphs",
         "benefits3": "Automatic backups (depending on device)",
-        "benefits4": "Multi-language support: English and Slovenian",
-        "benefits5": "Simple and intuitive user interface",
-        "description1": "Key benefits"
+        "benefits4": "Multi language support: English and Slovenian"
       },
       "title": "Smoking Tracker"
     }
   },
   "projects": {
     "available": "Available on",
+    "available1": "Available on Windows and Linux",
     "download": "Download",
     "preview": "App preview",
     "supported-languages": "Supported Languages",

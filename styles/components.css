@@ -65,9 +65,13 @@
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 
-.project-card .project-title, .project-card .project-description {
+.project-card .project-title {
     margin-bottom: 1rem;
     text-align: center;
+}
+
+.project-card .project-description {
+    margin-bottom: 1rem;
 }
 
 .no-outline:focus,
@@ -132,7 +136,7 @@
         text-align: start;
     }
 
-    .project-card .project-title, .project-card .project-description {
+    .project-card .project-title {
         text-align: start;
     }
 }

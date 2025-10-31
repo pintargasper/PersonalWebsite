@@ -117,7 +117,7 @@ const HomePage: React.FC = (): JSX.Element => {
                 </div>
 
                 <h2 className={"text-center"}>{t("home.projects")}</h2>
-                <div className={"row justify-content-center g-0"}>
+                <div className={"row g-0"}>
                     {projects.map((projectData: ProjectData): JSX.Element => (
                         <ProjectCard
                             key={projectData.title}

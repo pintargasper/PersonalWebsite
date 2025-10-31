@@ -117,7 +117,7 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
                         <div className={"col-md-8"}>
                             <h1 className={"display-5 fw-bold"}>{t("smoking-tracker.title")}</h1>
                             <p className={"mb-0"}>
-                                {t1("version")} : {appVersion}
+                                {t1("version")}: {appVersion}
                                 <span className={"d-block text-muted"}>{t1("available")} Android 8+</span>
                             </p>
                             <SmokingTrackerButtons />
@@ -126,10 +126,10 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
 
                     <div className={"row mb-4 text-justify"}>
                         <div className={"col"}>
-                            <h3 className={"h4 fw-bold mb-3"}>{t("smoking-tracker.text1.title")}</h3>
+                            <h3 className={"h4 fw-bold mb-3"}>{t("projects.text1.title")} {t("smoking-tracker.title")}?</h3>
 
                             <p className={"lead mb-3"}>
-                                <strong>{t("smoking-tracker.title")}</strong> {t("smoking-tracker.text1.description1")}
+                                <strong>{t("smoking-tracker.title")}</strong> {t("smoking-tracker.description")}
                             </p>
 
                             <p className={"mb-3"}>
@@ -154,13 +154,13 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
 
                     <div className={"row my-5 text-start"}>
                         <div className={"col"}>
-                            <h3 className={"h4 fw-bold mb-3"}>{t("smoking-tracker.title")}: {t("smoking-tracker.text3.description1")}</h3>
+                            <h3 className={"h4 fw-bold mb-3"}>{t("smoking-tracker.title")}: {t("projects.description1")}</h3>
                             <ul className={"list-group list-group-flush"}>
                                 <li className={"list-group-item"}><FontAwesomeIcon icon={faDatabase} className="me-2" /> {t("smoking-tracker.text3.benefits1")}</li>
                                 <li className={"list-group-item"}><FontAwesomeIcon icon={faChartLine} className="me-2" /> {t("smoking-tracker.text3.benefits2")}</li>
                                 <li className={"list-group-item"}><FontAwesomeIcon icon={faCloudArrowUp} className="me-2" /> {t("smoking-tracker.text3.benefits3")}</li>
                                 <li className={"list-group-item"}><FontAwesomeIcon icon={faGlobe} className="me-2" /> {t("smoking-tracker.text3.benefits4")}</li>
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faMobileScreen} className="me-2" /> {t("smoking-tracker.text3.benefits5")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faMobileScreen} className="me-2" /> {t("projects.benefits1")}</li>
                             </ul>
                         </div>
                     </div>
