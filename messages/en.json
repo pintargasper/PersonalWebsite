@@ -22,7 +22,7 @@
       "description": "is a desktop application for creating and generating custom cards. Using Excel spreadsheets and customizable fxml templates, you can quickly create entire sets of cards without having to design each card individually",
       "text1": {
         "description2": "You enter all the data, such as name, power, description and special features, into Excel, and the application automatically generates professionally designed cards based on your fxml template. You can export the finished cards as png images or download the entire set as a pdf file",
-        "description3": "is designed with an intuitive user interface, real-time visual preview, and full control over element layout. Projects and templates are stored locally, ensuring privacy and reliability while working"
+        "description3": "is designed with an intuitive user interface, real time visual preview, and full control over element layout. Projects and templates are stored locally, ensuring privacy and reliability while working"
       },
       "text2": {
         "description": "Create themed board game kits and prototypes quickly, efficiently, and fully customized"
@@ -65,7 +65,7 @@
       "text1": {
         "description2": "The app allows you to visualize your data through weekly, monthly, and yearly graphs, so you can quickly identify your habits. Based on this data, you can make more informed decisions about how to reduce or control the number of cigarettes you smoke",
         "description3": "All data is stored locally on your device, ensuring privacy and security. If desired, you can also enable automatic backups to keep your data safe even when you change devices. The application supports multilingualism and is available in Slovenian and English, with an intuitive user interface that is friendly to both beginners and advanced users",
-        "description4": "In addition to tracking and visualizing your progress, the app helps you understand long-term trends and smoking patterns, which is key to planning changes and achieving your goals. Simply tracking your daily consumption gives you better control over your habits"
+        "description4": "In addition to tracking and visualizing your progress, the app helps you understand long term trends and smoking patterns, which is key to planning changes and achieving your goals. Simply tracking your daily consumption gives you better control over your habits"
       },
       "text2": {
         "description": "Download the app today and start tracking your consumption!"
