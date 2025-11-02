@@ -4,7 +4,14 @@
         "description": "Sledilnik Kajenja je enostavna aplikacija za sledenje kajenju, ki vam pomaga razumeti vaše navade in napredek pri opuščanju kajenja. Vsaka cigareta, ki jo pokadite, je jasno zabeležena, kar vam daje podroben vpogled v vaše dnevne, tedenske in mesečne vzorce",
         "description-text-hyper": "Prenesite aplikacijo še danes in začnite spremljati svojo porabo!",
         "features": {
-            "text-1": "Lokalno shranjevanje podatkov za večjo zasebnost"
-        }
+            "text-1": "Lokalno shranjevanje podatkov za večjo zasebnost",
+            "text-2": "Dnevna, mesečna in letna statistika z grafi",
+            "text-3": "Samodejne varnostne kopije (odvisno od naprave)",
+            "text-4": "Večjezična podpora: angleščina in slovenščina",
+            "text-5": "Preprost in intuitiven uporabniški vmesnik",
+            "title": "Sledilnik Kajenja: Ključne lastnosti"
+        },
+        "logo-alt": "Logotip aplikacije Sledilnik Kajenja",
+        "preview": "Predogled aplikacije"
     }
 }
