@@ -21,6 +21,7 @@ interface TLink {
 interface ProjectData {
     title: string;
     image: string;
+    alt: string;
     imageSrcSet?: string;
     description: string;
     links: TLink[];
@@ -34,6 +35,7 @@ interface Card {
 }
 
 interface Screenshot {
+    title: string;
     src: string;
     alt: string;
     isHorizontal: boolean;
@@ -43,18 +45,20 @@ const projects: ProjectData[] = [
     {
         title: "smoking-tracker.title",
         image: SmokingLogo70.src,
+        alt: "smoking-tracker.logo-alt",
         description: "smoking-tracker.description",
         links: [
-            { label: "view", url: "/smoking-tracker", t: true },
+            { label: "buttons.view", url: "/smoking-tracker", t: true },
             { label: "GitHub", url: "https://github.com/pintargasper/SmokingTracker" }
         ]
     },
     {
         title: "card-generator.title",
         image: CardLogo70.src,
+        alt: "card-generator.logo-alt",
         description: "card-generator.description",
         links: [
-            { label: "view", url: "/card-generator", t: true },
+            { label: "buttons.view", url: "/card-generator", t: true },
             { label: "GitHub", url: "https://github.com/pintargasper/CardGenerator" }
         ]
     }
@@ -74,13 +78,13 @@ const cards: Card[] = [
 ];
 
 const screenshotsST: Screenshot[] = [
-    { src: ScreenshotHome.src, alt: "smoking-tracker.home-page", isHorizontal: false },
-    { src: ScreenshotGraph.src, alt: "smoking-tracker.graph-page", isHorizontal: false },
-    { src: ScreenshotSettings.src, alt: "smoking-tracker.settings-page", isHorizontal: false },
+    { title: "screenshots.home.title", src: ScreenshotHome.src, alt: "screenshots.home.alt", isHorizontal: false },
+    { title: "screenshots.graph.title", src: ScreenshotGraph.src, alt: "screenshots.graph.alt", isHorizontal: false },
+    { title: "screenshots.settings.title", src: ScreenshotSettings.src, alt: "screenshots.settings.alt", isHorizontal: false },
 ];
 
 const screenshotsCG: Screenshot[] = [
-    { src: ScreenshotGenerator.src, alt: "card-generator.generator-page", isHorizontal: true },
+    { title: "screenshots.generator-page.title", src: ScreenshotGenerator.src, alt: "screenshots.generator-page.alt", isHorizontal: true },
 ];
 
 export {

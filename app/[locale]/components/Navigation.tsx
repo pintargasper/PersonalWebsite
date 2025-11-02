@@ -29,7 +29,6 @@ const Navigation: React.FC = (): JSX.Element => {
     const pathname: string = usePathname();
 
     const t: TranslationFunction = useTranslations("components") as TranslationFunction;
-    const t1: TranslationFunction = useTranslations("pages") as TranslationFunction;
 
     const handleClickOutside: (event: MouseEvent<Document>) => void = (event: MouseEvent<Document>): void => {
         if (navbarRef.current && !navbarRef.current.contains(event.target as Node)) {
@@ -87,12 +86,12 @@ const Navigation: React.FC = (): JSX.Element => {
                             onToggle={(isOpen: boolean): void => setIsProjectDropdownOpen(isOpen)}
                         >
                             <NavDropdown.Item as={Link} href={"/smoking-tracker"} onClick={closeAll}>
-                                <Image src={SmokingLogo70} alt={"Smoking Tracker logo"} width={25} height={25} className={"me-2 mb-1"} />
-                                <span>{t1("smoking-tracker.title")}</span>
+                                <Image src={SmokingLogo70} alt={t("projects.smoking-tracker.alt")} width={25} height={25} className={"me-2 mb-1"} />
+                                <span>{t("projects.smoking-tracker.title")}</span>
                             </NavDropdown.Item>
                             <NavDropdown.Item as={Link} href={"/card-generator"} onClick={closeAll}>
-                                <Image src={CardLogo70} alt={"Card Generator logo"} width={25} height={25} className={"me-2 mb-1"} />
-                                {t1("card-generator.title")}
+                                <Image src={CardLogo70} alt={t("projects.card-generator.alt")} width={25} height={25} className={"me-2 mb-1"} />
+                                {t("projects.card-generator.title")}
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>

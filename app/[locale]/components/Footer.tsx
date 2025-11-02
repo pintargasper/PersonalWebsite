@@ -19,7 +19,7 @@ const Footer: React.FC = (): JSX.Element => {
 
     const isFooterLinksVisible: boolean = pathname ? visibleFooterRoutes.includes(pathname) : false;
 
-    const t: TranslationFunction = useTranslations("pages") as TranslationFunction;
+    const t: TranslationFunction = useTranslations("components") as TranslationFunction;
 
     return (
         <footer className={"footer border-top mt-auto py-3"}>

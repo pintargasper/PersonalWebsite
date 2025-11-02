@@ -95,9 +95,7 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
 
     const appVersion: string = await getLatestVersion("smoking-tracker");
 
-    const t: TranslationFunction = await getTranslations("pages") as TranslationFunction;
-    const t1: TranslationFunction = await getTranslations("projects") as TranslationFunction;
-    const t2: TranslationFunction = await getTranslations("images") as TranslationFunction;
+    const t: TranslationFunction = await getTranslations("smoking-tracker") as TranslationFunction;
 
     return (
         <>
@@ -107,7 +105,7 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
                         <div className={"col-md-4 text-center mb-3 mb-md-0"}>
                             <Image
                                 src={SmokingLogo150}
-                                alt={"Smoking Tracker logo"}
+                                alt={t("logo-alt")}
                                 width={250}
                                 height={250}
                                 loading={"eager"}
@@ -115,10 +113,10 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
                             />
                         </div>
                         <div className={"col-md-8"}>
-                            <h1 className={"display-5 fw-bold"}>{t("smoking-tracker.title")}</h1>
+                            <h1 className={"display-5 fw-bold"}>{t("title")}</h1>
                             <p className={"mb-0"}>
-                                {t1("version")}: {appVersion}
-                                <span className={"d-block text-muted"}>{t1("available")} Android 8+</span>
+                                {t("version")}: {appVersion}
+                                <span className={"d-block text-muted"}>{t("available-on")}</span>
                             </p>
                             <SmokingTrackerButtons />
                         </div>
@@ -126,27 +124,27 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
 
                     <div className={"row mb-4 text-justify"}>
                         <div className={"col"}>
-                            <h3 className={"h4 fw-bold mb-3"}>{t("projects.text1.title")} {t("smoking-tracker.title")}?</h3>
+                            <h3 className={"h4 fw-bold mb-3"}>{t("what-is")}</h3>
 
                             <p className={"lead mb-3"}>
-                                <strong>{t("smoking-tracker.title")}</strong> {t("smoking-tracker.description")}
+                                {t("description")}
                             </p>
 
                             <p className={"mb-3"}>
-                                {t("smoking-tracker.text1.description2")}
+                                {t("description-text-1")}
                             </p>
 
                             <p className={"mb-3"}>
-                                {t("smoking-tracker.text1.description3")}
+                                {t("description-text-2")}
                             </p>
 
                             <p className={"mb-3"}>
-                                {t("smoking-tracker.text1.description4")}
+                                {t("description-text-3")}
                             </p>
 
                             <div className={"text-center"}>
                                 <u className={"mb-3 fw-bold"}>
-                                    {t("smoking-tracker.text2.description")}
+                                    {t("description-text-hyper")}
                                 </u>
                             </div>
                         </div>
@@ -154,32 +152,32 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
 
                     <div className={"row my-5 text-start"}>
                         <div className={"col"}>
-                            <h3 className={"h4 fw-bold mb-3"}>{t("smoking-tracker.title")}: {t("projects.description1")}</h3>
+                            <h3 className={"h4 fw-bold mb-3"}>{t("features.title")}</h3>
                             <ul className={"list-group list-group-flush"}>
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faDatabase} className="me-2" /> {t("smoking-tracker.text3.benefits1")}</li>
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faChartLine} className="me-2" /> {t("smoking-tracker.text3.benefits2")}</li>
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faCloudArrowUp} className="me-2" /> {t("smoking-tracker.text3.benefits3")}</li>
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faGlobe} className="me-2" /> {t("smoking-tracker.text3.benefits4")}</li>
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faMobileScreen} className="me-2" /> {t("projects.benefits1")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faDatabase} className={"me-2"} /> {t("features.text-1")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faChartLine} className={"me-2"} /> {t("features.text-2")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faCloudArrowUp} className={"me-2"} /> {t("features.text-3")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faGlobe} className={"me-2"} /> {t("features.text-4")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faMobileScreen} className={"me-2"} /> {t("features.text-5")}</li>
                             </ul>
                         </div>
                     </div>
 
                     <div className={"screenshoots row"}>
                         <div className={"col text-center"}>
-                            <h3 className={"h5 fw-bold mb-1"}>{t1("preview")}</h3>
+                            <h3 className={"h5 fw-bold mb-1"}>{t("preview")}</h3>
                             <div className={"d-flex flex-column flex-md-row justify-content-center flex-wrap gap-4 mt-1"}>
                                 {screenshotsST.map((shot: Screenshot, index: number): JSX.Element => (
                                     <div key={index} className={"text-center"}>
                                         <Image
                                             src={shot.src}
-                                            alt={t2(shot.alt)}
+                                            alt={t(shot.alt)}
                                             width={1080}
                                             height={720}
                                             loading={"eager"}
                                             className={"img-fluid shadow-sm rounded mt-0"}
                                         />
-                                        <p className={"mt-1"}>{t2(shot.alt)}</p>
+                                        <p className={"mt-1"}>{t(shot.title)}</p>
                                     </div>
                                 ))}
                             </div>

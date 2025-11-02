@@ -12,15 +12,14 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }: ProjectCardProps): JSX.Element => {
 
-    const t: TranslationFunction = useTranslations("pages") as TranslationFunction;
-    const t1: TranslationFunction = useTranslations("projects") as TranslationFunction;
+    const t: TranslationFunction = useTranslations() as TranslationFunction;
 
     return (
         <div className={"project-card mb-0"}>
             <div className={"d-flex justify-content-center mb-md-0 me-md-3 ms-md-3"}>
                 <Image
                     src={project.image}
-                    alt={`${t(project?.title)} logo`}
+                    alt={t(project.alt)}
                     width={100}
                     height={100}
                     loading={"eager"}
@@ -50,7 +49,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }: ProjectCardProps):
                                     className={"img-assets"}
                                 />
                             )}
-                            <span>{link.t ? t1(link.label) : link.label}</span>
+                            <span>{link.t ? t(link.label) : link.label}</span>
                         </Link>
                     ))}
                 </div>

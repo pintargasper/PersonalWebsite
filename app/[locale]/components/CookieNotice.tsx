@@ -11,7 +11,7 @@ const CookieNotice: React.FC = (): JSX.Element | null => {
 
     const [visible, setVisible] = useState<undefined | boolean>(undefined);
 
-    const t: TranslationFunction = useTranslations("pages") as TranslationFunction;
+    const t: TranslationFunction = useTranslations() as TranslationFunction;
 
     useEffect((): void => {
         const dismissed: string | undefined = Cookies.get(COOKIE_NOTICE_KEY);
@@ -30,13 +30,13 @@ const CookieNotice: React.FC = (): JSX.Element | null => {
     return (
         <div className={"cookie-notice"}>
             <span className={"cookie-notice-text"}>
-                {t("cookie-notice.message")}
+                {t("components.cookie-notice.message")}
             </span>
             <button
                 onClick={handleClose}
                 className={"button"}
             >
-                {t("cookie-notice.close")}
+                {t("buttons.close")}
             </button>
         </div>
     );

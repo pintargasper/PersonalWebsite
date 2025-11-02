@@ -92,7 +92,7 @@ export const metadata: Metadata = {
 
 const HomePage: React.FC = (): JSX.Element => {
 
-    const t: TranslationFunction = useTranslations("pages") as TranslationFunction;
+    const t: TranslationFunction = useTranslations("home") as TranslationFunction;
 
     return (
         <>
@@ -101,7 +101,7 @@ const HomePage: React.FC = (): JSX.Element => {
                     <div className={"col-md-4 text-center mb-3 mb-md-0"}>
                         <Image
                             src={ProfilePicture250.src}
-                            alt={"Profile photo of Gašper Pintar"}
+                            alt={t("profile-picture-alt")}
                             width={250}
                             height={250}
                             loading={"eager"}
@@ -110,13 +110,13 @@ const HomePage: React.FC = (): JSX.Element => {
                     </div>
                     <div className={"col-md-8"}>
                         <h1 className={"display-5"}>Gašper Pintar</h1>
-                        <p className={"lead"}>{t("home.lead")}</p>
-                        <p>{t("home.description")}</p>
+                        <p className={"lead"}>{t("lead-text")}</p>
+                        <p>{t("lead-description")}</p>
                         <ContactButtons />
                     </div>
                 </div>
 
-                <h2 className={"text-center"}>{t("home.projects")}</h2>
+                <h2 className={"text-center"}>{t("projects")}</h2>
                 <div className={"row g-0"}>
                     {projects.map((projectData: ProjectData): JSX.Element => (
                         <ProjectCard

@@ -10,13 +10,8 @@ import {TranslationFunction} from "@/app/[locale]/layout";
 import {getTranslations} from "next-intl/server";
 import {CardGeneratorButtons} from "@/app/[locale]/components/ContactButtons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {
-    faChartLine,
-    faCloudArrowUp,
-    faDatabase, faFileCode,
-    faFileExcel, faFileExport, faFilePdf,
-    faGlobe,
-    faMobileScreen
+import {faFile, faFileCode,
+    faFileExcel, faMobileScreen
 } from "@fortawesome/free-solid-svg-icons";
 
 export const metadata: Metadata = {
@@ -109,9 +104,7 @@ const CardGenerator: () => void = async (): Promise<JSX.Element> => {
 
     const appVersion: string = await getLatestVersion("card-generator");
 
-    const t: TranslationFunction = await getTranslations("pages") as TranslationFunction;
-    const t1: TranslationFunction = await getTranslations("projects") as TranslationFunction;
-    const t2: TranslationFunction = await getTranslations("images") as TranslationFunction;
+    const t: TranslationFunction = await getTranslations("card-generator") as TranslationFunction;
 
     return (
         <>
@@ -121,7 +114,7 @@ const CardGenerator: () => void = async (): Promise<JSX.Element> => {
                         <div className={"col-md-4 text-center mb-3 mb-md-0"}>
                             <Image
                                 src={CardLogo150}
-                                alt={"Card Generator logo"}
+                                alt={t("logo-alt")}
                                 width={250}
                                 height={250}
                                 loading={"eager"}
@@ -129,10 +122,10 @@ const CardGenerator: () => void = async (): Promise<JSX.Element> => {
                             />
                         </div>
                         <div className={"col-md-8"}>
-                            <h1 className={"display-5 fw-bold"}>{t("card-generator.title")}</h1>
+                            <h1 className={"display-5 fw-bold"}>{t("title")}</h1>
                             <p className={"mb-0"}>
-                                {t1("version")}: {appVersion}
-                                <span className={"d-block text-muted"}>{t1("available1")}</span>
+                                {t("version")}: {appVersion}
+                                <span className={"d-block text-muted"}>{t("available-on")}</span>
                             </p>
                             <CardGeneratorButtons />
                         </div>
@@ -140,23 +133,23 @@ const CardGenerator: () => void = async (): Promise<JSX.Element> => {
 
                     <div className={"row mb-4 text-justify"}>
                         <div className={"col"}>
-                            <h3 className={"h4 fw-bold mb-3"}>{t("projects.text1.title")} {t("card-generator.title")}?</h3>
+                            <h3 className={"h4 fw-bold mb-3"}>{t("what-is")}</h3>
 
                             <p className={"lead mb-3"}>
-                                <strong>{t("card-generator.title")}</strong> {t("card-generator.description")}
+                                {t("description")}
                             </p>
 
                             <p className={"mb-3"}>
-                                {t("card-generator.text1.description2")}
+                                {t("description-text-1")}
                             </p>
 
                             <p className={"mb-3"}>
-                                <strong>{t("card-generator.title")}</strong> {t("card-generator.text1.description3")}
+                                {t("description-text-2")}
                             </p>
 
                             <div className={"text-center"}>
                                 <u className={"mb-3 fw-bold"}>
-                                    {t("card-generator.text2.description")}!
+                                    {t("description-text-hyper")}
                                 </u>
                             </div>
                         </div>
@@ -164,31 +157,30 @@ const CardGenerator: () => void = async (): Promise<JSX.Element> => {
 
                     <div className={"row my-5 text-start"}>
                         <div className={"col"}>
-                            <h3 className={"h4 fw-bold mb-3"}>{t("card-generator.title")}: {t("projects.description1")}</h3>
+                            <h3 className={"h4 fw-bold mb-3"}>{t("features.title")}</h3>
                             <ul className={"list-group list-group-flush"}>
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faFileExcel} className="me-2" /> {t("card-generator.text3.benefits1")}</li>
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faFileCode} className="me-2" /> {t("card-generator.text3.benefits2")}</li>
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faFileExport} className="me-2" /> {t("card-generator.text3.benefits3")}</li>
-                                {/*<li className={"list-group-item"}><FontAwesomeIcon icon={faGlobe} className="me-2" /> {t("card-generator.text3.benefits4")}</li>*/}
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faMobileScreen} className="me-2" /> {t("projects.benefits1")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faFileExcel} className={"me-2"} /> {t("features.text-1")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faFileCode} className={"me-2"} /> {t("features.text-2")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faFile} className={"me-2"} /> {t("features.text-3")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faMobileScreen} className={"me-2"} /> {t("features.text-4")}</li>
                             </ul>
                         </div>
                     </div>
 
                     <div className={"row"}>
                         <div className={"col text-center"}>
-                            <h3 className={"h5 fw-bold mb-1"}>{t1("preview")}</h3>
+                            <h3 className={"h5 fw-bold mb-1"}>{t("preview")}</h3>
                             <div className={"d-flex flex-column flex-md-row justify-content-center flex-wrap gap-4 mt-1"}>
                                 {screenshotsCG.map((shot: Screenshot, index: number): JSX.Element => (
                                     <div key={index} className={`${!shot.isHorizontal ? "screenshoots " : ""} text-center`}>
                                         <Image
                                             src={shot.src}
-                                            alt={t2(shot.alt)}
+                                            alt={t(shot.alt)}
                                             width={1900}
                                             height={1080}
                                             className={"img-fluid shadow-sm rounded mt-0"}
                                         />
-                                        <p className={"mt-1"}>{t2(shot.alt)}</p>
+                                        <p className={"mt-1"}>{t(shot.title)}</p>
                                     </div>
                                 ))}
                             </div>
