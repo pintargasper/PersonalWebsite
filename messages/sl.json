@@ -1,1 +1,10 @@
-{}
+{
+    "smoking-tracker": {
+        "available-on": "Na voljo v sistemih Android 8+",
+        "description": "Sledilnik Kajenja je enostavna aplikacija za sledenje kajenju, ki vam pomaga razumeti vaše navade in napredek pri opuščanju kajenja. Vsaka cigareta, ki jo pokadite, je jasno zabeležena, kar vam daje podroben vpogled v vaše dnevne, tedenske in mesečne vzorce",
+        "description-text-hyper": "Prenesite aplikacijo še danes in začnite spremljati svojo porabo!",
+        "features": {
+            "text-1": "Lokalno shranjevanje podatkov za večjo zasebnost"
+        }
+    }
+}
