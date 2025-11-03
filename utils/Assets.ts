@@ -72,9 +72,9 @@ const contacts: TLink[] = [
 ];
 
 const cards: Card[] = [
-    { title: "home.title", image: ProfilePicture250.src, alt: "Profile photo of Gašper Pintar", link: "/" },
-    { title: "smoking-tracker.title", image: SmokingLogo70.src, alt: "Smoking Tracker logo", link: "/smoking-tracker" },
-    { title: "card-generator.title", image: CardLogo70.src, alt: "Card Generator logo", link: "/card-generator" }
+    { title: "components.home.title", image: ProfilePicture250.src, alt: "components.home.alt", link: "/" },
+    { title: "components.smoking-tracker.title", image: SmokingLogo70.src, alt: "components.smoking-tracker.alt", link: "/smoking-tracker" },
+    { title: "components.card-generator.title", image: CardLogo70.src, alt: "components.card-generator.alt", link: "/card-generator" }
 ];
 
 const screenshotsST: Screenshot[] = [

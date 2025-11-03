@@ -93,5 +93,23 @@
     "title": "Card Generator",
     "version": "Version",
     "what-is": "What is Card Generator?"
+  },
+  "not-found": {
+    "title": "Lost in space",
+    "description": "The page you are looking for does not exist",
+    "components": {
+      "home": {
+        "title": "Home",
+        "alt": "Profile picture of Gašper Pintar"
+      },
+      "smoking-tracker": {
+        "title": "Smoking Tracker",
+        "alt": "Smoking Tracker application logo"
+      },
+      "card-generator": {
+        "title": "Card Generator",
+        "alt": "Card Generator application logo"
+      }
+    }
   }
 }

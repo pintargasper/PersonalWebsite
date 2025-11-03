@@ -87,13 +87,13 @@ export const metadata: Metadata = {
 
 const NotFoundPage: React.FC = (): JSX.Element => {
 
-    const t: TranslationFunction = useTranslations("pages") as TranslationFunction;
+    const t: TranslationFunction = useTranslations("not-found") as TranslationFunction;
 
     return (
         <>
             <div className={"notfound-container"}>
-                <h1 className={"notfound-title"}>{t("not-found.title")}</h1>
-                <p className={"notfound-text"}>{t("not-found.description")}</p>
+                <h1 className={"notfound-title"}>{t("title")}</h1>
+                <p className={"notfound-text"}>{t("description")}</p>
 
                 <div className={"cards-wrapper"}>
                     {cards.map((card: Card, index: number): JSX.Element => (
