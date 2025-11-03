@@ -101,7 +101,7 @@ const NotFoundPage: React.FC = (): JSX.Element => {
                             {card.image && (
                                 <Image
                                     src={card.image}
-                                    alt={card.alt + " logo"}
+                                    alt={t(card.alt)}
                                     width={40}
                                     height={40}
                                     className={"img-fluid"}
