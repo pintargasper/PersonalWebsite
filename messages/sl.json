@@ -12,6 +12,104 @@
             "title": "Sledilnik Kajenja: Ključne lastnosti"
         },
         "logo-alt": "Logotip aplikacije Sledilnik Kajenja",
-        "preview": "Predogled aplikacije"
+        "preview": "Predogled aplikacije",
+        "description-text-1": "Aplikacija omogoča vizualizacijo podatkov s tedenskimi, mesečnimi in letnimi grafi, tako da lahko hitro prepoznate svoje navade. Na podlagi teh podatkov se lahko bolj informirano odločite o tem, kako zmanjšati ali nadzorovati število pokajenih cigaret",
+        "description-text-2": "Vsi podatki so shranjeni lokalno na vaši napravi, kar zagotavlja zasebnost in varnost. Po želji lahko omogočite tudi samodejno varnostno kopiranje, da bodo vaši podatki varni tudi ob menjavi naprave. Aplikacija podpira večjezičnost in je na voljo v slovenščini in angleščini, z intuitivnim uporabniškim vmesnikom, ki je prijazen tako začetnikom kot naprednim uporabnikom",
+        "description-text-3": "Poleg sledenja in vizualizacije napredka vam aplikacija pomaga razumeti dolgoročne trende in vzorce kajenja, kar je ključnega pomena za načrtovanje sprememb in doseganje ciljev. Že samo sledenje dnevne porabe vam omogoča boljši nadzor nad vašimi navadami",
+        "screenshots": {
+            "graph": {
+                "alt": "Stran z Grafi aplikacije Sledilnik Kajenja",
+                "title": "Stran z grafi"
+            },
+            "home": {
+                "alt": "Domača stran aplikacije Sledilnik Kajenja",
+                "title": "Domača stran"
+            },
+            "settings": {
+                "alt": "Stran z nastavitvami aplikacije Sledilnik Kajenja",
+                "title": "Stan z nastavitvami"
+            }
+        },
+        "title": "Sledilnik Kajenja",
+        "version": "Različica",
+        "what-is": "Kaj je Sledilnik Kajenja?"
+    },
+    "home": {
+        "lead-description": "Živijo, sem Gašper iz Slovenije",
+        "lead-text": "Študent na Fakulteti za informacijske študije Novo mesto",
+        "profile-picture-alt": "Profilna slika Gašperja Pintarja",
+        "projects": "Projekti"
+    },
+    "components": {
+        "cookie-notice": {
+            "message": "To spletno mesto uporablja piškotke za analizo in izboljšanje vaše uporabniške izkušnje. Z nadaljnjo uporabo spletnega mesta se strinjate z uporabo piškotkov"
+        },
+        "footer": {
+            "privacy-policy": "Pravilnik o zasebnosti",
+            "terms-of-service": "Pogoji storitve"
+        },
+        "navbar": {
+            "brand": "Domov",
+            "language": "Jezik",
+            "projects": "Pojekti",
+            "settings": "Nastavitve"
+        },
+        "projects": {
+            "card-generator": {
+                "alt": "Logotip aplikacije Generator Kart",
+                "title": "Generator Kart"
+            },
+            "smoking-tracker": {
+                "alt": "Logotip aplikacije Sledilnik Kajenja",
+                "title": "Sledilnik Kajenja"
+            }
+        }
+    },
+    "buttons": {
+        "close": "Zapri",
+        "view": "Ogled"
+    },
+    "card-generator": {
+        "available-on": "Na voljo v sistemih Windows in Linux",
+        "description": "Generator Kart je namizna aplikacija za ustvarjanje in generiranje kart po meri. Z uporabo Excelovih preglednic in prilagodljivih predlog fxml lahko hitro ustvarite celotne komplete kart, ne da bi morali oblikovati vsako karto posebej",
+        "description-text-1": "Vse podatke, kot so na primer ime, moč, opis in posebne lastnosti, vnesete v Excel, aplikacija pa samodejno ustvari profesionalno oblikovane karte na podlagi vaše predloge fxml. Končane karte lahko izvozite kot slike png ali pa celoten komplet prenesete kot datoteko pdf",
+        "description-text-2": "Generator Kart je zasnovan z intuitivnim uporabniškim vmesnikom, vizualnim predogledom v realnem času in popolnim nadzorom nad postavitvijo elementov. Projekti in predloge so shranjeni lokalno, kar zagotavlja zasebnost in zanesljivost med delom",
+        "description-text-hyper": "Hitro, učinkovito in popolnoma prilagojeno ustvarite tematske komplete in prototipe družabnih iger!",
+        "features": {
+            "text-1": "Vnos podatkov v Excel za samodejno generiranje kartic",
+            "text-2": "Popolnoma prilagodljiva predloga fxml",
+            "text-3": "Izvoz kart kot png slike ali kot pdf datoteka",
+            "text-4": "Preprost in intuitiven uporabniški vmesnik",
+            "title": "Generator Kart: Ključne lastnosti"
+        },
+        "logo-alt": "Logotip aplikacije Generator Kart",
+        "preview": "Predogled aplikacije",
+        "screenshots": {
+            "generator-page": {
+                "alt": "Stran generatorja aplikacije Generator Kart",
+                "title": "Stran Generatorja"
+            }
+        },
+        "title": "Generator Kart",
+        "version": "Različica",
+        "what-is": "Kaj je Generator Kart?"
+    },
+    "not-found": {
+        "title": "Izgubljen v vesolju",
+        "description": "Stran, ki jo iščete, ne obstaja",
+        "components": {
+            "home": {
+                "title": "Domov",
+                "alt": "Profilna slika Gašperja Pintarja"
+            },
+            "smoking-tracker": {
+                "title": "Sledilnik Kajenja",
+                "alt": "Logotip aplikacije Sledilnik Kajenja"
+            },
+            "card-generator": {
+                "title": "Generator Kart",
+                "alt": "Logotip aplikacije Generator Kart"
+            }
+        }
     }
 }
