@@ -9,6 +9,7 @@ import GetSlovenian from "@/public/images/projects/images/play-store/get-it-on-g
 import {useLocale} from "next-intl";
 
 const GooglePlayButton: React.FC = (): JSX.Element => {
+
     const locale: string = useLocale();
 
     return (

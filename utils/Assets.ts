@@ -1,9 +1,14 @@
 import SmokingLogo70 from "@/public/images/projects/smoking-tracker/smoking-tracker-photo-size-70x70.webp";
 import CardLogo70 from "@/public/images/projects/card-generator/card-generator-photo-size-70x70.webp";
 import ProfilePicture250 from "@/public/images/home/profile-photo-size-250x250.webp";
-import ScreenshotHome from "@/public/images/projects/smoking-tracker/screenshots/home-page-preview.webp";
-import ScreenshotGraph from "@/public/images/projects/smoking-tracker/screenshots/graph-page-preview.webp";
-import ScreenshotSettings from "@/public/images/projects/smoking-tracker/screenshots/settings-page-preview.webp";
+
+import ScreenshotHomeEnglish from "@/public/images/projects/smoking-tracker/screenshots/home-page-preview-english.webp";
+import ScreenshotGraphEnglish from "@/public/images/projects/smoking-tracker/screenshots/graph-page-preview-english.webp";
+import ScreenshotSettingsEnglish from "@/public/images/projects/smoking-tracker/screenshots/settings-page-preview-english.webp";
+import ScreenShotHomeSlovenian from "@/public/images/projects/smoking-tracker/screenshots/home-page-preview-slovenian.webp";
+import ScreenShotGraphSlovenian from "@/public/images/projects/smoking-tracker/screenshots/graph-page-preview-slovenian.webp";
+import ScreenShotSettingsSlovenian from "@/public/images/projects/smoking-tracker/screenshots/settings-page-preview-slovenian.webp";
+
 import ScreenshotGenerator from "@/public/images/projects/card-generator/screenshots/generator-page-preview.webp";
 import GetSignal from "@/public/images/projects/images/signal-photo.webp";
 import GetGitHub from "@/public/images/projects/images/github-photo.webp";
@@ -36,9 +41,11 @@ interface Card {
 
 interface Screenshot {
     title: string;
-    src: string;
     alt: string;
     isHorizontal: boolean;
+    src: {
+        [locale: string]: string;
+    };
 }
 
 const projects: ProjectData[] = [
@@ -78,13 +85,13 @@ const cards: Card[] = [
 ];
 
 const screenshotsST: Screenshot[] = [
-    { title: "screenshots.home.title", src: ScreenshotHome.src, alt: "screenshots.home.alt", isHorizontal: false },
-    { title: "screenshots.graph.title", src: ScreenshotGraph.src, alt: "screenshots.graph.alt", isHorizontal: false },
-    { title: "screenshots.settings.title", src: ScreenshotSettings.src, alt: "screenshots.settings.alt", isHorizontal: false },
+    { title: "screenshots.home.title", src: {en: ScreenshotHomeEnglish.src, sl: ScreenShotHomeSlovenian.src}, alt: "screenshots.home.alt", isHorizontal: false },
+    { title: "screenshots.graph.title", src: {en: ScreenshotGraphEnglish.src, sl: ScreenShotGraphSlovenian.src}, alt: "screenshots.graph.alt", isHorizontal: false },
+    { title: "screenshots.settings.title", src: {en: ScreenshotSettingsEnglish.src, sl: ScreenShotSettingsSlovenian.src}, alt: "screenshots.settings.alt", isHorizontal: false },
 ];
 
 const screenshotsCG: Screenshot[] = [
-    { title: "screenshots.generator-page.title", src: ScreenshotGenerator.src, alt: "screenshots.generator-page.alt", isHorizontal: true },
+    { title: "screenshots.generator-page.title", src: {en: ScreenshotGenerator.src}, alt: "screenshots.generator-page.alt", isHorizontal: true },
 ];
 
 export {

@@ -4,13 +4,14 @@ import SmokingLogo150 from "@/public/images/projects/smoking-tracker/smoking-tra
 
 import Image from "next/image";
 import {getLatestVersion} from "@/utils/Utils";
-import {Screenshot, screenshotsST} from "@/utils/Assets";
+import {screenshotsST} from "@/utils/Assets";
 import {Metadata} from "next";
 import {TranslationFunction} from "@/app/[locale]/layout";
 import {getTranslations} from "next-intl/server";
 import {SmokingTrackerButtons} from "@/app/[locale]/components/ContactButtons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChartLine, faCloudArrowUp, faDatabase, faGlobe, faMobileScreen} from "@fortawesome/free-solid-svg-icons";
+import PreviewImage from "@/app/[locale]/components/PreviewImage";
 
 export const metadata: Metadata = {
     title: "Smoking Tracker - Gašper Pintar",
@@ -167,19 +168,7 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
                         <div className={"col text-center"}>
                             <h3 className={"h5 fw-bold mb-1"}>{t("preview")}</h3>
                             <div className={"d-flex flex-column flex-md-row justify-content-center flex-wrap gap-4 mt-1"}>
-                                {screenshotsST.map((shot: Screenshot, index: number): JSX.Element => (
-                                    <div key={index} className={"text-center"}>
-                                        <Image
-                                            src={shot.src}
-                                            alt={t(shot.alt)}
-                                            width={1080}
-                                            height={720}
-                                            loading={"eager"}
-                                            className={"img-fluid shadow-sm rounded mt-0"}
-                                        />
-                                        <p className={"mt-1"}>{t(shot.title)}</p>
-                                    </div>
-                                ))}
+                                <PreviewImage screenshots={screenshotsST} type={"smoking-tracker"} />
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,7 @@ import CardLogo150 from "@/public/images/projects/card-generator/card-generator-
 
 import Image from "next/image";
 import {getLatestVersion} from "@/utils/Utils";
-import {Screenshot, screenshotsCG} from "@/utils/Assets";
+import {screenshotsCG} from "@/utils/Assets";
 import {Metadata, Viewport} from "next";
 import {TranslationFunction} from "@/app/[locale]/layout";
 import {getTranslations} from "next-intl/server";
@@ -13,6 +13,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFile, faFileCode,
     faFileExcel, faMobileScreen
 } from "@fortawesome/free-solid-svg-icons";
+import PreviewImage from "@/app/[locale]/components/PreviewImage";
 
 export const metadata: Metadata = {
     title: "Card Generator - Gašper Pintar",
@@ -171,18 +172,7 @@ const CardGenerator: () => void = async (): Promise<JSX.Element> => {
                         <div className={"col text-center"}>
                             <h3 className={"h5 fw-bold mb-1"}>{t("preview")}</h3>
                             <div className={"d-flex flex-column flex-md-row justify-content-center flex-wrap gap-4 mt-1"}>
-                                {screenshotsCG.map((shot: Screenshot, index: number): JSX.Element => (
-                                    <div key={index} className={`${!shot.isHorizontal ? "screenshoots " : ""} text-center`}>
-                                        <Image
-                                            src={shot.src}
-                                            alt={t(shot.alt)}
-                                            width={1900}
-                                            height={1080}
-                                            className={"img-fluid shadow-sm rounded mt-0"}
-                                        />
-                                        <p className={"mt-1"}>{t(shot.title)}</p>
-                                    </div>
-                                ))}
+                                <PreviewImage screenshots={screenshotsCG} type={"card-generator"}/>
                             </div>
                         </div>
                     </div>
