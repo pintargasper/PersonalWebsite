@@ -40,37 +40,36 @@ async function RootLayout({children, params}: {
         <html lang={locale}
               data-scroll-behavior={"smooth"}
         >
-            <head>
-                {/* Google Analytics */}
-                <meta name="google-site-verification" content="ful3dtJx-2GOrhDrAbYsMI2oXsYASfAWbXLXZSj6Gf0"/>
-                <Script
-                    src="https://www.googletagmanager.com/gtag/js?id=G-06PV0WY17C"
-                    strategy="afterInteractive"
-                />
-                <Script id="google-analytics" strategy="afterInteractive">
-                    {`
+        <head>
+            {/* Google Analytics */}
+            <meta name="google-site-verification" content="ful3dtJx-2GOrhDrAbYsMI2oXsYASfAWbXLXZSj6Gf0"/>
+            <Script
+                src="https://www.googletagmanager.com/gtag/js?id=G-06PV0WY17C"
+            />
+            <Script id="google-analytics">
+                {`
                             window.dataLayer = window.dataLayer || [];
                             function gtag(){dataLayer.push(arguments);}
                             gtag('js', new Date());
                             gtag('config', 'G-06PV0WY17C');
                         `}
-                </Script>
-            </head>
-            <body>
-                <NextIntlClientProvider>
-                <div className={"app-wrapper d-flex flex-column min-vh-100"}>
-                    <Navigation />
-                    <CookieNotice />
-                    <div className={"flex-fill content-wrapper"}>
-                        {children}
-                    </div>
-                    <Footer />
+            </Script>
+        </head>
+        <body>
+        <NextIntlClientProvider>
+            <div className={"app-wrapper d-flex flex-column min-vh-100"}>
+                <Navigation />
+                <CookieNotice />
+                <div className={"flex-fill content-wrapper"}>
+                    {children}
                 </div>
-                </NextIntlClientProvider>
-            </body>
+                <Footer />
+            </div>
+        </NextIntlClientProvider>
+        </body>
         </html>
     );
-};
+}
 
 export type {
     TranslationFunction
