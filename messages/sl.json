@@ -76,7 +76,7 @@
         "description-text-2": "Generator Kart je zasnovan z intuitivnim uporabniškim vmesnikom, vizualnim predogledom v realnem času in popolnim nadzorom nad postavitvijo elementov. Projekti in predloge so shranjeni lokalno, kar zagotavlja zasebnost in zanesljivost med delom",
         "description-text-hyper": "Hitro, učinkovito in popolnoma prilagojeno ustvarite tematske komplete in prototipe družabnih iger!",
         "features": {
-            "text-1": "Vnos podatkov v Excel za samodejno generiranje kartic",
+            "text-1": "Vnos podatkov v Excel za samodejno generiranje kart",
             "text-2": "Popolnoma prilagodljiva predloga fxml",
             "text-3": "Izvoz kart kot png slike ali kot pdf datoteka",
             "text-4": "Preprost in intuitiven uporabniški vmesnik",
