@@ -72,13 +72,13 @@
     "card-generator": {
         "available-on": "Na voljo v sistemih Windows in Linux",
         "description": "Generator Kart je namizna aplikacija za ustvarjanje in generiranje kart po meri. Z uporabo Excelovih preglednic in prilagodljivih predlog fxml lahko hitro ustvarite celotne komplete kart, ne da bi morali oblikovati vsako karto posebej",
-        "description-text-1": "Vse podatke, kot so na primer ime, moč, opis in posebne lastnosti, vnesete v Excel, aplikacija pa samodejno ustvari profesionalno oblikovane karte na podlagi vaše predloge fxml. Končane karte lahko izvozite kot slike png ali pa celoten komplet prenesete kot datoteko pdf",
+        "description-text-1": "Vse podatke, kot so na primer ime, moč, opis in posebne lastnosti, vnesete v Excel, aplikacija pa samodejno ustvari profesionalno oblikovane karte na podlagi vaše predloge fxml. Končane karte lahko izvozite kot jpg ali png slike",
         "description-text-2": "Generator Kart je zasnovan z intuitivnim uporabniškim vmesnikom, vizualnim predogledom v realnem času in popolnim nadzorom nad postavitvijo elementov. Projekti in predloge so shranjeni lokalno, kar zagotavlja zasebnost in zanesljivost med delom",
         "description-text-hyper": "Hitro, učinkovito in popolnoma prilagojeno ustvarite tematske komplete in prototipe družabnih iger!",
         "features": {
             "text-1": "Vnos podatkov v Excel za samodejno generiranje kart",
             "text-2": "Popolnoma prilagodljiva predloga fxml",
-            "text-3": "Izvoz kart kot png slike ali kot pdf datoteka",
+            "text-3": "Izvoz kart kot jpg ali png slike",
             "text-4": "Preprost in intuitiven uporabniški vmesnik",
             "title": "Generator Kart: Ključne lastnosti"
         },
