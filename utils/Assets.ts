@@ -1,15 +1,14 @@
 import SmokingLogo70 from "@/public/images/projects/smoking-tracker/smoking-tracker-photo-size-70x70.webp";
 import CardLogo70 from "@/public/images/projects/card-generator/card-generator-photo-size-70x70.webp";
 import ProfilePicture250 from "@/public/images/home/profile-photo-size-250x250.webp";
-
 import ScreenshotHomeEnglish from "@/public/images/projects/smoking-tracker/screenshots/home-page-preview-english.webp";
 import ScreenshotGraphEnglish from "@/public/images/projects/smoking-tracker/screenshots/graph-page-preview-english.webp";
 import ScreenshotSettingsEnglish from "@/public/images/projects/smoking-tracker/screenshots/settings-page-preview-english.webp";
 import ScreenShotHomeSlovenian from "@/public/images/projects/smoking-tracker/screenshots/home-page-preview-slovenian.webp";
 import ScreenShotGraphSlovenian from "@/public/images/projects/smoking-tracker/screenshots/graph-page-preview-slovenian.webp";
 import ScreenShotSettingsSlovenian from "@/public/images/projects/smoking-tracker/screenshots/settings-page-preview-slovenian.webp";
-
-import ScreenshotGenerator from "@/public/images/projects/card-generator/screenshots/generator-page-preview.webp";
+import ScreenshotGeneratorEnglish from "@/public/images/projects/card-generator/screenshots/generator-page-preview-english.webp";
+import ScreenshotGeneratorSlovenian from "@/public/images/projects/card-generator/screenshots/generator-page-preview-slovenian.webp";
 import GetSignal from "@/public/images/projects/images/signal-photo.webp";
 import GetGitHub from "@/public/images/projects/images/github-photo.webp";
 import GetLinkedIn from "@/public/images/projects/images/linkedin-photo.webp";
@@ -91,7 +90,7 @@ const screenshotsST: Screenshot[] = [
 ];
 
 const screenshotsCG: Screenshot[] = [
-    { title: "screenshots.generator-page.title", src: {en: ScreenshotGenerator.src}, alt: "screenshots.generator-page.alt", isHorizontal: true },
+    { title: "screenshots.generator-page.title", src: {en: ScreenshotGeneratorEnglish.src, sl: ScreenshotGeneratorSlovenian.src}, alt: "screenshots.generator-page.alt", isHorizontal: true },
 ];
 
 export {
