@@ -1,115 +1,115 @@
 {
-  "smoking-tracker": {
-    "available-on": "Available on Android 8+",
-    "description": "Smoking Tracker is an easy to use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
-    "description-text-1": "The app allows you to visualize your data through weekly, monthly, and yearly graphs, so you can quickly identify your habits. Based on this data, you can make more informed decisions about how to reduce or control the number of cigarettes you smoke",
-    "description-text-2": "All data is stored locally on your device, ensuring privacy and security. If desired, you can also enable automatic backups to keep your data safe even when you change devices. The application supports multilingualism and is available in Slovenian and English, with an intuitive user interface that is friendly to both beginners and advanced users",
-    "description-text-3": "In addition to tracking and visualizing your progress, the app helps you understand long term trends and smoking patterns, which is key to planning changes and achieving your goals. Simply tracking your daily consumption gives you better control over your habits",
-    "description-text-hyper": "Download the app today and start tracking your consumption!",
-    "features": {
-      "text-1": "Local data storage for greater privacy",
-      "text-2": "Daily, monthly and yearly statistics with graphs",
-      "text-3": "Automatic backups (depending on device)",
-      "text-4": "Multi language support: English and Slovenian",
-      "text-5": "Simple and intuitive user interface",
-      "title": "Smoking Tracker: Key features"
-    },
-    "logo-alt": "Smoking Tracker application logo",
-    "preview": "Application preview",
-    "screenshots": {
-      "graph": {
-        "alt": "Graph page of Smoking Tracker application",
-        "title": "Graph page"
-      },
-      "home": {
-        "alt": "Home page of Smoking Tracker application",
-        "title": "Home page"
-      },
-      "settings": {
-        "alt": "Settings page of Smoking Tracker application",
-        "title": "Settings page"
-      }
-    },
-    "title": "Smoking Tracker",
-    "version": "Version",
-    "what-is": "What is Smoking Tracker?"
-  },
-  "home": {
-    "lead-description": "Hi, I am Gašper from Slovenia",
-    "lead-text": "Student at faculty of information studies Novo mesto",
-    "profile-picture-alt": "Profile picture of Gašper Pintar",
-    "projects": "Projects"
-  },
-  "components": {
-    "cookie-notice": {
-      "message": "This website uses cookies to analyze and improve your user experience. By continuing to use the site, you agree to the use of cookies"
-    },
-    "footer": {
-      "privacy-policy": "Privacy Policy",
-      "terms-of-service": "Terms of Service"
-    },
-    "navbar": {
-      "brand": "Home",
-      "language": "Language",
-      "projects": "Projects",
-      "settings": "Settings"
-    },
-    "projects": {
-      "card-generator": {
-        "alt": "Card Generator application logo",
-        "title": "Card Generator"
-      },
-      "smoking-tracker": {
-        "alt": "Smoking Tracker application logo",
-        "title": "Smoking Tracker"
-      }
-    }
-  },
-  "buttons": {
-    "close": "Close",
-    "view": "View"
-  },
-  "card-generator": {
-    "available-on": "Available on Windows and Linux",
-    "description": "Card Generator is a desktop application for creating and generating custom cards. Using Excel spreadsheets and customizable fxml templates, you can quickly create entire sets of cards without having to design each card individually",
-    "description-text-1": "You enter all the data, such as name, power, description and special features, into Excel, and the application automatically generates professionally designed cards based on your fxml template. You can export the finished cards as png images or download the entire set as a pdf file",
-    "description-text-2": "Card Generator is designed with an intuitive user interface, real time visual preview, and full control over element layout. Projects and templates are stored locally, ensuring privacy and reliability while working",
-    "description-text-hyper": "Create themed board game kits and prototypes quickly, efficiently, and fully customized!",
-    "features": {
-      "text-1": "Excel based data input for automatic card generation",
-      "text-2": "Fully customizable fxml template",
-      "text-3": "Export cards as png images or as a pdf file",
-      "text-4": "Simple and intuitive user interface",
-      "title": "Card Generator: Key features"
-    },
-    "logo-alt": "Card Generator application logo",
-    "preview": "Application preview",
-    "screenshots": {
-      "generator-page": {
-        "alt": "Generator page of Card Generator application",
-        "title": "Generator page"
-      }
-    },
-    "title": "Card Generator",
-    "version": "Version",
-    "what-is": "What is Card Generator?"
-  },
-  "not-found": {
-    "title": "Lost in space",
-    "description": "The page you are looking for does not exist",
-    "components": {
-      "home": {
-        "title": "Home",
-        "alt": "Profile picture of Gašper Pintar"
-      },
-      "smoking-tracker": {
+    "smoking-tracker": {
+        "available-on": "Available on Android 8+",
+        "description": "Smoking Tracker is an easy to use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
+        "description-text-1": "The app allows you to visualize your data through weekly, monthly, and yearly graphs, so you can quickly identify your habits. Based on this data, you can make more informed decisions about how to reduce or control the number of cigarettes you smoke",
+        "description-text-2": "All data is stored locally on your device, ensuring privacy and security. If desired, you can also enable automatic backups to keep your data safe even when you change devices. The application supports multilingualism and is available in Slovenian and English, with an intuitive user interface that is friendly to both beginners and advanced users",
+        "description-text-3": "In addition to tracking and visualizing your progress, the app helps you understand long term trends and smoking patterns, which is key to planning changes and achieving your goals. Simply tracking your daily consumption gives you better control over your habits",
+        "description-text-hyper": "Download the app today and start tracking your consumption!",
+        "features": {
+            "text-1": "Local data storage for greater privacy",
+            "text-2": "Daily, monthly and yearly statistics with graphs",
+            "text-3": "Automatic backups (depending on device)",
+            "text-4": "Multi language support: English and Slovenian",
+            "text-5": "Simple and intuitive user interface",
+            "title": "Smoking Tracker: Key features"
+        },
+        "logo-alt": "Smoking Tracker application logo",
+        "preview": "Application preview",
+        "screenshots": {
+            "graph": {
+                "alt": "Graph page of Smoking Tracker application",
+                "title": "Graph page"
+            },
+            "home": {
+                "alt": "Home page of Smoking Tracker application",
+                "title": "Home page"
+            },
+            "settings": {
+                "alt": "Settings page of Smoking Tracker application",
+                "title": "Settings page"
+            }
+        },
         "title": "Smoking Tracker",
-        "alt": "Smoking Tracker application logo"
-      },
-      "card-generator": {
+        "version": "Version",
+        "what-is": "What is Smoking Tracker?"
+    },
+    "home": {
+        "lead-description": "Hi, I am Gašper from Slovenia",
+        "lead-text": "Student at faculty of information studies Novo mesto",
+        "profile-picture-alt": "Profile picture of Gašper Pintar",
+        "projects": "Projects"
+    },
+    "components": {
+        "cookie-notice": {
+            "message": "This website uses cookies to analyze and improve your user experience. By continuing to use the site, you agree to the use of cookies"
+        },
+        "footer": {
+            "privacy-policy": "Privacy Policy",
+            "terms-of-service": "Terms of Service"
+        },
+        "navbar": {
+            "brand": "Home",
+            "language": "Language",
+            "projects": "Projects",
+            "settings": "Settings"
+        },
+        "projects": {
+            "card-generator": {
+                "alt": "Card Generator application logo",
+                "title": "Card Generator"
+            },
+            "smoking-tracker": {
+                "alt": "Smoking Tracker application logo",
+                "title": "Smoking Tracker"
+            }
+        }
+    },
+    "buttons": {
+        "close": "Close",
+        "view": "View"
+    },
+    "card-generator": {
+        "available-on": "Available on Windows and Linux",
+        "description": "Card Generator is a desktop application for creating and generating custom cards. Using Excel spreadsheets and customizable fxml templates, you can quickly create entire sets of cards without having to design each card individually",
+        "description-text-1": "You enter all the data, such as name, power, description and special features, into Excel, and the application automatically generates professionally designed cards based on your fxml template. You can export the finished cards as jpg or png images",
+        "description-text-2": "Card Generator is designed with an intuitive user interface, real time visual preview, and full control over element layout. Projects and templates are stored locally, ensuring privacy and reliability while working",
+        "description-text-hyper": "Create themed board game kits and prototypes quickly, efficiently, and fully customized!",
+        "features": {
+            "text-1": "Excel based data input for automatic card generation",
+            "text-2": "Fully customizable fxml template",
+            "text-3": "Export cards as jpg or png images",
+            "text-4": "Simple and intuitive user interface",
+            "title": "Card Generator: Key features"
+        },
+        "logo-alt": "Card Generator application logo",
+        "preview": "Application preview",
+        "screenshots": {
+            "generator-page": {
+                "alt": "Generator page of Card Generator application",
+                "title": "Generator page"
+            }
+        },
         "title": "Card Generator",
-        "alt": "Card Generator application logo"
-      }
+        "version": "Version",
+        "what-is": "What is Card Generator?"
+    },
+    "not-found": {
+        "title": "Lost in space",
+        "description": "The page you are looking for does not exist",
+        "components": {
+            "home": {
+                "title": "Home",
+                "alt": "Profile picture of Gašper Pintar"
+            },
+            "smoking-tracker": {
+                "title": "Smoking Tracker",
+                "alt": "Smoking Tracker application logo"
+            },
+            "card-generator": {
+                "title": "Card Generator",
+                "alt": "Card Generator application logo"
+            }
+        }
     }
-  }
 }
