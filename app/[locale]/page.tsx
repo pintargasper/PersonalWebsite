@@ -3,7 +3,7 @@ import React, {JSX} from "react";
 import ProjectCard from "@/app/[locale]/components/ProjectCard";
 import {ContactButtons} from "@/app/[locale]/components/ContactButtons";
 
-import ProfilePicture250 from "@/public/images/home/profile-photo-size-250x250.webp";
+import ProfilePicture250 from "@/public/images/home/profile-photo.webp";
 import {ProjectData, projects} from "@/utils/Assets";
 import Image from "next/image";
 import {Metadata} from "next";

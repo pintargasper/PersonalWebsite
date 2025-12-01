@@ -1,6 +1,6 @@
 import SmokingLogo70 from "@/public/images/projects/smoking-tracker/smoking-tracker-photo-size-70x70.webp";
 import CardLogo70 from "@/public/images/projects/card-generator/card-generator-photo-size-70x70.webp";
-import ProfilePicture250 from "@/public/images/home/profile-photo-size-250x250.webp";
+import ProfilePicture250 from "@/public/images/home/profile-photo.webp";
 import ScreenshotHomeEnglish from "@/public/images/projects/smoking-tracker/screenshots/home-page-preview-english.webp";
 import ScreenshotGraphEnglish from "@/public/images/projects/smoking-tracker/screenshots/graph-page-preview-english.webp";
 import ScreenshotSettingsEnglish from "@/public/images/projects/smoking-tracker/screenshots/settings-page-preview-english.webp";
