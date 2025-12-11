@@ -147,7 +147,7 @@ const News: () => void = async (): Promise<JSX.Element> => {
 
     return (
         <>
-            <div className={"project-page-container mt-5"}>
+            <div className={"news-page-container mt-5"}>
                 <div className={"container"}>
                     <Row>
                         {newsData.map((singleNewsItem: NewsItem): JSX.Element => (
