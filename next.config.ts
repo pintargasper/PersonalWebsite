@@ -3,7 +3,17 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
     /* config options here */
-    reactCompiler: true
+    reactCompiler: true,
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "gasperpintar.com",
+                port: "",
+                pathname: "/**",
+            },
+        ],
+    },
 };
 
 const withNextIntl: (nextConfig?: NextConfig | undefined) => NextConfig = createNextIntlPlugin();

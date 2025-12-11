@@ -71,6 +71,14 @@ const Navigation: React.FC = (): JSX.Element => {
             <Container fluid={true}>
                 <Navbar.Brand as={Link} href={"/"} onClick={closeAll}>{t("navbar.brand")}</Navbar.Brand>
 
+                <Nav.Link
+                    as={Link}
+                    href={"/news"}
+                    onClick={closeAll}
+                >
+                    Novice
+                </Nav.Link>
+
                 <Navbar.Toggle
                     aria-controls={"basic-navbar-nav"}
                     onClick={(): void => setIsNavbarExpanded((previous: boolean): boolean => !previous)}
