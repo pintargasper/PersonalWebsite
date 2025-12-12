@@ -3,6 +3,7 @@
 @import "@/styles/errors.css";
 @import "@/styles/projects.css";
 @import "@/styles/document.css";
+@import "@/styles/editor.css";
 
 :root {
     font-family: "Times New Roman", serif;
