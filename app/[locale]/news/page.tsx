@@ -88,6 +88,7 @@ export const newsData: NewsItem[] = [
         title: "Predstavitev nove funkcionalnosti",
         description: "Objavljena je bila nova funkcionalnost, ki izboljšuje uporabniško izkušnjo in povečuje učinkovitost spletne platforme.",
         image: "/images/news1.webp",
+        published: true,
         publishedAt: "2025-01-14",
         url: "news/predstavitev-nove-funkcionalnosti"
     },
@@ -96,6 +97,7 @@ export const newsData: NewsItem[] = [
         title: "Posodobljena poslovna strategija",
         description: "Predstavljen je načrt za leto 2025, ki vključuje pomembne razvojne usmeritve in optimizacijo procesov.",
         image: "/images/news2.webp",
+        published: true,
         publishedAt: "2025-01-10",
         url: "news/posodobljena-poslovna-strategija"
     },
@@ -104,6 +106,7 @@ export const newsData: NewsItem[] = [
         title: "Posodobljena poslovna strategija",
         description: "Predstavljen je načrt za leto 2025, ki vključuje pomembne razvojne usmeritve in optimizacijo procesov.",
         image: "/images/news2.webp",
+        published: false,
         publishedAt: "2025-01-10",
         url: "news/posodobljena-poslovna-strategija"
     },
@@ -112,6 +115,7 @@ export const newsData: NewsItem[] = [
         title: "Posodobljena poslovna strategija",
         description: "Predstavljen je načrt za leto 2025, ki vključuje pomembne razvojne usmeritve in optimizacijo procesov.",
         image: "/images/news2.webp",
+        published: false,
         publishedAt: "2025-01-10",
         url: "news/posodobljena-poslovna-strategija"
     },
@@ -120,6 +124,7 @@ export const newsData: NewsItem[] = [
         title: "Posodobljena poslovna strategija 3",
         description: "Predstavljen je načrt za leto 2025, ki vključuje pomembne razvojne usmeritve in optimizacijo procesov.",
         image: "https://gasperpintar.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fprofile-photo.2a780b90.webp&w=256&q=75",
+        published: true,
         publishedAt: "2025-01-10",
         url: "news/posodobljena-poslovna-strategija-3"
     },
@@ -128,6 +133,7 @@ export const newsData: NewsItem[] = [
         title: "Posodobljena poslovna strategija",
         description: "Predstavljen je načrt za leto 2025, ki vključuje pomembne razvojne usmeritve in optimizacijo procesov.",
         image: "/images/news2.webp",
+        published: false,
         publishedAt: "2025-01-10",
         url: "news/posodobljena-poslovna-strategija"
     },
@@ -136,6 +142,7 @@ export const newsData: NewsItem[] = [
         title: "Posodobljena poslovna strategija",
         description: "Predstavljen je načrt za leto 2025, ki vključuje pomembne razvojne usmeritve in optimizacijo procesov.",
         image: "/images/news2.webp",
+        published: true,
         publishedAt: "2025-01-10",
         url: "news/posodobljena-poslovna-strategija"
     }

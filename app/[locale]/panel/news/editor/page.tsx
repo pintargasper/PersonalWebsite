@@ -3,7 +3,7 @@ import Editor from "@/app/[locale]/panel/news/editor/Editor";
 import {Metadata} from "next";
 
 export const metadata: Metadata = {
-    title: "New Editor - Gašper Pintar",
+    title: "News editor - Gašper Pintar",
     description: "Create and edit news articles in multiple languages before publishing",
     applicationName: "News editor - Gašper Pintar",
 

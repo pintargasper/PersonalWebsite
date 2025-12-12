@@ -142,6 +142,20 @@
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 
+.truncate-one-line {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.truncate-multi-line {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .image-upload-area {
     width: 220px;
     padding: 16px;

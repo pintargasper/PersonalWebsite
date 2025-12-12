@@ -8,6 +8,7 @@ interface NewsItem {
     title: string,
     description: string,
     image: string,
+    published: boolean,
     publishedAt: string,
     url: string
 }
