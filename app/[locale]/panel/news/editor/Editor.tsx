@@ -56,33 +56,38 @@ const Editor: React.FC = (): JSX.Element => {
                 <div className={"col-lg-2 p-2"}>
                     <form>
                         <div className={"mb-2"}>
-                            <label htmlFor={"news-title"} className={"form-label"}>Ime novice</label>
+                            <label htmlFor={"news-title"} className={"form-label"}>Naslov novice</label>
                             <input
                                 id={"news-title"}
                                 name={"title"}
                                 type={"text"}
-                                className={"form-control"}
-                                placeholder={"Vnesi ime novice"}
+                                className={"input"}
+                                placeholder={"Vnesi naslov novice"}
                                 value={title[selectedLanguage] || ""}
                                 onChange={(event: ChangeEvent<HTMLInputElement>): void => setTitle((previous: Record<string, string>): {[x: string]: string} => ({ ...previous, [selectedLanguage]: event.target.value }))}
+                                maxLength={100}
                             />
+                            <div className="text-end small">{(title[selectedLanguage] || "").length}/100</div>
                         </div>
                         <div className={"mb-2"}>
                             <label htmlFor={"news-description"} className={"form-label"}>Kratek opis novice</label>
                             <textarea
                                 id={"news-description"}
                                 name={"description"}
-                                className={"form-control"}
+                                className={"input"}
                                 placeholder={"Vnesi kratek opis novice"}
                                 value={description[selectedLanguage] || ""}
                                 onChange={(event: ChangeEvent<HTMLTextAreaElement>): void => setDescription((previous: Record<string, string>): {[x: string]: string} => ({ ...previous, [selectedLanguage]: event.target.value }))}
+                                rows={4}
+                                maxLength={300}
                             />
+                            <div className="text-end small">{(description[selectedLanguage] || "").length}/300</div>
                         </div>
                         <div className={"mb-2"}>
                             <label htmlFor={"lang-select"} className={"form-label"}>Jezik novice</label>
                             <select
                                 id={"lang-select"}
-                                className={"form-select"}
+                                className={"select"}
                                 value={selectedLanguage}
                                 onChange={(event: ChangeEvent<HTMLSelectElement>): void => setSelectedLanguage(event.target.value)}
                             >

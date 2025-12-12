@@ -1,133 +1,133 @@
-/* ImageUploadArea */
 .image-upload-area {
-  width: 220px;
-  padding: 16px;
-  border-right: 1px solid #eee;
-  height: 100%;
-  overflow-y: auto;
+    width: 220px;
+    border-right: 1px solid #eee;
+    height: 100vh;
+    overflow-y: auto;
 }
 
-.image-upload-dropzone {
-  border: 2px dashed #aaa;
-  padding: 12px;
-  text-align: center;
-  cursor: pointer;
+.image-upload-dropzone p {
+    border: 2px dashed #aaa;
+    text-align: center;
+    cursor: pointer;
 }
 
 .image-upload-list {
-  margin-top: 16px;
+    margin-top: 16px;
 }
 
 .image-upload-preview {
-  width: 100% !important;
-  margin-bottom: 8px;
-  border-radius: 4px;
-  object-fit: cover;
-  height: 150px !important;
-  max-width: 220px;
+    width: 100%;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    object-fit: cover;
 }
 
-/* NewsEditorPage layout */
+.image-upload-image-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.image-upload-remove-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background 0.2s;
+}
+
+.image-upload-remove-btn:hover {
+    background: rgba(200,0,0,0.8);
+}
+
 .editor-row {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 .editor-image-col {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 .editor-center-col {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
-/* ProseMirror (RichTextEditor & Preview) shared styles */
 .ProseMirror img {
-  width: auto;
-  object-fit: contain;
-  border-radius: 8px;
-  background: #fff;
-  max-width: 100%;
-}
-
-.ProseMirror img.editor-image.float-left {
-  float: left;
-  margin-right: 16px;
-  margin-bottom: 8px;
-  max-width: 50%;
-}
-
-.ProseMirror img.editor-image.float-right {
-  float: right;
-  margin-left: 16px;
-  margin-bottom: 8px;
-  max-width: 50%;
-  display: inline;
-}
-
-.ProseMirror img.editor-image.float-none {
-  float: none;
-  margin: 0 auto 8px auto;
-  display: block;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #fff;
 }
 
 .ProseMirror p {
-  overflow: visible;
-  display: block;
+    overflow: visible;
+    display: block;
 }
 
 .ProseMirror {
-  min-height: 600px;
-  font-size: 1.1rem;
-  padding: 16px;
-  background: #fff;
-  border-radius: 8px;
-  border: 1px solid #e3e3e3;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  line-height: 1;
+    min-height: 600px;
+    font-size: 1.1rem;
+    padding: 16px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    line-height: 1;
 }
 
 .ProseMirror blockquote {
-  border-left: 4px solid #007bff;
-  padding-left: 12px;
-  color: #555;
-  background: #f8f9fa;
+    border-left: 4px solid #007bff;
+    padding-left: 12px;
+    color: #555;
+    background: #f8f9fa;
 }
 
 .ProseMirror a {
-  color: #007bff;
-  text-decoration: underline;
+    color: #007bff;
+    text-decoration: underline;
 }
 
 .ProseMirror ul, .ProseMirror ol {
-  padding-left: 2em;
+    padding-left: 2em;
 }
 
 .node-image {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .image-component {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .image-resizer {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  border: 1px solid #333;
-  z-index: 10;
-  border-radius: 50%;
-  cursor: pointer;
-  opacity: 0.8;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border: 1px solid #333;
+    z-index: 10;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 .image-resizer-n { top: -5px; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
@@ -140,4 +140,54 @@
 .image-resizer-se { bottom: -5px; right: -5px; cursor: nwse-resize; }
 .image-control-wrapper--resizing {
   pointer-events: none;
+}
+
+.editor-toolbar-btn {
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+.editor-toolbar-dropdown {
+    min-width: 90px;
+    margin-right: 4px;
+    margin-bottom: 2px;
+}
+
+.editor-toolbar-bold {
+    font-weight: bold;
+}
+
+.editor-toolbar-italic {
+    font-style: italic;
+}
+
+.editor-toolbar-underline {
+    text-decoration: underline;
+}
+
+.editor-toolbar-strike {
+    text-decoration: line-through;
+}
+
+.editor-toolbar-bullet {
+    font-size: 1.1em;
+}
+
+.editor-toolbar-ordered {
+    font-size: 1.1em;
+}
+
+.editor-toolbar-quote {
+    font-family: serif;
+}
+
+.editor-toolbar-undo,
+.editor-toolbar-redo {
+    font-size: 1.1em;
+}
+
+.editor-toolbar-align-left,
+.editor-toolbar-align-center,
+.editor-toolbar-align-right {
+    display: inline-block;
+    width: 18px;
 }

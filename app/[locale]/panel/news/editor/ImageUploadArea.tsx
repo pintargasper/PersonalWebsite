@@ -14,6 +14,11 @@ const ImageUploadArea: React.FC<ImageUploadAreaProps> = ({ images, onImagesChang
     onImagesChange([...images, ...newImages]);
   };
 
+  const handleRemoveImage: (idx: number) => void = (idx: number): void => {
+    const newImages: string[] = images.filter((_: string, i: number): boolean => i !== idx);
+    onImagesChange(newImages);
+  };
+
   const { getRootProps, getInputProps } = useDropzone({ onDrop, accept: { "image/*": [] } });
 
   return (
@@ -24,7 +29,18 @@ const ImageUploadArea: React.FC<ImageUploadAreaProps> = ({ images, onImagesChang
       </div>
       <div className={"image-upload-list"}>
         {images.map((img: string, idx: number): JSX.Element => (
-          <Image key={idx} src={img} alt={`uploaded-${idx}`} width={220} height={150} className={"image-upload-preview"} />
+          <div key={idx} className={"image-upload-image-wrapper"}>
+            <Image src={img} alt={`uploaded-${idx}`} width={220} height={150} className={"image-upload-preview"} />
+            <button
+              type={"button"}
+              onClick={(): void => handleRemoveImage(idx)}
+              className={"image-upload-remove-btn"}
+              aria-label={"Remove image"}
+              title={"Remove image"}
+            >
+              ×
+            </button>
+          </div>
         ))}
       </div>
     </div>

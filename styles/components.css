@@ -64,8 +64,8 @@
 }
 
 .project-card .project-title {
-    margin-bottom: 1rem;
-    text-align: center;
+	margin-bottom: 1rem;
+	text-align: center;
 }
 
 .project-card .project-description {
@@ -143,23 +143,23 @@
 }
 
 .image-upload-area {
-  width: 220px;
-  padding: 16px;
-  border-right: 1px solid #eee;
-  height: 100vh;
-  overflow-y: auto;
+    width: 220px;
+    padding: 16px;
+    border-right: 1px solid #eee;
+    height: 100vh;
+    overflow-y: auto;
 }
 
 .rich-text-editor {
-  flex: 1;
-  padding: 24px;
+    flex: 1;
+    padding: 24px;
 }
 
 .image-insert-button img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
 @media (min-width: 768px) {
@@ -182,13 +182,13 @@
 
 @media (max-width: 700px) {
   .news-editor-container {
-    flex-direction: column;
+      flex-direction: column;
   }
+
   .image-upload-area {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #eee;
-    height: auto;
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #eee;
+      height: auto;
   }
 }
-
