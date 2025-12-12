@@ -27,3 +27,25 @@
   max-width: 220px;
 }
 
+/* NewsEditorPage layout */
+.editor-row {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.editor-image-col {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.editor-center-col {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.editor-form-col {
+  /* p-2 is already a Bootstrap class for padding */
+}
