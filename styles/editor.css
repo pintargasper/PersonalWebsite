@@ -1,0 +1,29 @@
+/* ImageUploadArea */
+.image-upload-area {
+  width: 220px;
+  padding: 16px;
+  border-right: 1px solid #eee;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.image-upload-dropzone {
+  border: 2px dashed #aaa;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.image-upload-list {
+  margin-top: 16px;
+}
+
+.image-upload-preview {
+  width: 100% !important;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  object-fit: cover;
+  height: 150px !important;
+  max-width: 220px;
+}
+
