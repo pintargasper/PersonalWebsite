@@ -23,3 +23,28 @@
     transform: translateY(-3px);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
+
+.login-toast {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    width: 100%;
+    max-width: 420px;
+    padding: 16px;
+    pointer-events: none;
+}
+
+.login-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 3rem;
+}
+
+.login-card {
+    max-width: 400px;
+    width: 100%;
+}
