@@ -14,7 +14,7 @@ import CardLogo70 from "@/public/images/projects/card-generator/card-generator-p
 
 import {useTranslations} from "next-intl";
 import {TranslationFunction} from "@/app/[locale]/layout";
-import { useAuth } from "@/utils/AuthContext";
+import {useAuth} from "@/app/components/AuthContext";
 
 const Navigation: React.FC = (): JSX.Element => {
 

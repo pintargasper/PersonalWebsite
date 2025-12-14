@@ -1,10 +1,10 @@
 "use client";
 
 import React, {ChangeEvent, FormEvent, JSX, useEffect, useState} from "react";
-import {login, LoginResponse} from "@/utils/authApi";
 import {useRouter} from "next/navigation";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
-import { useAuth } from "@/utils/AuthContext";
+import {login, LoginResponse} from "@/api/authApi";
+import {useAuth} from "@/app/components/AuthContext";
 
 interface FormStatus {
     isLoading: boolean;

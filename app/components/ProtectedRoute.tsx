@@ -3,8 +3,8 @@
 import React, { useEffect, useState, JSX } from "react";
 import { useRouter } from "next/navigation";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import { authenticate } from "@/utils/authApi";
-import { useAuth } from "@/utils/AuthContext";
+import {authenticate} from "@/api/authApi";
+import {useAuth} from "@/app/components/AuthContext";
 
 interface ProtectedRouteProps {
     children: React.ReactNode;

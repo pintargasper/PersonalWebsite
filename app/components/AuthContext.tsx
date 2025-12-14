@@ -1,7 +1,7 @@
 "use client";
 
 import React, {createContext, useContext, useState, useEffect, ReactNode, JSX, Context} from "react";
-import { authenticate, logout as apiLogout } from "@/utils/authApi";
+import {authenticate, logout as apiLogout} from "@/api/authApi";
 
 interface AuthContextType {
   isAuthenticated: boolean;

@@ -10,7 +10,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import {Viewport} from "next";
 import {routing} from "@/i18n/routing";
 import {notFound} from "next/navigation";
-import {AuthProvider} from "@/utils/AuthContext";
+import {AuthProvider} from "@/app/components/AuthContext";
 config.autoAddCss = false;
 
 export const viewport: Viewport = {
