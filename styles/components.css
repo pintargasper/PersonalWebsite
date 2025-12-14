@@ -64,8 +64,8 @@
 }
 
 .project-card .project-title {
-	margin-bottom: 1rem;
-	text-align: center;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 .project-card .project-description {
@@ -156,69 +156,49 @@
     text-overflow: ellipsis;
 }
 
-.image-upload-area {
-    width: 220px;
-    padding: 16px;
-    border-right: 1px solid #eee;
-    height: 100vh;
-    overflow-y: auto;
-}
-
-.rich-text-editor {
-    flex: 1;
-    padding: 24px;
-}
-
-.image-insert-button img {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
 .protected-spinner-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70vh;
-  width: 100vw;
-  background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: 100vw;
+    background: transparent;
 }
 
 .protected-spinner-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .protected-spinner {
-  width: 96px;
-  height: 96px;
-  border: 12px solid #e0e0e0;
-  border-top: 12px solid #6c757d;
-  border-radius: 50%;
-  animation: protected-spin 1s linear infinite;
+    width: 96px;
+    height: 96px;
+    border: 12px solid #e0e0e0;
+    border-top: 12px solid #6c757d;
+    border-radius: 50%;
+    animation: protected-spin 1s linear infinite;
 }
 
 .protected-spinner-text {
-  position: absolute;
-  color: #6c757d;
-  font-weight: 600;
-  font-size: 18px;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
+    position: absolute;
+    color: #6c757d;
+    font-weight: 600;
+    font-size: 18px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
 }
 
 @keyframes protected-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @media (min-width: 768px) {
@@ -240,14 +220,7 @@
 }
 
 @media (max-width: 700px) {
-  .news-editor-container {
-      flex-direction: column;
-  }
-
-  .image-upload-area {
-      width: 100%;
-      border-right: none;
-      border-bottom: 1px solid #eee;
-      height: auto;
-  }
+    .news-editor-container {
+        flex-direction: column;
+    }
 }
