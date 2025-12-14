@@ -1,14 +1,19 @@
 "use client";
 
 import React, {ChangeEvent, FormEvent, JSX, useState} from "react";
+import {login, LoginResponse} from "@/utils/authApi";
+import {useRouter} from "next/navigation";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 interface FormStatus {
     isLoading: boolean;
     errorMessage: string | null;
-    successMessage: string | null;
+    successMessage: string | null | undefined;
 }
 
 const Login: React.FC = (): JSX.Element => {
+
+    const router: AppRouterInstance = useRouter();
 
     const [usernameOrEmail, setUsernameOrEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
@@ -31,7 +36,7 @@ const Login: React.FC = (): JSX.Element => {
         return null;
     };
 
-    const handleSubmit: (event: FormEvent<HTMLFormElement>) => void = (event: FormEvent<HTMLFormElement>): void => {
+    const handleSubmit: (event: FormEvent<HTMLFormElement>) => Promise<void> = async (event: FormEvent<HTMLFormElement>): Promise<void> => {
         event.preventDefault();
         const validationError: string | null = validateForm();
         if (validationError) {
@@ -43,10 +48,25 @@ const Login: React.FC = (): JSX.Element => {
             return;
         }
         setFormStatus({
-            isLoading: false,
+            isLoading: true,
             errorMessage: null,
-            successMessage: "Login successful"
+            successMessage: null
         });
+        try {
+            const data: LoginResponse = await login(usernameOrEmail, password);
+            setFormStatus({
+                isLoading: false,
+                errorMessage: null,
+                successMessage: data.message
+            });
+            router.push("/panel");
+        } catch (error) {
+            setFormStatus({
+                isLoading: false,
+                errorMessage: (error instanceof Error ? error.message : "Network error. Please try again."),
+                successMessage: null
+            });
+        }
     };
 
     return (

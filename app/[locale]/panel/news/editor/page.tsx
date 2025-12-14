@@ -1,6 +1,7 @@
 import React, {JSX} from "react";
 import Editor from "@/app/[locale]/panel/news/editor/Editor";
 import {Metadata} from "next";
+import ProtectedRoute from "../../../../components/ProtectedRoute";
 
 export const metadata: Metadata = {
     title: "News editor - Gašper Pintar",
@@ -26,7 +27,9 @@ export const metadata: Metadata = {
 
 const EditorPage: React.FC = (): JSX.Element => {
     return (
-       <Editor/>
+        <ProtectedRoute>
+            <Editor/>
+        </ProtectedRoute>
     );
 };
 

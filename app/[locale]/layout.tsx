@@ -39,7 +39,7 @@ async function RootLayout({children, params}: {
               data-scroll-behavior={"smooth"}
         >
         <head>
-            <meta name="google-site-verification" content="ful3dtJx-2GOrhDrAbYsMI2oXsYASfAWbXLXZSj6Gf0"/>
+            <meta name={"google-site-verification"} content={"ful3dtJx-2GOrhDrAbYsMI2oXsYASfAWbXLXZSj6Gf0"}/>
         </head>
         <body>
         <NextIntlClientProvider>

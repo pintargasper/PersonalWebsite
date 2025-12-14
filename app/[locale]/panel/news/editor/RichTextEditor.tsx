@@ -318,7 +318,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
                 <select
                     id={"heading-select"}
                     className={"select w-auto editor-toolbar-dropdown"}
-                    title="Text Type"
+                    title={"Text Type"}
                     onChange={(event: ChangeEvent<HTMLSelectElement>): void =>
                         handleHeadingChange<HTMLSelectElement>(event, editor)
                     }
@@ -332,7 +332,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
                 <select
                     id={"font-size-select"}
                     className={"select w-auto editor-toolbar-dropdown"}
-                    title="Font Size"
+                    title={"Font Size"}
                     onChange={(event: ChangeEvent<HTMLSelectElement>): boolean | undefined =>
                         editor?.chain().focus().setMark("textStyle", { fontSize: event.target.value }).run()
                     }

@@ -1,6 +1,7 @@
 import React, {JSX} from "react";
 import PreviewPage from "@/app/[locale]/panel/news/editor/preview/PreviewPage";
 import {Metadata} from "next";
+import ProtectedRoute from "../../../../../components/ProtectedRoute";
 
 export const metadata: Metadata = {
     title: "News preview - Gašper Pintar",
@@ -26,7 +27,9 @@ export const metadata: Metadata = {
 
 const Preview: React.FC = (): JSX.Element => {
   return (
-      <PreviewPage/>
+      <ProtectedRoute>
+          <PreviewPage/>
+      </ProtectedRoute>
   );
 };
 
