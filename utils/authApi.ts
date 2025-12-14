@@ -4,6 +4,21 @@ interface LoginResponse {
     [key: string]: unknown;
 }
 
+const authenticate: () => Promise<boolean> = async (): Promise<boolean> => {
+    const response: Response = await fetch(process.env.NEXT_PUBLIC_AUTHENTICATE_API_URL!, {
+        method: "POST",
+        credentials: "include",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+
+    if (!response.ok) {
+        throw new Error("Authentication failed");
+    }
+    return await response.json();
+};
+
 const login: (usernameOrEmail: string, password: string) => Promise<LoginResponse> = async (usernameOrEmail: string, password: string): Promise<LoginResponse> => {
     const response: Response = await fetch(process.env.NEXT_PUBLIC_LOGIN_API_URL!, {
         method: "POST",
@@ -26,8 +41,8 @@ const login: (usernameOrEmail: string, password: string) => Promise<LoginRespons
     return await response.json();
 };
 
-const authenticate: () => Promise<boolean> = async (): Promise<boolean> => {
-    const response: Response = await fetch(process.env.NEXT_PUBLIC_AUTHENTICATE_API_URL!, {
+const logout: () => Promise<boolean> = async (): Promise<boolean> => {
+    const response: Response = await fetch(process.env.NEXT_PUBLIC_LOGOUT_API_URL!, {
         method: "POST",
         credentials: "include",
         headers: {
@@ -36,14 +51,18 @@ const authenticate: () => Promise<boolean> = async (): Promise<boolean> => {
     });
 
     if (!response.ok) {
-        throw new Error("Authentication failed");
+        const errorData: { message?: string; error?: string } = await response
+            .json()
+            .catch((): { message?: string; error?: string } => ({}));
+        throw new Error(errorData.message || errorData.error);
     }
     return await response.json();
 };
 
 export {
+    authenticate,
     login,
-    authenticate
+    logout
 }
 
 export type {

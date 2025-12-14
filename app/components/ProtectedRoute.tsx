@@ -4,6 +4,7 @@ import React, { useEffect, useState, JSX } from "react";
 import { useRouter } from "next/navigation";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { authenticate } from "@/utils/authApi";
+import { useAuth } from "@/utils/AuthContext";
 
 interface ProtectedRouteProps {
     children: React.ReactNode;
@@ -14,6 +15,12 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }: ProtectedRo
     const router: AppRouterInstance = useRouter();
     const [isChecking, setIsChecking] = useState<boolean>(true);
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    const { setIsProtectedRouteActive } = useAuth();
+
+    useEffect((): () => void => {
+        setIsProtectedRouteActive(true);
+        return (): void => setIsProtectedRouteActive(false);
+    }, [setIsProtectedRouteActive]);
 
     useEffect((): void => {
         const checkAuth: () => Promise<void> = async (): Promise<void> => {
@@ -45,6 +52,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }: ProtectedRo
             </div>
         );
     }
+
     if (!isAuthenticated) {
         return null;
     }

@@ -1,9 +1,10 @@
 "use client";
 
-import React, {ChangeEvent, FormEvent, JSX, useState} from "react";
+import React, {ChangeEvent, FormEvent, JSX, useEffect, useState} from "react";
 import {login, LoginResponse} from "@/utils/authApi";
 import {useRouter} from "next/navigation";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { useAuth } from "@/utils/AuthContext";
 
 interface FormStatus {
     isLoading: boolean;
@@ -11,9 +12,10 @@ interface FormStatus {
     successMessage: string | null | undefined;
 }
 
-const Login: React.FC = (): JSX.Element => {
+const Login: React.FC = (): JSX.Element | null => {
 
     const router: AppRouterInstance = useRouter();
+    const { setIsAuthenticated, isAuthenticated } = useAuth();
 
     const [usernameOrEmail, setUsernameOrEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
@@ -22,6 +24,12 @@ const Login: React.FC = (): JSX.Element => {
         errorMessage: null,
         successMessage: null
     });
+
+    useEffect((): void => {
+        if (isAuthenticated) {
+            router.replace("/panel");
+        }
+    }, [isAuthenticated, router]);
 
     const validateForm: () => string | null = (): string | null => {
         if (!usernameOrEmail.trim()) {
@@ -59,6 +67,7 @@ const Login: React.FC = (): JSX.Element => {
                 errorMessage: null,
                 successMessage: data.message
             });
+            setIsAuthenticated(true);
             router.push("/panel");
         } catch (error) {
             setFormStatus({
@@ -68,6 +77,10 @@ const Login: React.FC = (): JSX.Element => {
             });
         }
     };
+
+    if (isAuthenticated) {
+        return null;
+    }
 
     return (
         <>

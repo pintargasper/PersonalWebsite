@@ -10,6 +10,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import {Viewport} from "next";
 import {routing} from "@/i18n/routing";
 import {notFound} from "next/navigation";
+import {AuthProvider} from "@/utils/AuthContext";
 config.autoAddCss = false;
 
 export const viewport: Viewport = {
@@ -43,14 +44,16 @@ async function RootLayout({children, params}: {
         </head>
         <body>
         <NextIntlClientProvider>
-            <div className={"app-wrapper d-flex flex-column min-vh-100"}>
-                <Navigation />
-                <CookieNotice />
-                <div className={"flex-fill content-wrapper"}>
-                    {children}
+            <AuthProvider>
+                <div className={"app-wrapper d-flex flex-column min-vh-100"}>
+                    <Navigation />
+                    <CookieNotice />
+                    <div className={"flex-fill content-wrapper"}>
+                        {children}
+                    </div>
+                    <Footer />
                 </div>
-                <Footer />
-            </div>
+            </AuthProvider>
         </NextIntlClientProvider>
         <GoogleAnalytics gaId={"G-06PV0WY17C"} />
         </body>
