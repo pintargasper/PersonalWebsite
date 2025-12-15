@@ -10,8 +10,14 @@ const nextConfig: NextConfig = {
                 protocol: "https",
                 hostname: "gasperpintar.com",
                 port: "",
-                pathname: "/**",
+                pathname: "/**"
             },
+            {
+                protocol: "http",
+                hostname: "localhost",
+                port: "8080",
+                pathname: "/**"
+            }
         ],
     },
 };

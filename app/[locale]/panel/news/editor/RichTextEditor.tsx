@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, ReactElement, useEffect, useState,} from "react";
+import React, {ChangeEvent, FC, ReactElement, useEffect, useState, useRef} from "react";
 import {EditorContent, useEditor} from "@tiptap/react";
 import type {Editor} from "@tiptap/core";
 import {Extension, Node as TiptapNode} from "@tiptap/core";
@@ -226,14 +226,23 @@ export const handleHeadingChange: <T extends HTMLSelectElement>(
 
 
 const RichTextEditor: FC<RichTextEditorProps> = ({
-                                                     content,
-                                                     onContentChange,
-                                                     onSetFontSize,
-                                                     onSetLineHeight,
-                                                     onSetHeading
-                                                 }: RichTextEditorProps): ReactElement | null => {
+    content,
+    onContentChange,
+    onSetFontSize,
+    onSetLineHeight,
+    onSetHeading
+}: RichTextEditorProps): ReactElement | null => {
 
     const [isClient, setIsClient]: [boolean, (v: boolean) => void] = useState<boolean>(false);
+    const lastSyncedContent = useRef<string>("");
+
+    const handleUpdate = (props: { editor: Editor }) => {
+        const htmlContent: string = addImageAlignmentClasses(props.editor.getHTML());
+        if (htmlContent !== lastSyncedContent.current) {
+            lastSyncedContent.current = htmlContent;
+            onContentChange(htmlContent);
+        }
+    };
 
     const editor: Editor | null = useEditor({
         extensions: [
@@ -260,10 +269,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
             LineHeight
         ],
         content,
-        onUpdate: (props: { editor: Editor }): void => {
-            const htmlContent: string = addImageAlignmentClasses(props.editor.getHTML());
-            onContentChange(htmlContent);
-        },
+        onUpdate: handleUpdate,
         immediatelyRender: false
     });
 
@@ -307,6 +313,17 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
             });
         }
     }, [editor, onSetFontSize, onSetLineHeight, onSetHeading]);
+
+    useEffect(() => {
+        if (!editor) return;
+        // Uporabi microtask, da se izogneš flushSync napaki
+        if (content !== lastSyncedContent.current && content !== editor.getHTML()) {
+            Promise.resolve().then(() => {
+                editor.commands.setContent(content || "<p></p>");
+                lastSyncedContent.current = content;
+            });
+        }
+    }, [content, editor]);
 
     if (!isClient) {
         return null;

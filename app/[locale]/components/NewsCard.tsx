@@ -42,7 +42,7 @@ const NewsCard: React.FC<NewsCardProps> = ({newsItem}: NewsCardProps): JSX.Eleme
                         href={newsItem?.url}
                         className={"button"}
                     >
-                        Preberi več
+                        Read more
                     </Link>
                 </div>
             </CardBody>
