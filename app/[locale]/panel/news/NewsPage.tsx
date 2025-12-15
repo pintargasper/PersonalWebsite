@@ -2,9 +2,10 @@
 
 import React, {JSX, useEffect, useState} from "react";
 import Image from "next/image";
-import {getArticles, NewsArticleView} from "@/api/newsApi";
+import {deleteArticle, getArticles, NewsArticleView} from "@/api/newsApi";
 import Link from "next/link";
 import {fetchImage} from "@/api/filesApi";
+import {useLocale} from "next-intl";
 
 
 const NewsPage: React.FC = (): JSX.Element => {
@@ -12,11 +13,12 @@ const NewsPage: React.FC = (): JSX.Element => {
     const [articles, setArticles] = useState<NewsArticleView[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const locale: string = useLocale();
 
     useEffect((): void => {
         (async (): Promise<void> => {
             try {
-                const data: NewsArticleView = await getArticles();
+                const data: NewsArticleView[] = await getArticles(locale);
                 const array: NewsArticleView[] | (NewsArticleView | undefined)[] = Array.isArray(data) ? data : [data];
                 setArticles(array as NewsArticleView[]);
             } catch (error) {
@@ -25,10 +27,26 @@ const NewsPage: React.FC = (): JSX.Element => {
                 setLoading(false);
             }
         })();
-    }, []);
+    }, [locale]);
+
+    const handleDelete: (uuid: string) => void = async (uuid: string): Promise<void> => {
+        try {
+            await deleteArticle(uuid);
+            const data: NewsArticleView[] = await getArticles(locale);
+            const array: NewsArticleView[] | (NewsArticleView | undefined)[] = Array.isArray(data) ? data : [data];
+            setArticles(array as NewsArticleView[]);
+        } catch (error) {
+            setError(error instanceof Error ? error.message : "Error deleting article");
+        }
+    };
 
     return (
         <div className={"container py-5"}>
+            <div className={"mb-4 d-flex justify-content-end"}>
+                <Link href="/panel/news/editor" className={"button fw-bold"}>
+                    + Add New Article
+                </Link>
+            </div>
             <div className={"row justify-content-center g-4"}>
                 {error && <div className={"text-danger"}>{error}</div>}
                 {!loading && !error && articles.map((news: NewsArticleView): JSX.Element => (
@@ -55,7 +73,7 @@ const NewsPage: React.FC = (): JSX.Element => {
                             </div>
                             <div className={"d-flex flex-column text-center gap-2 ms-3"}>
                                 <Link href={{ pathname: "/panel/news/editor", query: { url: news.uuid } }} className={"button"}>Edit</Link>
-                                <button type={"button"} className={"button"}>Delete</button>
+                                <button type={"button"} className={"button"} onClick={() => handleDelete(news.uuid)}>Delete</button>
                             </div>
                         </div>
                     </div>

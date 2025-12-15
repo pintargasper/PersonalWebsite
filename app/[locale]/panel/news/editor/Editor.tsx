@@ -7,6 +7,7 @@ import {saveArticle, getArticleSingle, NewsArticleSingleView, NewsArticle} from 
 import {ReadonlyURLSearchParams, useSearchParams} from "next/navigation";
 import { useRouter } from "next/navigation";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
+import Link from "next/link";
 
 type Language = {
     code: string;
@@ -42,15 +43,12 @@ const Editor: React.FC = (): JSX.Element => {
     const [notificationMessage, setNotificationMessage] = useState<string | null>(null);
     const [notificationType, setNotificationType] = useState<"success" | "error" | null>(null);
 
+    const [published, setPublished] = useState<boolean>(false);
+
     const searchParams: ReadonlyURLSearchParams = useSearchParams();
     const newsId: string = searchParams.get("url") || "";
 
     const router: AppRouterInstance = useRouter();
-
-    const handlePreview: () => void = (): void => {
-        const encoded: string = encodeURIComponent(content[selectedLanguage] || "");
-        window.open(`/panel/news/editor/preview?html=${encoded}`, "_blank");
-    };
 
     useEffect((): void => {
         if (!newsId) {
@@ -76,6 +74,7 @@ const Editor: React.FC = (): JSX.Element => {
                 setExistingImageUrls(data.images || []);
                 setNewCoverImage(null);
                 setNewImages([]);
+                setPublished(data.published);
                 setHasInitialContentSync(false);
             } catch {}
         })();
@@ -121,6 +120,7 @@ const Editor: React.FC = (): JSX.Element => {
             shortDescription: description[selectedLanguage] || "",
             content: content[selectedLanguage] || "",
             language: selectedLanguage,
+            published: published,
             newCoverImage: newCoverImage || undefined,
             existingCoverImage: existingCoverImageUrl || undefined,
             deletedCoverImage: deletedCoverImage,
@@ -164,7 +164,7 @@ const Editor: React.FC = (): JSX.Element => {
     return (
         <>
             {(notificationMessage && notificationType) && (
-                <div className={"login-toast"}>
+                <div className={"login-toast position-fixed top-0 end-0 m-3"} style={{ zIndex: 1050, minWidth: 300 }}>
                     <div className={`alert alert-${notificationType === "success" ? "success" : "danger"} shadow`} role={notificationType === "success" ? "status" : "alert"}>
                         {notificationMessage}
                     </div>
@@ -203,11 +203,26 @@ const Editor: React.FC = (): JSX.Element => {
                         <form onSubmit={(event: FormEvent<HTMLFormElement>): void => { event.preventDefault()}}>
                             <div className={`editor-unsaved-row${unsavedChanges ? " unsaved-active" : ""}`}>
                                 <span className={"editor-unsaved-indicator"}>Spremembe niso shranjene</span>
-                                <button
-                                    type={"button"}
-                                    className={"button editor-unsaved-save-button"}
-                                    onClick={handleSave}
-                                >Save</button>
+                            </div>
+                            <div className={"d-flex align-items-center w-100 mb-3"}>
+                                {newsId ? (
+                                    <Link
+                                        href={{ pathname: "/panel/news/editor/preview", query: { url: newsId } }}
+                                        target={"_blank"}
+                                        className={"button w-50 me-2"}
+                                    >
+                                        Preview
+                                    </Link>
+                                ) : (
+                                    <span className={"w-50 me-2"}>Preview (save first)</span>
+                                )}
+                                {unsavedChanges && (
+                                    <button
+                                        type={"button"}
+                                        className={"button w-50"}
+                                        onClick={handleSave}
+                                    >Save</button>
+                                )}
                             </div>
                             <div className={"mb-2"}>
                                 <label htmlFor={"news-title"} className={"form-label"}>News headline</label>
@@ -263,7 +278,16 @@ const Editor: React.FC = (): JSX.Element => {
                                     ))}
                                 </select>
                             </div>
-                            <button type={"button"} className={"button w-100 mb-1"} onClick={handlePreview}>Preview</button>
+                            <div className={"mb-2 form-check"}>
+                                <input
+                                    id={"publish-checkbox"}
+                                    type={"checkbox"}
+                                    className={"checkbox form-check-input"}
+                                    checked={published}
+                                    onChange={(event: ChangeEvent<HTMLInputElement>): void => { setPublished(event.target.checked); markDirty(); }}
+                                />
+                                <label htmlFor={"publish-checkbox"}>Objavi novico</label>
+                            </div>
                         </form>
                     </div>
                 </div>

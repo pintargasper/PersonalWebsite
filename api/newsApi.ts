@@ -4,6 +4,7 @@ type NewsArticle = {
     shortDescription: string;
     content: string;
     language: string;
+    published: boolean;
     newCoverImage?: File;
     existingCoverImage?: string;
     deletedCoverImage?: string;
@@ -36,8 +37,9 @@ interface NewsArticleSingleView {
     published: boolean;
 }
 
-const getArticles: () => Promise<NewsArticleView> = async (): Promise<NewsArticleView> => {
-    const response: Response = await fetch(process.env.NEXT_PUBLIC_NEWS_ARTICLE_ALL_API_URL!, {
+const getArticles: (locale: string) => Promise<NewsArticleView[]> = async (locale: string): Promise<NewsArticleView[]> => {
+
+    const response: Response = await fetch(`${process.env.NEXT_PUBLIC_NEWS_ARTICLE_ALL_API_URL}?useLocale=${locale}`, {
         method: "GET",
         credentials: "include"
     });
@@ -73,6 +75,7 @@ const saveArticle: (article: NewsArticle) => Promise<NewsArticle> = async (artic
     formData.append("shortDescription", article.shortDescription);
     formData.append("content", article.content);
     formData.append("language", article.language);
+    formData.append("published", String(article.published));
 
     if (article.newCoverImage) {
         formData.append("newCoverImage", article.newCoverImage);
@@ -119,14 +122,32 @@ const saveArticle: (article: NewsArticle) => Promise<NewsArticle> = async (artic
     return await response.json();
 };
 
+const deleteArticle: (uuid: string) => Promise<boolean> = async (uuid: string): Promise<boolean> => {
+
+    const response: Response = await fetch(`${process.env.NEXT_PUBLIC_NEWS_ARTICLE_DELETE_API_URL}/${uuid}`, {
+        method: "DELETE",
+        credentials: "include"
+    });
+
+    if (!response.ok) {
+        const errorData: { message?: string; error?: string } = await response
+            .json()
+            .catch((): { message?: string; error?: string } => ({}));
+        throw new Error(errorData.message || errorData.error);
+    }
+    return await response.json();
+};
+
 export {
     getArticles,
     getArticleSingle,
-    saveArticle
+    saveArticle,
+    deleteArticle
 }
 
 export type {
     NewsArticleView,
     NewsArticleSingleView,
+    Translation,
     NewsArticle
 };

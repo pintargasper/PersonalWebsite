@@ -206,14 +206,6 @@
     transition: opacity 0.2s;
 }
 
-.editor-unsaved-save-button {
-    padding: 2px 12px;
-    font-size: 14px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-}
-
 .unsaved-active .editor-unsaved-indicator,
 .unsaved-active .editor-unsaved-save-button {
     opacity: 1;
