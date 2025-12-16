@@ -5,6 +5,8 @@ import {useRouter} from "next/navigation";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import {login, LoginResponse} from "@/api/authApi";
 import {useAuth} from "@/app/components/AuthContext";
+import {TranslationFunction} from "@/app/[locale]/layout";
+import {useTranslations} from "next-intl";
 
 interface FormStatus {
     isLoading: boolean;
@@ -25,6 +27,10 @@ const Login: React.FC = (): JSX.Element | null => {
         successMessage: null
     });
 
+    const t: TranslationFunction = useTranslations("login") as TranslationFunction;
+    const t1: TranslationFunction = useTranslations("errors") as TranslationFunction;
+    const t2: TranslationFunction = useTranslations("buttons") as TranslationFunction;
+
     useEffect((): void => {
         if (isAuthenticated) {
             router.replace("/panel");
@@ -33,13 +39,10 @@ const Login: React.FC = (): JSX.Element | null => {
 
     const validateForm: () => string | null = (): string | null => {
         if (!usernameOrEmail.trim()) {
-            return "Enter your email address or username.";
+            return t("validation.empty");
         }
         if (!password) {
-            return "Enter password";
-        }
-        if (password.length < 10) {
-            return "The password must be at least 10 characters long";
+            return t("validation.password-empty");
         }
         return null;
     };
@@ -72,7 +75,7 @@ const Login: React.FC = (): JSX.Element | null => {
         } catch (error) {
             setFormStatus({
                 isLoading: false,
-                errorMessage: (error instanceof Error ? error.message : "Network error. Please try again."),
+                errorMessage: (error instanceof Error ? error.message : t1("network")),
                 successMessage: null
             });
         }
@@ -105,14 +108,14 @@ const Login: React.FC = (): JSX.Element | null => {
                         <form onSubmit={handleSubmit} noValidate>
                             <div className={"mb-3"}>
                                 <label htmlFor={"usernameOrEmail"} className={"form-label"}>
-                                    Email/Username
+                                    {t("username.label")}
                                 </label>
                                 <input
                                     id={"usernameOrEmail"}
                                     name={"usernameOrEmail"}
                                     type={"text"}
                                     value={usernameOrEmail}
-                                    placeholder={"Enter email address or username"}
+                                    placeholder={t("username.placeholder")}
                                     onChange={(event: ChangeEvent<HTMLInputElement>): void => setUsernameOrEmail(event.target.value)}
                                     autoComplete={"username"}
                                     required
@@ -121,14 +124,14 @@ const Login: React.FC = (): JSX.Element | null => {
                             </div>
                             <div className={"mb-3"}>
                                 <label htmlFor={"password"} className={"form-label"}>
-                                    Password
+                                    {t("password.label")}
                                 </label>
                                 <input
                                     id={"password"}
                                     name={"password"}
                                     type={"password"}
                                     value={password}
-                                    placeholder={"Enter password"}
+                                    placeholder={t("password.placeholder")}
                                     onChange={(event: ChangeEvent<HTMLInputElement>): void => setPassword(event.target.value)}
                                     autoComplete={"current-password"}
                                     required
@@ -140,7 +143,7 @@ const Login: React.FC = (): JSX.Element | null => {
                                 className={"button w-100"}
                                 disabled={formStatus.isLoading}
                             >
-                                {formStatus.isLoading ? "Prijavljam ..." : "Login"}
+                                {formStatus.isLoading ? t2("logging") : t2("login")}
                             </button>
                         </form>
                     </div>

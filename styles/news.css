@@ -51,7 +51,21 @@
   color: #23272b;
 }
 
-/* Empty news state styles */
+.news-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.news-container {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.news-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
 .news-empty-state {
   min-height: 60vh;
   display: flex;
@@ -85,4 +99,8 @@
   color: #6c757d;
   font-size: 1.05rem;
   margin-bottom: 0;
+}
+
+.news-panel {
+    object-fit: cover;
 }

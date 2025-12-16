@@ -1,9 +1,12 @@
 import React, {JSX} from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faNewspaper, faProjectDiagram, faCog, IconDefinition} from "@fortawesome/free-solid-svg-icons";
+import {IconDefinition} from "@fortawesome/free-solid-svg-icons";
 import {Metadata} from "next";
 import ProtectedRoute from "../../components/ProtectedRoute";
+import {adminCards} from "@/utils/Assets";
+import {TranslationFunction} from "@/app/[locale]/layout";
+import {getTranslations} from "next-intl/server";
 
 export const metadata: Metadata = {
     title: "Panel - Gašper Pintar",
@@ -34,28 +37,10 @@ interface Card {
     link: string;
 }
 
-const adminCards = [
-	{
-		id: 1,
-		title: "News",
-		icon: faNewspaper,
-		link: "/panel/news"
-	},
-	{
-		id: 2,
-		title: "Users",
-		icon: faProjectDiagram,
-		link: "/panel/projects"
-	},
-	{
-		id: 3,
-		title: "Settings",
-		icon: faCog,
-		link: "/panel/settings"
-	},
-];
+const AdminPanelPage: React.FC = async () : Promise<JSX.Element> => {
 
-const AdminPanelPage: React.FC = (): JSX.Element => {
+    const t: TranslationFunction =  await getTranslations("panel") as TranslationFunction;
+
     return (
         <ProtectedRoute>
             <div className={"container py-5"}>
@@ -72,7 +57,7 @@ const AdminPanelPage: React.FC = (): JSX.Element => {
                                     className={"mb-2 text-primary"}
                                 />
                                 <div className={"flex-grow-1 d-flex flex-column justify-content-center w-100"}>
-                                    <h3 className={"fw-bold mb-2"}>{card.title}</h3>
+                                    <h3 className={"fw-bold mb-2"}>{t(card.title)}</h3>
                                 </div>
                             </Link>
                         </div>

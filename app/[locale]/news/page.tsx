@@ -3,7 +3,8 @@ import {Metadata} from "next";
 import {Col, Row} from "react-bootstrap";
 import {NewsCard} from "@/app/[locale]/components/NewsCard";
 import {getNews, type NewsView} from "@/api/newsApi";
-import {getLocale} from "next-intl/server";
+import {getLocale, getTranslations} from "next-intl/server";
+import {TranslationFunction} from "@/app/[locale]/layout";
 
 export const metadata: Metadata = {
     title: "News - Gašper Pintar",
@@ -89,6 +90,8 @@ const News: () => Promise<JSX.Element> = async (): Promise<JSX.Element> => {
     const locale: string = await getLocale();
     const newsViews: NewsView[] = await getNews(locale);
 
+    const t: TranslationFunction = await getTranslations("news") as TranslationFunction;
+
     return (
         <>
             <div className={"news-page-container mt-5"}>
@@ -101,8 +104,8 @@ const News: () => Promise<JSX.Element> = async (): Promise<JSX.Element> => {
                                     <path d={"M9.5 9.5a2.5 2.5 0 1 1 5 0c0 1.5-2.5 2-2.5 4"} stroke={"#adb5bd"} strokeWidth={"1.5"} strokeLinecap={"round"} strokeLinejoin={"round"}/>
                                     <circle cx={"12"} cy={"17"} r={"1"} fill={"#adb5bd"}/>
                                 </svg>
-                                <h2 className={"news-empty-title"}>No news has been published yet</h2>
-                                <p className={"news-empty-desc"}>There is currently no news published</p>
+                                <h2 className={"news-empty-title"}>{t("no-news.title")}</h2>
+                                <p className={"news-empty-desc"}>{t("no-news.message")}</p>
                             </div>
                         </div>
                     ) : (

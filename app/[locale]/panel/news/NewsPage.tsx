@@ -5,8 +5,8 @@ import Image from "next/image";
 import {deleteArticle, getArticles, NewsArticleView} from "@/api/newsApi";
 import Link from "next/link";
 import {fetchImage} from "@/api/filesApi";
-import {useLocale} from "next-intl";
-
+import {useLocale, useTranslations} from "next-intl";
+import {TranslationFunction} from "@/app/[locale]/layout";
 
 const NewsPage: React.FC = (): JSX.Element => {
 
@@ -15,6 +15,9 @@ const NewsPage: React.FC = (): JSX.Element => {
     const [error, setError] = useState<string | null>(null);
     const locale: string = useLocale();
 
+    const t: TranslationFunction = useTranslations("panel") as TranslationFunction;
+    const t1: TranslationFunction = useTranslations("buttons") as TranslationFunction;
+
     useEffect((): void => {
         (async (): Promise<void> => {
             try {
@@ -22,12 +25,12 @@ const NewsPage: React.FC = (): JSX.Element => {
                 const array: NewsArticleView[] | (NewsArticleView | undefined)[] = Array.isArray(data) ? data : [data];
                 setArticles(array as NewsArticleView[]);
             } catch (error) {
-                setError(error instanceof Error ? error.message : "Error fetching articles");
+                setError(error instanceof Error ? error.message : t("news.errors.fetch"));
             } finally {
                 setLoading(false);
             }
         })();
-    }, [locale]);
+    }, [locale, t]);
 
     const handleDelete: (uuid: string) => void = async (uuid: string): Promise<void> => {
         try {
@@ -36,7 +39,7 @@ const NewsPage: React.FC = (): JSX.Element => {
             const array: NewsArticleView[] | (NewsArticleView | undefined)[] = Array.isArray(data) ? data : [data];
             setArticles(array as NewsArticleView[]);
         } catch (error) {
-            setError(error instanceof Error ? error.message : "Error deleting article");
+            setError(error instanceof Error ? error.message : t("news.errors.delete"));
         }
     };
 
@@ -44,7 +47,8 @@ const NewsPage: React.FC = (): JSX.Element => {
         <div className={"container py-5"}>
             <div className={"mb-4 d-flex justify-content-end"}>
                 <Link href={"/panel/news/editor"} className={"button fw-bold"}>
-                    + Add New Article
+                    + {t1("new-article")}
+
                 </Link>
             </div>
             <div className={"row justify-content-center g-4"}>
@@ -60,20 +64,19 @@ const NewsPage: React.FC = (): JSX.Element => {
                                     height={120}
                                     unoptimized={true}
                                     loading={"eager"}
-                                    className={"me-3 rounded"}
-                                    style={{ objectFit: "cover" }}
+                                    className={"me-3 rounded news-panel"}
                                 />
                             ) : null}
                             <div className={"flex-grow-1 d-flex flex-column justify-content-center w-100"}>
                                 <h3 className={"fw-bold mb-1 truncate-one-line"}>{news.headline}</h3>
                                 <p className={"mb-0 text-justify truncate-multi-line"}>{news.description}</p>
                                 <span className={news.published ? "badge bg-success mt-2" : "badge bg-secondary mt-2"}>
-                                        {news.published ? "Published" : "Draft"}
+                                        {news.published ? t("news.published") : t("news.draft")}
                                     </span>
                             </div>
                             <div className={"d-flex flex-column text-center gap-2 ms-3"}>
-                                <Link href={{ pathname: "/panel/news/editor", query: { url: news.uuid } }} className={"button"}>Edit</Link>
-                                <button type={"button"} className={"button"} onClick={(): void => handleDelete(news.uuid)}>Delete</button>
+                                <Link href={{ pathname: "/panel/news/editor", query: { url: news.uuid } }} className={"button"}>{t1("article-edit")}</Link>
+                                <button type={"button"} className={"button"} onClick={(): void => handleDelete(news.uuid)}>{t1("article-delete")}</button>
                             </div>
                         </div>
                     </div>

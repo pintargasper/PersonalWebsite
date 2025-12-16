@@ -8,6 +8,8 @@ import {ReadonlyURLSearchParams, useSearchParams} from "next/navigation";
 import { useRouter } from "next/navigation";
 import {AppRouterInstance} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import Link from "next/link";
+import {TranslationFunction} from "@/app/[locale]/layout";
+import {useTranslations} from "next-intl";
 
 type Language = {
     code: string;
@@ -63,6 +65,9 @@ const Editor: React.FC = (): JSX.Element => {
     const contentRef: RefObject<Record<string, string>> = useRef<Record<string, string>>(getEmptyLanguageObject());
     const selectedLanguageRef: RefObject<string> = useRef<string>(SUPPORTED_LANGUAGES[0].code);
     const publishedRef: RefObject<boolean> = useRef<boolean>(false);
+
+    const t: TranslationFunction = useTranslations("panel") as TranslationFunction;
+    const t1: TranslationFunction = useTranslations("buttons") as TranslationFunction;
 
     const setNewCoverImageAndRef: (value: File | null) => void = (value: File | null): void => {
         setNewCoverImage(value); newCoverImageRef.current = value;
@@ -288,7 +293,7 @@ const Editor: React.FC = (): JSX.Element => {
                     <div className={"col-lg-2 p-2"}>
                         <form onSubmit={(event: FormEvent<HTMLFormElement>): void => { event.preventDefault()}}>
                             <div className={`editor-unsaved-row${unsavedChanges ? " unsaved-active" : ""}`}>
-                                <span className={"editor-unsaved-indicator"}>Spremembe niso shranjene</span>
+                                <span className={"editor-unsaved-indicator"}>{t("editor.editor.changes.status")}</span>
                             </div>
                             <div className={"d-flex align-items-center w-100 mb-3"}>
                                 {newsId ? (
@@ -297,27 +302,27 @@ const Editor: React.FC = (): JSX.Element => {
                                         target={"_blank"}
                                         className={"button w-50 me-2"}
                                     >
-                                        Preview
+                                        {t1("preview")}
                                     </Link>
                                 ) : (
-                                    <span className={"w-50 me-2"}>Preview (save first)</span>
+                                    <span className={"w-50 me-2"}>{t("editor.editor.changes.preview")}</span>
                                 )}
                                 {unsavedChanges && (
                                     <button
                                         type={"button"}
                                         className={"button w-50"}
                                         onClick={handleSave}
-                                    >Save</button>
+                                    >{t1("save")}</button>
                                 )}
                             </div>
                             <div className={"mb-2"}>
-                                <label htmlFor={"news-title"} className={"form-label"}>News headline</label>
+                                <label htmlFor={"news-title"} className={"form-label"}>{t("editor.editor.headline.label")}</label>
                                 <input
                                     id={"news-title"}
                                     name={"title"}
                                     type={"text"}
                                     className={"input"}
-                                    placeholder={"Enter the news headline"}
+                                    placeholder={t("editor.editor.headline.placeholder")}
                                     value={title[selectedLanguage] || ""}
                                     onChange={(event: ChangeEvent<HTMLInputElement>): void => {
                                         setTitle((previous: Record<string, string>): {[x: string]: string} => ({ ...previous, [selectedLanguage]: event.target.value }));
@@ -328,12 +333,12 @@ const Editor: React.FC = (): JSX.Element => {
                                 <div className={"text-end small"}>{(title[selectedLanguage] || "").length}/100</div>
                             </div>
                             <div className={"mb-2"}>
-                                <label htmlFor={"news-description"} className={"form-label"}>Short description</label>
+                                <label htmlFor={"news-description"} className={"form-label"}>{t("editor.editor.description.label")}</label>
                                 <textarea
                                     id={"news-description"}
                                     name={"description"}
                                     className={"input"}
-                                    placeholder={"Enter a short description of the news"}
+                                    placeholder={t("editor.editor.description.placeholder")}
                                     value={description[selectedLanguage] || ""}
                                     onChange={(event: ChangeEvent<HTMLTextAreaElement>): void => {
                                         setDescription((previous: Record<string, string>): {[x: string]: string} => ({ ...previous, [selectedLanguage]: event.target.value }));
@@ -345,11 +350,11 @@ const Editor: React.FC = (): JSX.Element => {
                                 <div className={"text-end small"}>{(description[selectedLanguage] || "").length}/300</div>
                             </div>
                             <div className={"mb-2"}>
-                                <label className={"form-label"}>Cover image</label>
+                                <label className={"form-label"}>{t("editor.editor.cover-image")}</label>
                                 <ImageUploadArea images={existingCoverImageUrl ? [existingCoverImageUrl] : newCoverImage ? [newCoverImage] : []} onImagesChange={handleCoverImageChange} singleImage={true} />
                             </div>
                             <div className={"mb-2"}>
-                                <label htmlFor={"lang-select"} className={"form-label"}>News language</label>
+                                <label htmlFor={"lang-select"} className={"form-label"}>{t("editor.editor.language")}</label>
                                 <select
                                     id={"lang-select"}
                                     className={"select"}
@@ -372,7 +377,7 @@ const Editor: React.FC = (): JSX.Element => {
                                     checked={published}
                                     onChange={(event: ChangeEvent<HTMLInputElement>): void => { setPublished(event.target.checked); markDirty(); }}
                                 />
-                                <label htmlFor={"publish-checkbox"}>Objavi novico</label>
+                                <label htmlFor={"publish-checkbox"}>{t("editor.editor.checkbox")}</label>
                             </div>
                         </form>
                     </div>

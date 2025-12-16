@@ -5,7 +5,7 @@ import { useLocale } from "next-intl";
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCog, faGlobe, faFolder, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faCog, faGlobe, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import {Link} from "@/i18n/navigation";
 import Image from "next/image";
 
@@ -98,7 +98,7 @@ const Navigation: React.FC = (): JSX.Element => {
                         href={"/news"}
                         onClick={closeAll}
                     >
-                        Novice
+                        {(t("navbar.news"))}
                     </Nav.Link>
                 )}
 
@@ -112,7 +112,7 @@ const Navigation: React.FC = (): JSX.Element => {
                     {!showAuthenticated && (
                         <Nav className={"me-auto"}>
                             <NavDropdown
-                                title={<><FontAwesomeIcon icon={faFolder} className={"me-2"} />{t("navbar.projects")}</>}
+                                title={<>{t("navbar.projects")}</>}
                                 id={"project-dropdown"}
                                 show={isProjectDropdownOpen}
                                 onToggle={(isOpen: boolean): void => setIsProjectDropdownOpen(isOpen)}
@@ -151,7 +151,7 @@ const Navigation: React.FC = (): JSX.Element => {
                             </NavDropdown>
                             {showAuthenticated && (
                                 <NavDropdown.Item onClick={handleLogout}>
-                                    <FontAwesomeIcon icon={faRightFromBracket} className={"me-2"}/> Logout
+                                    <FontAwesomeIcon icon={faRightFromBracket} className={"me-2"}/> {t("navbar.logout")}
                                 </NavDropdown.Item>
                             )}
                         </NavDropdown>

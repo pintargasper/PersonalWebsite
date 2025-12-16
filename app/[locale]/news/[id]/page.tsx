@@ -2,6 +2,8 @@ import React, {JSX} from "react";
 import {getNewsSingle, NewsView, Translation} from "@/api/newsApi";
 import {type Metadata} from "next";
 import {fetchImage} from "@/api/filesApi";
+import {TranslationFunction} from "@/app/[locale]/layout";
+import {getTranslations} from "next-intl/server";
 
 interface NewsDetailPageProps {
     params: {
@@ -76,6 +78,8 @@ const NewsDetailPage: ({ params }: NewsDetailPageProps) => Promise<JSX.Element> 
 
     const {id, locale} = await params;
 
+    const t: TranslationFunction = await getTranslations("news") as TranslationFunction;
+
     let newsItem: NewsView | null;
     try {
         newsItem = await getNewsSingle(id, locale);
@@ -92,8 +96,8 @@ const NewsDetailPage: ({ params }: NewsDetailPageProps) => Promise<JSX.Element> 
                         <path d={"M9.5 9.5a2.5 2.5 0 1 1 5 0c0 1.5-2.5 2-2.5 4"} stroke={"#adb5bd"} strokeWidth={"1.5"} strokeLinecap={"round"} strokeLinejoin={"round"}/>
                         <circle cx={"12"} cy={"17"} r={"1"} fill={"#adb5bd"}/>
                     </svg>
-                    <h2 className={"news-empty-title"}>News not found</h2>
-                    <p className={"news-empty-desc"}>Sorry, the requested news item cannot be displayed. It may have been removed or the link may be incorrect.</p>
+                    <h2 className={"news-empty-title"}>{t("not-found.title")}</h2>
+                    <p className={"news-empty-desc"}>{t("not-found.message")}</p>
                 </div>
             </div>
         );
@@ -109,7 +113,7 @@ const NewsDetailPage: ({ params }: NewsDetailPageProps) => Promise<JSX.Element> 
                     <div className={"card shadow-sm p-4"}>
                         <h1 className={"mb-3 fw-bold fs-2"}>{translation.headline}</h1>
                         <div className={"d-flex align-items-center mb-2"}>
-                            <small className={"text-muted me-3"}>Posted: {newsItem.publishedAt}</small>
+                            <small className={"text-muted me-3"}>{t("posted")}: {newsItem.publishedAt}</small>
                         </div>
                         {translation.content && (
                             <div

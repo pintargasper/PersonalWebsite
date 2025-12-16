@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, ReactElement, useEffect, useState, useRef} from "react";
+import React, {ChangeEvent, FC, ReactElement, useEffect, useState, useRef, RefObject} from "react";
 import {EditorContent, useEditor} from "@tiptap/react";
 import type {Editor} from "@tiptap/core";
 import {Extension, Node as TiptapNode} from "@tiptap/core";
@@ -16,6 +16,8 @@ import Link from "@tiptap/extension-link";
 import {TextStyle} from "@tiptap/extension-text-style";
 
 import type {Node as ProseMirrorNode, ResolvedPos,} from "prosemirror-model";
+import {TranslationFunction} from "@/app/[locale]/layout";
+import {useTranslations} from "next-intl";
 
 interface RichTextEditorProps {
     content: string;
@@ -142,7 +144,7 @@ const addImageAlignmentClasses: (html: string) => string = (html: string): strin
 };
 
 
-export const handleImageDrop: <T extends Element>(
+const handleImageDrop: <T extends Element>(
     dragEvent: React.DragEvent<T>,
     editor: Editor | null
 ) => void = <T extends Element>(
@@ -197,7 +199,7 @@ export const handleImageDrop: <T extends Element>(
 };
 
 
-export const handleHeadingChange: <T extends HTMLSelectElement>(
+const handleHeadingChange: <T extends HTMLSelectElement>(
     changeEvent: ChangeEvent<T>,
     editor: Editor | null
 ) => void = <T extends HTMLSelectElement>(
@@ -234,9 +236,11 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
 }: RichTextEditorProps): ReactElement | null => {
 
     const [isClient, setIsClient]: [boolean, (v: boolean) => void] = useState<boolean>(false);
-    const lastSyncedContent = useRef<string>("");
+    const lastSyncedContent: RefObject<string> = useRef<string>("");
 
-    const handleUpdate = (props: { editor: Editor }) => {
+    const t: TranslationFunction = useTranslations("panel") as TranslationFunction;
+
+    const handleUpdate: (props: { editor: Editor }) => void = (props: { editor: Editor }): void => {
         const htmlContent: string = addImageAlignmentClasses(props.editor.getHTML());
         if (htmlContent !== lastSyncedContent.current) {
             lastSyncedContent.current = htmlContent;
@@ -314,11 +318,10 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
         }
     }, [editor, onSetFontSize, onSetLineHeight, onSetHeading]);
 
-    useEffect(() => {
+    useEffect((): void => {
         if (!editor) return;
-        // Uporabi microtask, da se izogneš flushSync napaki
         if (content !== lastSyncedContent.current && content !== editor.getHTML()) {
-            Promise.resolve().then(() => {
+            Promise.resolve().then((): void => {
                 editor.commands.setContent(content || "<p></p>");
                 lastSyncedContent.current = content;
             });
@@ -335,21 +338,21 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
                 <select
                     id={"heading-select"}
                     className={"select w-auto editor-toolbar-dropdown"}
-                    title={"Text Type"}
+                    title={t("editor.rich-editor.tooltips.text")}
                     onChange={(event: ChangeEvent<HTMLSelectElement>): void =>
                         handleHeadingChange<HTMLSelectElement>(event, editor)
                     }
                 >
-                    <option value={"paragraph"}>Navadno besedilo</option>
-                    <option value={"h1"}>Naslov 1</option>
-                    <option value={"h2"}>Naslov 2</option>
-                    <option value={"h3"}>Naslov 3</option>
+                    <option value={"paragraph"}>{t("editor.rich-editor.text-types.paragraph")}</option>
+                    <option value={"h1"}>{t("editor.rich-editor.text-types.heading1")}</option>
+                    <option value={"h2"}>{t("editor.rich-editor.text-types.heading2")}</option>
+                    <option value={"h3"}>{t("editor.rich-editor.text-types.heading3")}</option>
                 </select>
 
                 <select
                     id={"font-size-select"}
                     className={"select w-auto editor-toolbar-dropdown"}
-                    title={"Font Size"}
+                    title={t("editor.rich-editor.tooltips.font")}
                     onChange={(event: ChangeEvent<HTMLSelectElement>): boolean | undefined =>
                         editor?.chain().focus().setMark("textStyle", { fontSize: event.target.value }).run()
                     }
@@ -374,7 +377,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
                 <select
                     id={"line-height-select"}
                     className={"select w-auto editor-toolbar-dropdown"}
-                    title={"Line Spacing"}
+                    title={t("editor.rich-editor.tooltips.line")}
                     onChange={(event: ChangeEvent<HTMLSelectElement>): boolean | undefined =>
                         editor?.chain().focus().setMark("textStyle", { lineHeight: event.target.value }).run()
                     }
@@ -390,7 +393,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
 
                 <button
                     type={"button"}
-                    title={"Bold"}
+                    title={t("editor.rich-editor.tooltips.bold")}
                     className={editor?.isActive("bold")
                         ? "btn btn-dark btn-sm editor-toolbar-btn"
                         : "btn btn-light btn-sm editor-toolbar-btn"}
@@ -403,7 +406,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
 
                 <button
                     type={"button"}
-                    title={"Italic"}
+                    title={t("editor.rich-editor.tooltips.italic")}
                     className={editor?.isActive("italic")
                         ? "btn btn-dark btn-sm editor-toolbar-btn"
                         : "btn btn-light btn-sm editor-toolbar-btn"}
@@ -416,7 +419,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
 
                 <button
                     type={"button"}
-                    title={"Underline"}
+                    title={t("editor.rich-editor.tooltips.underline")}
                     className={editor?.isActive("underline")
                         ? "btn btn-dark btn-sm editor-toolbar-btn"
                         : "btn btn-light btn-sm editor-toolbar-btn"}
@@ -429,7 +432,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
 
                 <button
                     type={"button"}
-                    title={"Strike"}
+                    title={t("editor.rich-editor.tooltips.strike")}
                     className={editor?.isActive("strike")
                         ? "btn btn-dark btn-sm editor-toolbar-btn"
                         : "btn btn-light btn-sm editor-toolbar-btn"}
@@ -442,7 +445,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
 
                 <button
                     type={"button"}
-                    title={"Bullet List"}
+                    title={t("editor.rich-editor.tooltips.bulleted")}
                     className={editor?.isActive("bulletList")
                         ? "btn btn-dark btn-sm editor-toolbar-btn"
                         : "btn btn-light btn-sm editor-toolbar-btn"}
@@ -455,7 +458,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
 
                 <button
                     type={"button"}
-                    title={"Ordered List"}
+                    title={t("editor.rich-editor.tooltips.ordered")}
                     className={editor?.isActive("orderedList")
                         ? "btn btn-dark btn-sm editor-toolbar-btn"
                         : "btn btn-light btn-sm editor-toolbar-btn"}
@@ -468,7 +471,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
 
                 <button
                     type={"button"}
-                    title={"Quote"}
+                    title={t("editor.rich-editor.tooltips.quote")}
                     className={editor?.isActive("blockquote")
                         ? "btn btn-dark btn-sm editor-toolbar-btn"
                         : "btn btn-light btn-sm editor-toolbar-btn"}
@@ -481,7 +484,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
 
                 <button
                     type={"button"}
-                    title={"Undo"}
+                    title={t("editor.rich-editor.tooltips.undo")}
                     className={"btn btn-light btn-sm editor-toolbar-btn"}
                     onClick={(): void => {
                         editor?.chain().focus().undo().run();
@@ -492,7 +495,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
 
                 <button
                     type={"button"}
-                    title={"Redo"}
+                    title={t("editor.rich-editor.tooltips.redo")}
                     className={"btn btn-light btn-sm editor-toolbar-btn"}
                     onClick={(): void => {
                         editor?.chain().focus().redo().run();
@@ -503,7 +506,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
 
                 <button
                     type={"button"}
-                    title={"Align Left"}
+                    title={t("editor.rich-editor.tooltips.align-left")}
                     className={editor?.isActive("paragraph", { textAlign: "left" })
                         ? "btn btn-dark btn-sm editor-toolbar-btn"
                         : "btn btn-light btn-sm editor-toolbar-btn"}
@@ -516,7 +519,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
 
                 <button
                     type={"button"}
-                    title={"Align Center"}
+                    title={t("editor.rich-editor.tooltips.align-center")}
                     className={editor?.isActive("paragraph", { textAlign: "center" })
                         ? "btn btn-dark btn-sm editor-toolbar-btn"
                         : "btn btn-light btn-sm editor-toolbar-btn"}
@@ -529,7 +532,7 @@ const RichTextEditor: FC<RichTextEditorProps> = ({
 
                 <button
                     type={"button"}
-                    title={"Align Right"}
+                    title={t("editor.rich-editor.tooltips.align-right")}
                     className={editor?.isActive("paragraph", { textAlign: "right" })
                         ? "btn btn-dark btn-sm editor-toolbar-btn"
                         : "btn btn-light btn-sm editor-toolbar-btn"}

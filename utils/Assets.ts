@@ -13,6 +13,7 @@ import GetSignal from "@/public/images/projects/images/signal-photo.webp";
 import GetGitHub from "@/public/images/projects/images/github-photo.webp";
 import GetLinkedIn from "@/public/images/projects/images/linkedin-photo.webp";
 import GetEmail from "@/public/images/projects/images/email-photo.webp";
+import {faCog, faNewspaper, faProjectDiagram, IconDefinition} from "@fortawesome/free-solid-svg-icons";
 
 interface TLink {
     label: string;
@@ -93,12 +94,22 @@ const screenshotsCG: Screenshot[] = [
     { title: "screenshots.generator-page.title", src: {en: ScreenshotGeneratorEnglish.src, sl: ScreenshotGeneratorSlovenian.src}, alt: "screenshots.generator-page.alt", isHorizontal: true },
 ];
 
+const adminCards: ({ id: number; title: string; icon: IconDefinition; link: string })[] = [
+    {
+        id: 1,
+        title: "cards.news",
+        icon: faNewspaper,
+        link: "/panel/news"
+    }
+];
+
 export {
     projects,
     contacts,
     cards,
     screenshotsST,
-    screenshotsCG
+    screenshotsCG,
+    adminCards
 }
 
 export type {

@@ -4,6 +4,8 @@ import React, {ChangeEvent, JSX, useEffect, useState} from "react";
 import {useSearchParams} from "next/navigation";
 import {getArticleSingle, NewsArticleSingleView, Translation} from "@/api/newsApi";
 import {addImageAlignmentClasses} from "@/app/[locale]/panel/news/editor/RichTextEditor";
+import {TranslationFunction} from "@/app/[locale]/layout";
+import {useTranslations} from "next-intl";
 
 const PreviewPage: React.FC = (): JSX.Element => {
 
@@ -12,6 +14,8 @@ const PreviewPage: React.FC = (): JSX.Element => {
     const [, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [selectedLanguage, setSelectedLanguage] = useState<string>("en");
+
+    const t: TranslationFunction = useTranslations("panel") as TranslationFunction;
 
     useEffect((): void => {
         if (!uuid) {
@@ -28,11 +32,11 @@ const PreviewPage: React.FC = (): JSX.Element => {
                 const language: string[] = Object.keys(data.translations);
                 setSelectedLanguage(language.includes("en") ? "en" : language[0]);
             }).catch((error: unknown): void => {
-                setError(error instanceof Error ? error.message : "Napaka pri pridobivanju novice.");
+                setError(error instanceof Error ? error.message : t("editor.preview.errors.retrieve-article"));
                 setArticle(null);
             })
             .finally((): void => setLoading(false));
-    }, [uuid]);
+    }, [t, uuid]);
 
     const availableLanguages: string[] = article ? Object.keys(article.translations) : [];
     const translation: Translation | null = article && (article.translations[selectedLanguage] || article.translations[availableLanguages[0]]);
@@ -42,10 +46,10 @@ const PreviewPage: React.FC = (): JSX.Element => {
             <div className={"row justify-content-center"}>
                 <div className={"col-md-8"}>
                     <div className={"p-4 bg-white"}>
-                        <h2 className={"mb-4 text-center"}>Article preview</h2>
+                        <h2 className={"mb-4 text-center"}>{t("editor.preview.title")}</h2>
                         {availableLanguages.length > 1 && (
                             <div className={"mb-3 text-center"}>
-                                <label htmlFor={"lang-select"} className={"form-label me-2"}>Language:</label>
+                                <label htmlFor={"lang-select"} className={"form-label me-2"}>{t("editor.preview.language")}:</label>
                                 <select
                                     id={"lang-select"}
                                     className={"select d-inline-block w-auto"}

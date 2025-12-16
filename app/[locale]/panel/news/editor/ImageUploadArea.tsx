@@ -1,7 +1,11 @@
+"use client";
+
 import React, {JSX} from "react";
 import { useDropzone } from "react-dropzone";
 import Image from "next/image";
 import {fetchImage} from "@/api/filesApi";
+import {TranslationFunction} from "@/app/[locale]/layout";
+import {useTranslations} from "next-intl";
 
 interface ImageUploadAreaProps {
     images: (File | string)[];
@@ -11,6 +15,10 @@ interface ImageUploadAreaProps {
 }
 
 const ImageUploadArea: React.FC<ImageUploadAreaProps> = ({ images, onImagesChange, singleImage = false }: ImageUploadAreaProps): JSX.Element => {
+
+    const t: TranslationFunction = useTranslations("panel") as TranslationFunction;
+    const t1: TranslationFunction = useTranslations("buttons") as TranslationFunction;
+
     const onDrop: (acceptedFiles: File[]) => void = (acceptedFiles: File[]): void => {
         onImagesChange(singleImage ? acceptedFiles.slice(0, 1) : [...images, ...acceptedFiles]);
     };
@@ -26,7 +34,7 @@ const ImageUploadArea: React.FC<ImageUploadAreaProps> = ({ images, onImagesChang
         <div className={"image-upload-area"}>
             <div {...getRootProps()} className={"image-upload-dropzone"}>
                 <input {...getInputProps()} />
-                <p>{singleImage ? "Drag & drop an image here, or click to select" : "Drag & drop images here, or click to select"}</p>
+                <p>{singleImage ? t("editor.upload-area.single") : t("editor.upload-area.multiple")}</p>
             </div>
             <div className={"image-upload-list"}>
                 {images.map((img: File | string, idx: number): JSX.Element => {
@@ -48,8 +56,8 @@ const ImageUploadArea: React.FC<ImageUploadAreaProps> = ({ images, onImagesChang
                                 type={"button"}
                                 onClick={(): void => handleRemoveImage(idx)}
                                 className={"image-upload-remove-btn"}
-                                aria-label={"Remove image"}
-                                title={"Remove image"}
+                                aria-label={t1("remove-image")}
+                                title={t1("remove-image")}
                             >
                                 ×
                             </button>
