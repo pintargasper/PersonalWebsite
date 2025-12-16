@@ -13,7 +13,7 @@ import GetSignal from "@/public/images/projects/images/signal-photo.webp";
 import GetGitHub from "@/public/images/projects/images/github-photo.webp";
 import GetLinkedIn from "@/public/images/projects/images/linkedin-photo.webp";
 import GetEmail from "@/public/images/projects/images/email-photo.webp";
-import {faCog, faNewspaper, faProjectDiagram, IconDefinition} from "@fortawesome/free-solid-svg-icons";
+import {faNewspaper, IconDefinition} from "@fortawesome/free-solid-svg-icons";
 
 interface TLink {
     label: string;
