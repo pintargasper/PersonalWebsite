@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useState, useEffect, JSX, ChangeEvent, FormEvent} from "react";
+import React, {useState, useEffect, useRef, JSX, ChangeEvent, FormEvent, RefObject} from "react";
 import ImageUploadArea from "./ImageUploadArea";
 import RichTextEditor from "./RichTextEditor";
 import {saveArticle, getArticleSingle, NewsArticleSingleView, NewsArticle} from "@/api/newsApi";
@@ -45,10 +45,77 @@ const Editor: React.FC = (): JSX.Element => {
 
     const [published, setPublished] = useState<boolean>(false);
 
+    const [imagesKey, setImagesKey] = useState(0);
+
     const searchParams: ReadonlyURLSearchParams = useSearchParams();
     const newsId: string = searchParams.get("url") || "";
 
     const router: AppRouterInstance = useRouter();
+
+    const newCoverImageRef: RefObject<File | null> = useRef<File | null>(null);
+    const existingCoverImageUrlRef: RefObject<string> = useRef<string>("");
+    const deletedCoverImageRef: RefObject<string | undefined> = useRef<string | undefined>(undefined);
+    const newImagesRef: RefObject<File[]> = useRef<File[]>([]);
+    const existingImageUrlsRef: RefObject<string[]> = useRef<string[]>([]);
+    const deletedImageUrlsRef: RefObject<string[]> = useRef<string[]>([]);
+    const titleRef: RefObject<Record<string, string>> = useRef<Record<string, string>>(getEmptyLanguageObject());
+    const descriptionRef: RefObject<Record<string, string>> = useRef<Record<string, string>>(getEmptyLanguageObject());
+    const contentRef: RefObject<Record<string, string>> = useRef<Record<string, string>>(getEmptyLanguageObject());
+    const selectedLanguageRef: RefObject<string> = useRef<string>(SUPPORTED_LANGUAGES[0].code);
+    const publishedRef: RefObject<boolean> = useRef<boolean>(false);
+
+    const setNewCoverImageAndRef: (value: File | null) => void = (value: File | null): void => {
+        setNewCoverImage(value); newCoverImageRef.current = value;
+    };
+
+    const setExistingCoverImageUrlAndRef: (value: string) => void = (value: string): void => {
+        setExistingCoverImageUrl(value); existingCoverImageUrlRef.current = value;
+    };
+
+    const setDeletedCoverImageAndRef: (value: string | undefined) => void = (value: string | undefined): void => {
+        setDeletedCoverImage(value); deletedCoverImageRef.current = value;
+    };
+
+    const setNewImagesAndRef: (value: File[]) => void = (value: File[]): void => {
+        setNewImages(value); newImagesRef.current = value;
+    };
+
+    const setExistingImageUrlsAndRef: (value: string[]) => void = (value: string[]): void => {
+        setExistingImageUrls(value); existingImageUrlsRef.current = value;
+    };
+
+    const setDeletedImageUrlsAndRef: (value: string[]) => void = (value: string[]): void => {
+        setDeletedImageUrls(value); deletedImageUrlsRef.current = value;
+    };
+
+    const setTitleAndRef: (value: Record<string, string>) => void = (value: Record<string, string>): void => {
+        setTitle(value); titleRef.current = value;
+    };
+
+    const setDescriptionAndRef: (value: Record<string, string>) => void = (value: Record<string, string>): void => {
+        setDescription(value); descriptionRef.current = value;
+    };
+
+    const setContentAndRef: (value: Record<string, string>) => void = (value: Record<string, string>): void => {
+        setContent(value); contentRef.current = value;
+    };
+
+    useEffect((): void => {
+        newCoverImageRef.current = newCoverImage;
+        existingCoverImageUrlRef.current = existingCoverImageUrl;
+        deletedCoverImageRef.current = deletedCoverImage;
+        newImagesRef.current = newImages;
+        existingImageUrlsRef.current = existingImageUrls;
+        deletedImageUrlsRef.current = deletedImageUrls;
+        titleRef.current = title;
+        descriptionRef.current = description;
+        contentRef.current = content;
+        selectedLanguageRef.current = selectedLanguage;
+        publishedRef.current = published;
+    }, [newCoverImage, existingCoverImageUrl, deletedCoverImage,
+        newImages, existingImageUrls, deletedImageUrls,
+        title, description, content, selectedLanguage, published
+    ]);
 
     useEffect((): void => {
         if (!newsId) {
@@ -61,19 +128,19 @@ const Editor: React.FC = (): JSX.Element => {
                 const newDescription = { ...getEmptyLanguageObject() };
                 const newContent = { ...getEmptyLanguageObject() };
                 if (data.translations) {
-                    for (const lang of Object.keys(data.translations)) {
-                        newTitle[lang] = data.translations[lang].headline || "";
-                        newDescription[lang] = data.translations[lang].description || "";
-                        newContent[lang] = data.translations[lang].content || "";
+                    for (const language of Object.keys(data.translations)) {
+                        newTitle[language] = data.translations[language].headline || "";
+                        newDescription[language] = data.translations[language].description || "";
+                        newContent[language] = data.translations[language].content || "";
                     }
                 }
-                setTitle(newTitle);
-                setDescription(newDescription);
-                setContent(newContent);
+                setTitleAndRef(newTitle);
+                setDescriptionAndRef(newDescription);
+                setContentAndRef(newContent);
                 setExistingCoverImageUrl(data.coverImage || "");
                 setExistingImageUrls(data.images || []);
-                setNewCoverImage(null);
-                setNewImages([]);
+                setNewCoverImageAndRef(null);
+                setNewImagesAndRef([]);
                 setPublished(data.published);
                 setHasInitialContentSync(false);
             } catch {}
@@ -81,61 +148,79 @@ const Editor: React.FC = (): JSX.Element => {
     }, [newsId]);
 
     const handleCoverImageChange: (images: (string | File)[]) => void = (images: (File | string)[]): void => {
+        setUnsavedChanges(true);
         if (images.length > 0 && images[0] instanceof File) {
-            if (existingCoverImageUrl) {
-                setDeletedCoverImage(existingCoverImageUrl);
+            if (existingCoverImageUrlRef.current) {
+                setDeletedCoverImageAndRef(existingCoverImageUrlRef.current);
             }
-            setNewCoverImage(images[0] as File);
-            setExistingCoverImageUrl("");
+            setNewCoverImageAndRef(images[0] as File);
+            setExistingCoverImageUrlAndRef("");
         } else if (images.length > 0 && typeof images[0] === "string") {
-            setExistingCoverImageUrl(images[0] as string);
-            setNewCoverImage(null);
-            setDeletedCoverImage(undefined);
+            setExistingCoverImageUrlAndRef(images[0] as string);
+            setNewCoverImageAndRef(null);
+            setDeletedCoverImageAndRef(undefined);
         } else {
-            if (existingCoverImageUrl) {
-                setDeletedCoverImage(existingCoverImageUrl);
+            if (existingCoverImageUrlRef.current) {
+                setDeletedCoverImageAndRef(existingCoverImageUrlRef.current);
             }
-            setNewCoverImage(null);
-            setExistingCoverImageUrl("");
+            setNewCoverImageAndRef(null);
+            setExistingCoverImageUrlAndRef("");
         }
         markDirty();
+        handleSave();
     };
 
     const handleImagesChange: (images: (string | File)[]) => void = (images: (File | string)[]): void => {
-        const removed: string[] = existingImageUrls.filter((url: string): boolean => !images.includes(url));
+        setUnsavedChanges(true);
+        const removed: string[] = existingImageUrlsRef.current.filter((url: string): boolean => !images.includes(url));
         if (removed.length > 0) {
-            setDeletedImageUrls((previous: string[]): string[] => [...previous, ...removed.filter((url: string): boolean => !previous.includes(url))]);
+            setDeletedImageUrlsAndRef([
+                ...deletedImageUrlsRef.current,
+                ...removed.filter((url: string): boolean => !deletedImageUrlsRef.current.includes(url))
+            ]);
         }
-        setNewImages(images.filter((image: string | File): image is File => image instanceof File));
-        setExistingImageUrls(images.filter((image: string | File): image is string => typeof image === "string"));
+        setNewImagesAndRef(images.filter((image: string | File): image is File => image instanceof File));
+        setExistingImageUrlsAndRef(images.filter((image: string | File): image is string => typeof image === "string"));
         markDirty();
+        handleSave();
+    };
+
+    const handleImagesSaveRefresh: () => void = (): void => {
+        setImagesKey((previous: number): number => previous + 1);
     };
 
     const handleSave: () => void = async (): Promise<void> => {
         setUnsavedChanges(false);
         const isNew: boolean = !newsId;
+        const language: string = selectedLanguageRef.current;
         const article: NewsArticle = {
             uuid: newsId,
-            headline: title[selectedLanguage] || "",
-            shortDescription: description[selectedLanguage] || "",
-            content: content[selectedLanguage] || "",
-            language: selectedLanguage,
-            published: published,
-            newCoverImage: newCoverImage || undefined,
-            existingCoverImage: existingCoverImageUrl || undefined,
-            deletedCoverImage: deletedCoverImage,
-            newImages: newImages,
-            existingImages: existingImageUrls,
-            deletedImages: deletedImageUrls,
+            headline: titleRef.current[language] || "",
+            shortDescription: descriptionRef.current[language] || "",
+            content: contentRef.current[language] || "",
+            language: language,
+            published: publishedRef.current,
+            newCoverImage: newCoverImageRef.current || undefined,
+            existingCoverImage: existingCoverImageUrlRef.current || undefined,
+            deletedCoverImage: deletedCoverImageRef.current,
+            newImages: newImagesRef.current,
+            existingImages: existingImageUrlsRef.current,
+            deletedImages: deletedImageUrlsRef.current
         };
         try {
             const result: NewsArticle = await saveArticle(article);
             setNotificationMessage("Article successfully updated");
             setNotificationType("success");
-            setDeletedImageUrls([]);
-            setDeletedCoverImage(undefined);
-
-            console.log(result.uuid);
+            setDeletedImageUrlsAndRef([]);
+            setDeletedCoverImageAndRef(undefined);
+            setNewImagesAndRef([]);
+            setNewCoverImageAndRef(null);
+            if (result.uuid) {
+                const fresh: NewsArticleSingleView = await getArticleSingle(result.uuid);
+                setExistingImageUrlsAndRef(fresh.images || []);
+                setExistingCoverImageUrlAndRef(fresh.coverImage || "");
+            }
+            handleImagesSaveRefresh();
             if (isNew && result && result.uuid) {
                 const params = new URLSearchParams(Array.from(searchParams.entries()));
                 params.set("url", result.uuid);
@@ -164,7 +249,7 @@ const Editor: React.FC = (): JSX.Element => {
     return (
         <>
             {(notificationMessage && notificationType) && (
-                <div className={"login-toast position-fixed top-0 end-0 m-3"} style={{ zIndex: 1050, minWidth: 300 }}>
+                <div className={"login-toast position-fixed top-0 end-0 m-3"}>
                     <div className={`alert alert-${notificationType === "success" ? "success" : "danger"} shadow`} role={notificationType === "success" ? "status" : "alert"}>
                         {notificationMessage}
                     </div>
@@ -174,6 +259,7 @@ const Editor: React.FC = (): JSX.Element => {
                 <div className={"row gx-1 align-items-start editor-row"}>
                     <div className={"col-lg-2 editor-image-col"}>
                         <ImageUploadArea
+                            key={imagesKey}
                             images={[...existingImageUrls, ...newImages]}
                             onImagesChange={handleImagesChange}
                             singleImage={false}

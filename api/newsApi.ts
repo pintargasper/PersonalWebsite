@@ -37,6 +37,16 @@ interface NewsArticleSingleView {
     published: boolean;
 }
 
+interface NewsView {
+    id: number;
+    translations: Translation;
+    image: string;
+    slug: string;
+    seoTitle: string;
+    seoDescription: string;
+    publishedAt: string;
+}
+
 const getArticles: (locale: string) => Promise<NewsArticleView[]> = async (locale: string): Promise<NewsArticleView[]> => {
 
     const response: Response = await fetch(`${process.env.NEXT_PUBLIC_NEWS_ARTICLE_ALL_API_URL}?useLocale=${locale}`, {
@@ -138,16 +148,49 @@ const deleteArticle: (uuid: string) => Promise<boolean> = async (uuid: string): 
     return await response.json();
 };
 
+const getNews: (locale: string) => Promise<NewsView[]> = async (locale: string): Promise<NewsView[]> => {
+
+    const response: Response = await fetch(`${process.env.NEXT_PUBLIC_NEWS_ALL_API_URL}?useLocale=${locale}`, {
+        method: "GET"
+    });
+
+    if (!response.ok) {
+        const errorData: { message?: string; error?: string } = await response
+            .json()
+            .catch((): { message?: string; error?: string } => ({}));
+        throw new Error(errorData.message || errorData.error);
+    }
+    return await response.json();
+};
+
+const getNewsSingle: (slug: string, locale: string) => Promise<NewsView> = async (slug: string, locale: string): Promise<NewsView> => {
+
+    const response: Response = await fetch(`${process.env.NEXT_PUBLIC_NEWS_SINGLE_API_URL}/${slug}?useLocale=${locale}`, {
+        method: "GET"
+    });
+
+    if (!response.ok) {
+        const errorData: { message?: string; error?: string } = await response
+            .json()
+            .catch((): { message?: string; error?: string } => ({}));
+        throw new Error(errorData.message || errorData.error);
+    }
+    return await response.json();
+};
+
 export {
     getArticles,
     getArticleSingle,
     saveArticle,
-    deleteArticle
+    deleteArticle,
+    getNews,
+    getNewsSingle
 }
 
 export type {
     NewsArticleView,
     NewsArticleSingleView,
     Translation,
-    NewsArticle
+    NewsArticle,
+    NewsView
 };

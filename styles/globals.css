@@ -5,6 +5,7 @@
 @import "@/styles/document.css";
 @import "@/styles/editor.css";
 @import "@/styles/panel.css";
+@import "@/styles/news.css";
 
 :root {
     font-family: "Times New Roman", serif;

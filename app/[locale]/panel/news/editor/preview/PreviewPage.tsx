@@ -9,7 +9,7 @@ const PreviewPage: React.FC = (): JSX.Element => {
 
     const uuid: string | null = useSearchParams().get("url");
     const [article, setArticle] = useState<NewsArticleSingleView | null>(null);
-    const [loading, setLoading] = useState(true);
+    const [, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [selectedLanguage, setSelectedLanguage] = useState<string>("en");
 
@@ -17,7 +17,7 @@ const PreviewPage: React.FC = (): JSX.Element => {
         if (!uuid) {
             setTimeout((): void => {
                 setLoading(false);
-                setError("Manjka URL novice.");
+                setError("The news URL is missing");
             }, 0);
             return;
         }

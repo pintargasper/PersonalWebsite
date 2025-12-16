@@ -1,7 +1,9 @@
 import React, {JSX} from "react";
 import {Metadata} from "next";
 import {Col, Row} from "react-bootstrap";
-import {NewsCard, NewsItem} from "@/app/[locale]/components/NewsCard";
+import {NewsCard} from "@/app/[locale]/components/NewsCard";
+import {getNews, type NewsView} from "@/api/newsApi";
+import {getLocale} from "next-intl/server";
 
 export const metadata: Metadata = {
     title: "News - Gašper Pintar",
@@ -82,87 +84,36 @@ export const metadata: Metadata = {
     }
 };
 
-export const newsData: NewsItem[] = [
-    {
-        id: 1,
-        title: "Predstavitev nove funkcionalnosti",
-        description: "Objavljena je bila nova funkcionalnost, ki izboljšuje uporabniško izkušnjo in povečuje učinkovitost spletne platforme.",
-        image: "/images/news1.webp",
-        published: true,
-        publishedAt: "2025-01-14",
-        url: "news/predstavitev-nove-funkcionalnosti"
-    },
-    {
-        id: 2,
-        title: "Posodobljena poslovna strategija",
-        description: "Predstavljen je načrt za leto 2025, ki vključuje pomembne razvojne usmeritve in optimizacijo procesov.",
-        image: "/images/news2.webp",
-        published: true,
-        publishedAt: "2025-01-10",
-        url: "news/posodobljena-poslovna-strategija"
-    },
-    {
-        id: 3,
-        title: "Posodobljena poslovna strategija",
-        description: "Predstavljen je načrt za leto 2025, ki vključuje pomembne razvojne usmeritve in optimizacijo procesov.",
-        image: "/images/news2.webp",
-        published: false,
-        publishedAt: "2025-01-10",
-        url: "news/posodobljena-poslovna-strategija"
-    },
-    {
-        id: 4,
-        title: "Posodobljena poslovna strategija",
-        description: "Predstavljen je načrt za leto 2025, ki vključuje pomembne razvojne usmeritve in optimizacijo procesov.",
-        image: "/images/news2.webp",
-        published: false,
-        publishedAt: "2025-01-10",
-        url: "news/posodobljena-poslovna-strategija"
-    },
-    {
-        id: 5,
-        title: "Posodobljena poslovna strategija 3",
-        description: "Predstavljen je načrt za leto 2025, ki vključuje pomembne razvojne usmeritve in optimizacijo procesov.",
-        image: "https://gasperpintar.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fprofile-photo.2a780b90.webp&w=256&q=75",
-        published: true,
-        publishedAt: "2025-01-10",
-        url: "news/posodobljena-poslovna-strategija-3"
-    },
-    {
-        id: 6,
-        title: "Posodobljena poslovna strategija",
-        description: "Predstavljen je načrt za leto 2025, ki vključuje pomembne razvojne usmeritve in optimizacijo procesov.",
-        image: "/images/news2.webp",
-        published: false,
-        publishedAt: "2025-01-10",
-        url: "news/posodobljena-poslovna-strategija"
-    },
-    {
-        id: 7,
-        title: "Posodobljena poslovna strategija",
-        description: "Predstavljen je načrt za leto 2025, ki vključuje pomembne razvojne usmeritve in optimizacijo procesov.",
-        image: "/images/news2.webp",
-        published: true,
-        publishedAt: "2025-01-10",
-        url: "news/posodobljena-poslovna-strategija"
-    }
-];
+const News: () => Promise<JSX.Element> = async (): Promise<JSX.Element> => {
 
-const News: () => void = async (): Promise<JSX.Element> => {
-
-    //const t: TranslationFunction = await getTranslations("news") as TranslationFunction;
+    const locale: string = await getLocale();
+    const newsViews: NewsView[] = await getNews(locale);
 
     return (
         <>
             <div className={"news-page-container mt-5"}>
                 <div className={"container"}>
-                    <Row>
-                        {newsData.map((singleNewsItem: NewsItem): JSX.Element => (
-                            <Col key={singleNewsItem.id} md={6} lg={4}>
-                                <NewsCard newsItem={singleNewsItem} />
-                            </Col>
-                        ))}
-                    </Row>
+                    {newsViews.length === 0 ? (
+                        <div className={"news-empty-state"}>
+                            <div className={"news-empty-card"}>
+                                <svg xmlns={"http://www.w3.org/2000/svg"} width={"48"} height={"48"} fill={"none"} viewBox={"0 0 24 24"} className={"news-empty-icon"}>
+                                    <circle cx={"12"} cy={"12"} r={"10"} stroke={"#adb5bd"} strokeWidth={"2"} fill={"#f8f9fa"}/>
+                                    <path d={"M9.5 9.5a2.5 2.5 0 1 1 5 0c0 1.5-2.5 2-2.5 4"} stroke={"#adb5bd"} strokeWidth={"1.5"} strokeLinecap={"round"} strokeLinejoin={"round"}/>
+                                    <circle cx={"12"} cy={"17"} r={"1"} fill={"#adb5bd"}/>
+                                </svg>
+                                <h2 className={"news-empty-title"}>No news has been published yet</h2>
+                                <p className={"news-empty-desc"}>There is currently no news published</p>
+                            </div>
+                        </div>
+                    ) : (
+                        <Row>
+                            {newsViews.map((singleNewsItem: NewsView): JSX.Element => (
+                                <Col key={singleNewsItem.id} md={6} lg={4}>
+                                    <NewsCard currentLocale={locale} {...singleNewsItem} />
+                                </Col>
+                            ))}
+                        </Row>
+                    )}
                 </div>
             </div>
         </>

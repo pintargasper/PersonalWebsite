@@ -43,7 +43,7 @@ const NewsPage: React.FC = (): JSX.Element => {
     return (
         <div className={"container py-5"}>
             <div className={"mb-4 d-flex justify-content-end"}>
-                <Link href="/panel/news/editor" className={"button fw-bold"}>
+                <Link href={"/panel/news/editor"} className={"button fw-bold"}>
                     + Add New Article
                 </Link>
             </div>
@@ -73,7 +73,7 @@ const NewsPage: React.FC = (): JSX.Element => {
                             </div>
                             <div className={"d-flex flex-column text-center gap-2 ms-3"}>
                                 <Link href={{ pathname: "/panel/news/editor", query: { url: news.uuid } }} className={"button"}>Edit</Link>
-                                <button type={"button"} className={"button"} onClick={() => handleDelete(news.uuid)}>Delete</button>
+                                <button type={"button"} className={"button"} onClick={(): void => handleDelete(news.uuid)}>Delete</button>
                             </div>
                         </div>
                     </div>

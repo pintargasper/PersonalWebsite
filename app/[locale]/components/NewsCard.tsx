@@ -2,44 +2,41 @@ import React, {JSX} from "react";
 import {Card, CardBody, CardTitle, CardText} from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";
+import {NewsView, Translation} from "@/api/newsApi";
+import {fetchImage} from "@/api/filesApi";
 
-interface NewsItem {
-    id: number,
-    title: string,
-    description: string,
-    image: string,
-    published: boolean,
-    publishedAt: string,
-    url: string
+interface NewsCardProps extends NewsView {
+    currentLocale: string;
 }
 
-interface NewsCardProps {
-    newsItem: NewsItem
-}
+const NewsCard: React.FC<NewsCardProps> = (props: NewsCardProps): JSX.Element => {
 
-const NewsCard: React.FC<NewsCardProps> = ({newsItem}: NewsCardProps): JSX.Element => {
+    const { currentLocale, ...news } = props;
+    const translations = news.translations as unknown as Record<string, Translation>;
+    const translation: Translation = translations[currentLocale] || Object.values(translations)[0];
 
     return (
         <Card className={"mb-4 shadow-sm news-container"}>
             <Image
                 className={"news-image"}
-                src={newsItem?.image}
-                alt={newsItem?.title}
+                src={fetchImage(news.image)}
+                alt={translation.headline}
                 width={100}
                 height={200}
+                unoptimized={true}
                 loading={"eager"}
             />
 
             <CardBody>
-                <CardTitle className={"truncate-one-line"}>{newsItem?.title}</CardTitle>
-                <CardText className={"truncate-multi-line"}>{newsItem?.description}</CardText>
+                <CardTitle className={"truncate-one-line"}>{translation.headline}</CardTitle>
+                <CardText className={"truncate-multi-line"}>{translation.description}</CardText>
                 <div className={"d-flex justify-content-between align-items-center"}>
                     <small className={"text-muted"}>
-                        {newsItem!.publishedAt}
+                        {news.publishedAt}
                     </small>
                     <Link
-                        key={newsItem?.id}
-                        href={newsItem?.url}
+                        key={news.id}
+                        href={`/news/${news.slug}`}
                         className={"button"}
                     >
                         Read more
@@ -52,8 +49,4 @@ const NewsCard: React.FC<NewsCardProps> = ({newsItem}: NewsCardProps): JSX.Eleme
 
 export {
     NewsCard
-};
-
-export type {
-    NewsItem
 };
