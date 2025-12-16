@@ -52,7 +52,9 @@
             "brand": "Domov",
             "language": "Jezik",
             "projects": "Pojekti",
-            "settings": "Nastavitve"
+            "settings": "Nastavitve",
+            "news": "Novice",
+            "logout": "Odjava"
         },
         "projects": {
             "card-generator": {
@@ -67,7 +69,15 @@
     },
     "buttons": {
         "close": "Zapri",
-        "view": "Ogled"
+        "view": "Ogled",
+        "login": "Prijava",
+        "logging": "Prijavljanje...",
+        "new-article": "Dodaj nov članek",
+        "article-edit": "Uredi",
+        "article-delete": "Izbriši",
+        "remove-image": "Odstrani sliko",
+        "preview": "Predogled",
+        "save": "Shrani"
     },
     "card-generator": {
         "available-on": "Na voljo v sistemih Windows in Linux",
@@ -110,6 +120,24 @@
                 "title": "Generator Kart",
                 "alt": "Logotip aplikacije Generator Kart"
             }
+        }
+    },
+    "login": {
+        "validation": {
+            "password-empty": "Vnesi geslo"
+        },
+        "username": {
+            "label": "E-pošta ali uporabniško ime",
+            "placeholder": "Vnesi svojo e-pošto ali uporabniško ime"
+        },
+        "password": {
+            "label": "Geslo",
+            "placeholder": "Vnesi geslo"
+        }
+    },
+    "panel": {
+        "cards": {
+            "news": "Novice"
         }
     }
 }
