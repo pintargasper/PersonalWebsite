@@ -28,7 +28,6 @@ const Login: React.FC = (): JSX.Element | null => {
     });
 
     const t: TranslationFunction = useTranslations("login") as TranslationFunction;
-    const t1: TranslationFunction = useTranslations("errors") as TranslationFunction;
     const t2: TranslationFunction = useTranslations("buttons") as TranslationFunction;
 
     useEffect((): void => {
@@ -75,7 +74,7 @@ const Login: React.FC = (): JSX.Element | null => {
         } catch (error) {
             setFormStatus({
                 isLoading: false,
-                errorMessage: (error instanceof Error ? error.message : t1("network")),
+                errorMessage: (error instanceof Error ? error.message : t("error-network")),
                 successMessage: null
             });
         }

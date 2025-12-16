@@ -132,10 +132,11 @@
         "label": "Email or Username",
         "placeholder": "Enter your email or username"
       },
-        "password": {
-            "label": "Password",
-            "placeholder": "Enter your password"
-        }
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter your password"
+      },
+      "error-network": "Network error occurred"
     },
     "news": {
       "posted": "Posted",
@@ -214,9 +215,6 @@
             "retrieve-article": "Error retrieving article"
           }
         }
-      },
-      "errors": {
-        "network": "Network error occurred"
       }
     }
 }
