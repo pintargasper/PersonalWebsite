@@ -66,13 +66,13 @@
             "logout": "Logout"
         },
         "projects": {
-            "card-generator": {
-                "alt": "Card Generator application logo",
-                "title": "Card Generator"
-            },
             "smoking-tracker": {
-                "alt": "Smoking Tracker application logo",
-                "title": "Smoking Tracker"
+              "title": "Smoking Tracker",
+              "alt": "Smoking Tracker application logo"
+            },
+            "card-generator": {
+              "title": "Card Generator",
+              "alt": "Card Generator application logo"
             }
         }
     },
@@ -113,6 +113,11 @@
         "title": "Card Generator",
         "version": "Version",
         "what-is": "What is Card Generator?"
+    },
+    "criogen": {
+      "title": "Criogen",
+      "description": "Criogen is a specialized tool for digitally recording, organizing and monitoring data related to the collection, processing and storage of dog and horse semen",
+      "logo-alt": "Criogen logo"
     },
     "not-found": {
         "title": "Lost in space",

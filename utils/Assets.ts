@@ -1,5 +1,6 @@
 import SmokingLogo70 from "@/public/images/projects/smoking-tracker/smoking-tracker-photo-size-70x70.webp";
 import CardLogo70 from "@/public/images/projects/card-generator/card-generator-photo-size-70x70.webp";
+import CriogenLogo70 from "@/public/images/projects/criogen/criogen-logo.webp";
 import ProfilePicture250 from "@/public/images/home/profile-photo.webp";
 import ScreenshotHomeEnglish from "@/public/images/projects/smoking-tracker/screenshots/en/home-page-preview.webp";
 import ScreenshotGraphEnglish from "@/public/images/projects/smoking-tracker/screenshots/en/graph-page-preview.webp";
@@ -71,6 +72,15 @@ const projects: ProjectData[] = [
         links: [
             { label: "buttons.view", url: "/card-generator", t: true },
             { label: "GitHub", url: "https://github.com/pintargasper/CardGenerator" }
+        ]
+    },
+    {
+        title: "criogen.title",
+        image: CriogenLogo70.src,
+        alt: "criogen.logo-alt",
+        description: "criogen.description",
+        links: [
+            { label: "buttons.view", url: "https://www.vet-center-trnje.si/criogen", t: true }
         ]
     }
 ];

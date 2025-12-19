@@ -39,7 +39,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }: ProjectCardProps):
                             {...(link.url.startsWith("http") ? { target: "_blank" } : {})}
                             className={"button"}
                         >
-                            {link.url.startsWith("http") && (
+                            {link.url.includes("//github") && (
                                 <Image
                                     src={GetGitHub}
                                     alt={"GitHub logo"}
