@@ -126,7 +126,7 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
                             <div className={"mt-3"}>
                                 <div className={"border-0"}>
                                     <p className={"mb-0"}>
-                                        {t1("sentence", { app: t("title") })}
+                                        {t1("smoking-tracker")}
                                     </p>
                                     <Link
                                         href={"https://translate.gasperpintar.com/projects/smokingtracker"}

@@ -232,7 +232,8 @@
         }
     },
     "translation": {
-        "sentence": "Help translate {app} app into your language!",
+        "smoking-tracker": "Help translate Smoking Tracker application into your language!",
+        "card-generator": "Help translate Card Generator application into your language!",
         "status": "Translation status"
     }
 }
