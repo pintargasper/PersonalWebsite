@@ -77,17 +77,17 @@
         }
     },
     "buttons": {
-      "close": "Close",
-      "view": "View",
-      "login": "Login",
-      "logging": "Logging in...",
-      "read-more": "Read more",
-      "new-article": "Add new article",
-      "article-edit": "Edit",
-      "article-delete": "Delete",
-      "remove-image": "Remove image",
-      "preview": "Preview",
-      "save": "Save"
+        "close": "Close",
+        "view": "View",
+        "login": "Login",
+        "logging": "Logging in…",
+        "read-more": "Read more",
+        "new-article": "Add new article",
+        "article-edit": "Edit",
+        "article-delete": "Delete",
+        "remove-image": "Remove image",
+        "preview": "Preview",
+        "save": "Save"
     },
     "card-generator": {
         "available-on": "Available on Windows and Linux",
@@ -138,97 +138,97 @@
         }
     },
     "login": {
-      "validation": {
-        "empty": "Enter your email address or username",
-        "password-empty": "Enter your password"
-      },
-      "username": {
-        "label": "Email or Username",
-        "placeholder": "Enter your email or username"
-      },
-      "password": {
-        "label": "Password",
-        "placeholder": "Enter your password"
-      },
-      "error-network": "Network error occurred"
+        "validation": {
+            "empty": "Enter your email address or username",
+            "password-empty": "Enter your password"
+        },
+        "username": {
+            "label": "Email or Username",
+            "placeholder": "Enter your email or username"
+        },
+        "password": {
+            "label": "Password",
+            "placeholder": "Enter your password"
+        },
+        "error-network": "Network error occurred"
     },
     "news": {
-      "posted": "Posted",
-      "no-news": {
-        "title": "No news has been published yet",
-        "message": "No news available at the moment"
-      },
-      "not-found": {
-        "title": "Article not found",
-        "message": "Sorry, the requested article item cannot be displayed. It may have been removed or the link may be incorrect"
-      }
+        "posted": "Posted",
+        "no-news": {
+            "title": "No news has been published yet",
+            "message": "No news available at the moment"
+        },
+        "not-found": {
+            "title": "Article not found",
+            "message": "Sorry, the requested article item cannot be displayed. It may have been removed or the link may be incorrect"
+        }
     },
     "panel": {
-      "cards": {
-        "news": "News"
-      },
-      "news": {
-        "errors": {
-          "fetch": "Error fetching articles",
-          "delete": "Error deleting article"
+        "cards": {
+            "news": "News"
         },
-        "published": "Published",
-        "draft": "Draft"
-      },
-      "editor": {
+        "news": {
+            "errors": {
+                "fetch": "Error fetching articles",
+                "delete": "Error deleting article"
+            },
+            "published": "Published",
+            "draft": "Draft"
+        },
         "editor": {
-          "changes": {
-            "status": "Changes not saved",
-            "preview": "Preview (save first)"
-          },
-          "headline": {
-            "label": "News headline",
-            "placeholder": "Enter the news headline"
-          },
-          "description": {
-            "label": "Short description",
-            "placeholder": "Enter a short description of the news"
-          },
-          "cover-image": "Cover image",
-          "language": "Article language",
-          "checkbox": "Publish article"
-        },
-        "upload-area": {
-          "single": "Drag & drop an image here, or click to select",
-          "multiple": "Drag & drop images here, or click to select"
-        },
-        "rich-editor": {
-          "text-types": {
-            "paragraph": "Paragraph",
-            "heading1": "Heading 1",
-            "heading2": "Heading 2",
-            "heading3": "Heading 3"
-          },
-          "tooltips": {
-            "text": "Text type",
-            "font": "Font size",
-            "line": "Line spacing",
-            "bold": "Bold",
-            "italic": "Italic",
-            "underline": "Underline",
-            "strike": "Strike",
-            "bulleted": "Bulleted list",
-            "ordered": "Ordered list",
-            "quote": "Blockquote",
-            "undo": "Undo",
-            "redo": "Redo",
-            "align-left": "Align left",
-            "align-center": "Align center",
-            "align-right": "Align right"
-          }
-        },
-        "preview": {
-          "title": "Article preview",
-          "language": "Language",
-          "errors": {
-            "retrieve-article": "Error retrieving article"
-          }
+            "editor": {
+                "changes": {
+                    "status": "Changes not saved",
+                    "preview": "Preview (save first)"
+                },
+                "headline": {
+                    "label": "News headline",
+                    "placeholder": "Enter the news headline"
+                },
+                "description": {
+                    "label": "Short description",
+                    "placeholder": "Enter a short description of the news"
+                },
+                "cover-image": "Cover image",
+                "language": "Article language",
+                "checkbox": "Publish article"
+            },
+            "upload-area": {
+                "single": "Drag & drop an image here, or click to select",
+                "multiple": "Drag & drop images here, or click to select"
+            },
+            "rich-editor": {
+                "text-types": {
+                    "paragraph": "Paragraph",
+                    "heading1": "Heading 1",
+                    "heading2": "Heading 2",
+                    "heading3": "Heading 3"
+                },
+                "tooltips": {
+                    "text": "Text type",
+                    "font": "Font size",
+                    "line": "Line spacing",
+                    "bold": "Bold",
+                    "italic": "Italic",
+                    "underline": "Underline",
+                    "strike": "Strike",
+                    "bulleted": "Bulleted list",
+                    "ordered": "Ordered list",
+                    "quote": "Blockquote",
+                    "undo": "Undo",
+                    "redo": "Redo",
+                    "align-left": "Align left",
+                    "align-center": "Align center",
+                    "align-right": "Align right"
+                }
+            },
+            "preview": {
+                "title": "Article preview",
+                "language": "Language",
+                "errors": {
+                    "retrieve-article": "Error retrieving article"
+                }
+            }
         }
-      }
     }
 }

@@ -71,13 +71,14 @@
         "close": "Zapri",
         "view": "Ogled",
         "login": "Prijava",
-        "logging": "Prijavljanje...",
+        "logging": "Prijavljanje…",
         "new-article": "Dodaj nov članek",
         "article-edit": "Uredi",
         "article-delete": "Izbriši",
         "remove-image": "Odstrani sliko",
         "preview": "Predogled",
-        "save": "Shrani"
+        "save": "Shrani",
+        "read-more": "Preberi več"
     },
     "card-generator": {
         "available-on": "Na voljo v sistemih Windows in Linux",
@@ -124,7 +125,8 @@
     },
     "login": {
         "validation": {
-            "password-empty": "Vnesi geslo"
+            "password-empty": "Vnesi geslo",
+            "empty": "Vnesi svoj e-poštni naslov ali uporabniško ime"
         },
         "username": {
             "label": "E-pošta ali uporabniško ime",
@@ -133,11 +135,86 @@
         "password": {
             "label": "Geslo",
             "placeholder": "Vnesi geslo"
-        }
+        },
+        "error-network": "Prišlo je do omrežne napake"
     },
     "panel": {
         "cards": {
             "news": "Novice"
+        },
+        "news": {
+            "errors": {
+                "fetch": "Napaka pri pridobivanju člankov",
+                "delete": "Napaka pri brisanju članka"
+            },
+            "published": "Objavljeno",
+            "draft": "Osnutek"
+        },
+        "editor": {
+            "editor": {
+                "changes": {
+                    "status": "Spremembe niso shranjene",
+                    "preview": "Predogled (najprej shrani)"
+                },
+                "headline": {
+                    "label": "Naslov novice",
+                    "placeholder": "Vnesite naslov novice"
+                },
+                "description": {
+                    "label": "Kratek opis",
+                    "placeholder": "Vnesite kratek opis novice"
+                },
+                "cover-image": "Naslovna slika",
+                "language": "Jezik članka",
+                "checkbox": "Objavi članek"
+            },
+            "upload-area": {
+                "single": "Povlecite in spustite sliko sem ali kliknite za izbiro",
+                "multiple": "Povlecite in spustite slike sem ali kliknite za izbiro"
+            },
+            "rich-editor": {
+                "text-types": {
+                    "paragraph": "Odstavek",
+                    "heading1": "Naslov 1",
+                    "heading2": "Naslov 2",
+                    "heading3": "Naslov 3"
+                },
+                "tooltips": {
+                    "text": "Vrsta besedila",
+                    "font": "Velikost pisave",
+                    "line": "Razmik med vrsticami",
+                    "bold": "Krepko",
+                    "italic": "Kurzivno",
+                    "underline": "Podčrtano",
+                    "strike": "Prečrtano",
+                    "bulleted": "Označen seznam",
+                    "ordered": "Urejen seznam",
+                    "quote": "Blokovni citat",
+                    "undo": "Razveljavi",
+                    "redo": "Ponovi",
+                    "align-left": "Leva poravnava",
+                    "align-center": "Sredinska poravnava",
+                    "align-right": "Desna poravnava"
+                }
+            },
+            "preview": {
+                "title": "Predogled članka",
+                "language": "Jezik",
+                "errors": {
+                    "retrieve-article": "Napaka pri pridobivanju članka"
+                }
+            }
+        }
+    },
+    "news": {
+        "posted": "Objavljeno",
+        "no-news": {
+            "title": "Nobena novica še ni bila objavljena",
+            "message": "Trenutno ni na voljo novic"
+        },
+        "not-found": {
+            "title": "Članek ni bil najden",
+            "message": "Žal zahtevanega članka ni mogoče prikazati. Morda je bil odstranjen ali pa je povezava napačna"
         }
     }
 }
