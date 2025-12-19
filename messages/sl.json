@@ -6,28 +6,37 @@
         "features": {
             "text-1": "Lokalno shranjevanje podatkov za večjo zasebnost",
             "text-2": "Dnevna, mesečna in letna statistika z grafi",
-            "text-3": "Samodejne varnostne kopije (odvisno od naprave)",
-            "text-4": "Večjezična podpora: angleščina in slovenščina",
-            "text-5": "Preprost in intuitiven uporabniški vmesnik",
-            "title": "Sledilnik Kajenja: Ključne lastnosti"
+            "text-3": "Preprosta analitika, ki vam bo pomagala razumeti vaše navade",
+            "text-4": "Samodejne varnostne kopije (odvisno od naprave)",
+            "text-5": "Večjezična podpora: angleščina in slovenščina",
+            "title": "Sledilnik Kajenja: Ključne lastnosti",
+            "text-6": "Preprost in intuitiven uporabniški vmesnik"
         },
         "logo-alt": "Logotip aplikacije Sledilnik Kajenja",
         "preview": "Predogled aplikacije",
         "description-text-1": "Aplikacija omogoča vizualizacijo podatkov s tedenskimi, mesečnimi in letnimi grafi, tako da lahko hitro prepoznate svoje navade. Na podlagi teh podatkov se lahko bolj informirano odločite o tem, kako zmanjšati ali nadzorovati število pokajenih cigaret",
         "description-text-2": "Vsi podatki so shranjeni lokalno na vaši napravi, kar zagotavlja zasebnost in varnost. Po želji lahko omogočite tudi samodejno varnostno kopiranje, da bodo vaši podatki varni tudi ob menjavi naprave. Aplikacija podpira večjezičnost in je na voljo v slovenščini in angleščini, z intuitivnim uporabniškim vmesnikom, ki je prijazen tako začetnikom kot naprednim uporabnikom",
-        "description-text-3": "Poleg sledenja in vizualizacije napredka vam aplikacija pomaga razumeti dolgoročne trende in vzorce kajenja, kar je ključnega pomena za načrtovanje sprememb in doseganje ciljev. Že samo sledenje dnevne porabe vam omogoča boljši nadzor nad vašimi navadami",
+        "description-text-3": "Poleg sledenja in vizualizacije napredka, aplikacija zdaj vključuje tudi kalkulator, ki izračunava skupne stroške kajenja, stroške cigaret, povprečne stroške na uro ter čas, porabljen za kajenje. Kalkulator deluje na podlagi podatkov, katere vnese uporabnik, kot so: število cigaret na dan, število cigaret v škatlici, cena škatlice v izbranem obdobju. Na ta način lahko uporabnik hitro dobi jasen pregled nad finančnim in časovnim vplivom svojega kajenja ter sprejema bolj informirane odločitve za boljši nadzor nad svojimi navadami",
         "screenshots": {
             "graph": {
                 "alt": "Stran z Grafi aplikacije Sledilnik Kajenja",
-                "title": "Stran z grafi"
+                "title": "Grafi"
             },
             "home": {
                 "alt": "Domača stran aplikacije Sledilnik Kajenja",
-                "title": "Domača stran"
+                "title": "Dom"
             },
             "settings": {
                 "alt": "Stran z nastavitvami aplikacije Sledilnik Kajenja",
-                "title": "Stan z nastavitvami"
+                "title": "Nastavitve"
+            },
+            "analytics": {
+                "alt": "Analitična stran aplikacije Sledilnik Kajenja",
+                "title": "Analitika"
+            },
+            "calculator": {
+                "alt": "Stran s kalkulatorjem aplikacije Sledilnik Kajenja",
+                "title": "Kalkulator"
             }
         },
         "title": "Sledilnik Kajenja",
@@ -216,5 +225,14 @@
             "title": "Članek ni bil najden",
             "message": "Žal zahtevanega članka ni mogoče prikazati. Morda je bil odstranjen ali pa je povezava napačna"
         }
+    },
+    "criogen": {
+        "description": "Criogen je specializirano orodje za digitalno beleženje, organiziranje in spremljanje podatkov, povezanih z zbiranjem, obdelavo in shranjevanjem pasje in konjske sperme",
+        "logo-alt": "Criogen logotip"
+    },
+    "translation": {
+        "smoking-tracker": "Pomagajte prevesti aplikacijo Sledilnik Kajenja v vaš jezik!",
+        "card-generator": "Pomagajte prevesti aplikacijo Generator Kart v vaš jezik!",
+        "status": "Stanje prevoda"
     }
 }
