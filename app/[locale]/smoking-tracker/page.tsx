@@ -12,6 +12,7 @@ import {SmokingTrackerButtons} from "@/app/[locale]/components/ContactButtons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChartLine, faCloudArrowUp, faChartSimple, faDatabase, faGlobe, faMobileScreen} from "@fortawesome/free-solid-svg-icons";
 import PreviewImage from "@/app/[locale]/components/PreviewImage";
+import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Smoking Tracker - Gašper Pintar",
@@ -97,6 +98,7 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
     const appVersion: string = await getLatestVersion("smoking-tracker");
 
     const t: TranslationFunction = await getTranslations("smoking-tracker") as TranslationFunction;
+    const t1: TranslationFunction = await getTranslations("translation") as TranslationFunction;
 
     return (
         <>
@@ -120,6 +122,27 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
                                 <span className={"d-block text-muted"}>{t("available-on")}</span>
                             </p>
                             <SmokingTrackerButtons />
+
+                            <div className={"mt-3"}>
+                                <div className={"border-0"}>
+                                    <p className={"mb-0"}>
+                                        {t1("sentence", { app: t("title") })}
+                                    </p>
+                                    <Link
+                                        href={"https://translate.gasperpintar.com/projects/smokingtracker"}
+                                        target={"_blank"}
+                                    >
+                                        <Image
+                                            src={"https://translate.gasperpintar.com/widget/smokingtracker/287x66-grey.png"}
+                                            alt={t1("status")}
+                                            width={287}
+                                            height={66}
+                                            className={"img-fluid rounded border"}
+                                        />
+                                    </Link>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -173,6 +196,7 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </>

@@ -230,5 +230,9 @@
                 }
             }
         }
+    },
+    "translation": {
+        "sentence": "Help translate {app} app into your language!",
+        "status": "Translation status"
     }
 }

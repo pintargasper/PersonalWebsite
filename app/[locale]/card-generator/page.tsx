@@ -14,6 +14,7 @@ import {faFile, faFileCode,
     faFileExcel, faMobileScreen
 } from "@fortawesome/free-solid-svg-icons";
 import PreviewImage from "@/app/[locale]/components/PreviewImage";
+import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Card Generator - Gašper Pintar",
@@ -106,6 +107,7 @@ const CardGenerator: () => void = async (): Promise<JSX.Element> => {
     const appVersion: string = await getLatestVersion("card-generator");
 
     const t: TranslationFunction = await getTranslations("card-generator") as TranslationFunction;
+    const t1: TranslationFunction = await getTranslations("translation") as TranslationFunction;
 
     return (
         <>
@@ -129,6 +131,26 @@ const CardGenerator: () => void = async (): Promise<JSX.Element> => {
                                 <span className={"d-block text-muted"}>{t("available-on")}</span>
                             </p>
                             <CardGeneratorButtons />
+
+                            <div className={"mt-3"}>
+                                <div className={"border-0"}>
+                                    <p className={"mb-0"}>
+                                        {t1("sentence", { app: t("title") })}
+                                    </p>
+                                    <Link
+                                        href={"https://translate.gasperpintar.com/projects/cardgenerator"}
+                                        target={"_blank"}
+                                    >
+                                        <Image
+                                            src={"https://translate.gasperpintar.com/widget/cardgenerator/287x66-grey.png"}
+                                            alt={t1("status")}
+                                            width={287}
+                                            height={66}
+                                            className={"img-fluid rounded border"}
+                                        />
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
