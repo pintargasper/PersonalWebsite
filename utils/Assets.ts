@@ -1,12 +1,16 @@
 import SmokingLogo70 from "@/public/images/projects/smoking-tracker/smoking-tracker-photo-size-70x70.webp";
 import CardLogo70 from "@/public/images/projects/card-generator/card-generator-photo-size-70x70.webp";
 import ProfilePicture250 from "@/public/images/home/profile-photo.webp";
-import ScreenshotHomeEnglish from "@/public/images/projects/smoking-tracker/screenshots/home-page-preview-english.webp";
-import ScreenshotGraphEnglish from "@/public/images/projects/smoking-tracker/screenshots/graph-page-preview-english.webp";
-import ScreenshotSettingsEnglish from "@/public/images/projects/smoking-tracker/screenshots/settings-page-preview-english.webp";
-import ScreenShotHomeSlovenian from "@/public/images/projects/smoking-tracker/screenshots/home-page-preview-slovenian.webp";
-import ScreenShotGraphSlovenian from "@/public/images/projects/smoking-tracker/screenshots/graph-page-preview-slovenian.webp";
-import ScreenShotSettingsSlovenian from "@/public/images/projects/smoking-tracker/screenshots/settings-page-preview-slovenian.webp";
+import ScreenshotHomeEnglish from "@/public/images/projects/smoking-tracker/screenshots/en/home-page-preview.webp";
+import ScreenshotGraphEnglish from "@/public/images/projects/smoking-tracker/screenshots/en/graph-page-preview.webp";
+import ScreenshotAnalyticsEnglish from "@/public/images/projects/smoking-tracker/screenshots/en/analytics-page-preview.webp";
+import ScreenshotSettingsEnglish from "@/public/images/projects/smoking-tracker/screenshots/en/settings-page-preview.webp";
+import ScreenshotCalculatorEnglish from "@/public/images/projects/smoking-tracker/screenshots/en/calculator-page-preview.webp";
+import ScreenShotHomeSlovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/home-page-preview.webp";
+import ScreenShotGraphSlovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/graph-page-preview.webp";
+import ScreenShotAnalyticsSlovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/analytics-page-preview.webp";
+import ScreenShotSettingsSlovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/settings-page-preview.webp";
+import ScreenShotCalculatorSlovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/calculator-page-preview.webp";
 import ScreenshotGeneratorEnglish from "@/public/images/projects/card-generator/screenshots/generator-page-preview-english.webp";
 import ScreenshotGeneratorSlovenian from "@/public/images/projects/card-generator/screenshots/generator-page-preview-slovenian.webp";
 import GetSignal from "@/public/images/projects/images/signal-photo.webp";
@@ -87,7 +91,9 @@ const cards: Card[] = [
 const screenshotsST: Screenshot[] = [
     { title: "screenshots.home.title", src: {en: ScreenshotHomeEnglish.src, sl: ScreenShotHomeSlovenian.src}, alt: "screenshots.home.alt", isHorizontal: false },
     { title: "screenshots.graph.title", src: {en: ScreenshotGraphEnglish.src, sl: ScreenShotGraphSlovenian.src}, alt: "screenshots.graph.alt", isHorizontal: false },
+    { title: "screenshots.analytics.title", src: {en: ScreenshotAnalyticsEnglish.src, sl: ScreenShotAnalyticsSlovenian.src}, alt: "screenshots.analytics.alt", isHorizontal: false },
     { title: "screenshots.settings.title", src: {en: ScreenshotSettingsEnglish.src, sl: ScreenShotSettingsSlovenian.src}, alt: "screenshots.settings.alt", isHorizontal: false },
+    { title: "screenshots.calculator.title", src: {en: ScreenshotCalculatorEnglish.src, sl: ScreenShotCalculatorSlovenian.src}, alt: "screenshots.calculator.alt", isHorizontal: false },
 ];
 
 const screenshotsCG: Screenshot[] = [

@@ -10,7 +10,7 @@ import {TranslationFunction} from "@/app/[locale]/layout";
 import {getTranslations} from "next-intl/server";
 import {SmokingTrackerButtons} from "@/app/[locale]/components/ContactButtons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faChartLine, faCloudArrowUp, faDatabase, faGlobe, faMobileScreen} from "@fortawesome/free-solid-svg-icons";
+import {faChartLine, faCloudArrowUp, faChartSimple, faDatabase, faGlobe, faMobileScreen} from "@fortawesome/free-solid-svg-icons";
 import PreviewImage from "@/app/[locale]/components/PreviewImage";
 
 export const metadata: Metadata = {
@@ -157,9 +157,10 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
                             <ul className={"list-group list-group-flush"}>
                                 <li className={"list-group-item"}><FontAwesomeIcon icon={faDatabase} className={"me-2"} /> {t("features.text-1")}</li>
                                 <li className={"list-group-item"}><FontAwesomeIcon icon={faChartLine} className={"me-2"} /> {t("features.text-2")}</li>
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faCloudArrowUp} className={"me-2"} /> {t("features.text-3")}</li>
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faGlobe} className={"me-2"} /> {t("features.text-4")}</li>
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faMobileScreen} className={"me-2"} /> {t("features.text-5")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faChartSimple} className={"me-2"} /> {t("features.text-3")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faCloudArrowUp} className={"me-2"} /> {t("features.text-4")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faGlobe} className={"me-2"} /> {t("features.text-5")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faMobileScreen} className={"me-2"} /> {t("features.text-6")}</li>
                             </ul>
                         </div>
                     </div>
