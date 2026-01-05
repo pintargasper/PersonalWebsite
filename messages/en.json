@@ -43,51 +43,10 @@
         "version": "Version",
         "what-is": "What is Smoking Tracker?"
     },
-    "home": {
-        "lead-description": "Hi, I am Gašper from Slovenia",
-        "lead-text": "Student at faculty of information studies Novo mesto",
-        "profile-picture-alt": "Profile picture of Gašper Pintar",
-        "projects": "Projects"
-    },
-    "components": {
-        "cookie-notice": {
-            "message": "This website uses cookies to analyze and improve your user experience. By continuing to use the site, you agree to the use of cookies"
-        },
-        "footer": {
-            "privacy-policy": "Privacy Policy",
-            "terms-of-service": "Terms of Service"
-        },
-        "navbar": {
-            "brand": "Home",
-            "language": "Language",
-            "projects": "Projects",
-            "settings": "Settings",
-            "news": "News",
-            "logout": "Logout"
-        },
-        "projects": {
-            "smoking-tracker": {
-              "title": "Smoking Tracker",
-              "alt": "Smoking Tracker application logo"
-            },
-            "card-generator": {
-              "title": "Card Generator",
-              "alt": "Card Generator application logo"
-            }
-        }
-    },
-    "buttons": {
-        "close": "Close",
-        "view": "View",
-        "login": "Login",
-        "logging": "Logging in…",
-        "read-more": "Read more",
-        "new-article": "Add new article",
-        "article-edit": "Edit",
-        "article-delete": "Delete",
-        "remove-image": "Remove image",
-        "preview": "Preview",
-        "save": "Save"
+    "item-weight-scanner": {
+        "title": "Item Weight Scanner",
+        "description": "Item Weight Scanner is a barcode scanning application that uses a product's barcode to obtain information about its weight and adds up the total weight of all scanned items",
+        "logo-alt": "Item Weight Scanner application logo"
     },
     "card-generator": {
         "available-on": "Available on Windows and Linux",
@@ -115,9 +74,57 @@
         "what-is": "What is Card Generator?"
     },
     "criogen": {
-      "title": "Criogen",
-      "description": "Criogen is a specialized tool for digitally recording, organizing and monitoring data related to the collection, processing and storage of dog and horse semen",
-      "logo-alt": "Criogen logo"
+        "title": "Criogen",
+        "description": "Criogen is a specialized tool for digitally recording, organizing and monitoring data related to the collection, processing and storage of dog and horse semen",
+        "logo-alt": "Criogen logo"
+    },
+    "home": {
+        "lead-description": "Hi, I am Gašper from Slovenia",
+        "lead-text": "Student at faculty of information studies Novo mesto",
+        "profile-picture-alt": "Profile picture of Gašper Pintar",
+        "projects": "Projects"
+    },
+    "components": {
+        "cookie-notice": {
+            "message": "This website uses cookies to analyze and improve your user experience. By continuing to use the site, you agree to the use of cookies"
+        },
+        "footer": {
+            "privacy-policy": "Privacy Policy",
+            "terms-of-service": "Terms of Service"
+        },
+        "navbar": {
+            "brand": "Home",
+            "language": "Language",
+            "projects": {
+                "title": "Projects",
+                "platforms": {
+                    "android": {
+                        "title": "Android",
+                        "alt": "Android logo"
+                    },
+                    "desktop": {
+                        "title": "Desktop",
+                        "alt": "Desktop computer icon"
+                    }
+                }
+            },
+            "settings": "Settings",
+            "news": "News",
+            "logout": "Logout"
+        }
+    },
+    "buttons": {
+        "close": "Close",
+        "view": "View",
+        "login": "Login",
+        "logging": "Logging in…",
+        "read-more": "Read more",
+        "new-article": "Add new article",
+        "article-edit": "Edit",
+        "article-delete": "Delete",
+        "remove-image": "Remove image",
+        "preview": "Preview",
+        "save": "Save"
     },
     "not-found": {
         "title": "Lost in space",
@@ -235,5 +242,15 @@
         "smoking-tracker": "Help translate Smoking Tracker application into your language!",
         "card-generator": "Help translate Card Generator application into your language!",
         "status": "Translation status"
+    },
+    "android": {
+        "title": "Android applications",
+        "description": "A collection of Android apps focused on performance, usability and user experience",
+        "logo-alt": "Android logo"
+    },
+    "desktop": {
+        "title": "Desktop applications",
+        "description": "A collection of desktop applications focused on performance, usability, and user experience",
+        "logo-alt": "Desktop logo"
     }
 }

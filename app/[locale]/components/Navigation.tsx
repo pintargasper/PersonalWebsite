@@ -5,12 +5,8 @@ import { useLocale } from "next-intl";
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCog, faGlobe, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faCog, faGlobe, faRightFromBracket, faDesktop,  faTabletAndroid} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "@/i18n/navigation";
-import Image from "next/image";
-
-import SmokingLogo70 from "@/public/images/projects/smoking-tracker/smoking-tracker-photo-size-70x70.webp";
-import CardLogo70 from "@/public/images/projects/card-generator/card-generator-photo-size-70x70.webp";
 
 import {useTranslations} from "next-intl";
 import {TranslationFunction} from "@/app/[locale]/layout";
@@ -112,20 +108,18 @@ const Navigation: React.FC = (): JSX.Element => {
                     {!showAuthenticated && (
                         <Nav className={"me-auto"}>
                             <NavDropdown
-                                title={<>{t("navbar.projects")}</>}
+                                title={<>{t("navbar.projects.title")}</>}
                                 id={"project-dropdown"}
                                 show={isProjectDropdownOpen}
                                 onToggle={(isOpen: boolean): void => setIsProjectDropdownOpen(isOpen)}
                             >
-                                <NavDropdown.Item as={Link} href={"/smoking-tracker"} onClick={closeAll}>
-                                    <Image src={SmokingLogo70} alt={t("projects.smoking-tracker.alt")}
-                                           width={25} height={25} className={"me-2 mb-1"}/>
-                                    <span>{t("projects.smoking-tracker.title")}</span>
+                                <NavDropdown.Item as={Link} href={"/projects/android"} onClick={closeAll}>
+                                    <FontAwesomeIcon icon={faTabletAndroid} className={"me-2"}/>
+                                    {t("navbar.projects.platforms.android.title")}
                                 </NavDropdown.Item>
-                                <NavDropdown.Item as={Link} href={"/card-generator"} onClick={closeAll}>
-                                    <Image src={CardLogo70} alt={t("projects.card-generator.alt")}
-                                           width={25} height={25} className={"me-2 mb-1"}/>
-                                    {t("projects.card-generator.title")}
+                                <NavDropdown.Item as={Link} href={"/projects/desktop"} onClick={closeAll}>
+                                    <FontAwesomeIcon icon={faDesktop} className={"me-2"}/>
+                                    {t("navbar.projects.platforms.desktop.title")}
                                 </NavDropdown.Item>
                             </NavDropdown>
                         </Nav>

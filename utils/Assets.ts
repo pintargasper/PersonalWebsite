@@ -1,6 +1,9 @@
 import SmokingLogo70 from "@/public/images/projects/smoking-tracker/smoking-tracker-photo-size-70x70.webp";
+import ItemWeightScannerLogo70 from "@/public/images/projects/item-weight-scanner/item-weight-scanner-photo-size-320x320.png";
 import CardLogo70 from "@/public/images/projects/card-generator/card-generator-photo-size-70x70.webp";
 import CriogenLogo70 from "@/public/images/projects/criogen/criogen-logo.webp";
+import AndroidLogo from "@/public/images/projects/images/platform/android-logo.webp";
+import DesktopLogo from "@/public/images/projects/images/platform/desktop-logo.webp";
 import ProfilePicture250 from "@/public/images/home/profile-photo.webp";
 import ScreenshotHomeEnglish from "@/public/images/projects/smoking-tracker/screenshots/en/home-page-preview.webp";
 import ScreenshotGraphEnglish from "@/public/images/projects/smoking-tracker/screenshots/en/graph-page-preview.webp";
@@ -53,7 +56,7 @@ interface Screenshot {
     };
 }
 
-const projects: ProjectData[] = [
+const androidProjects: ProjectData[] = [
     {
         title: "smoking-tracker.title",
         image: SmokingLogo70.src,
@@ -64,6 +67,18 @@ const projects: ProjectData[] = [
             { label: "GitHub", url: "https://github.com/pintargasper/SmokingTracker" }
         ]
     },
+    {
+        title: "item-weight-scanner.title",
+        image: ItemWeightScannerLogo70.src,
+        alt: "item-weight-scanner.logo-alt",
+        description: "item-weight-scanner.description",
+        links: [
+            { label: "buttons.view", url: "/item-weight-scanner", t: true }
+        ]
+    }
+];
+
+const desktopProjects: ProjectData[] = [
     {
         title: "card-generator.title",
         image: CardLogo70.src,
@@ -81,6 +96,27 @@ const projects: ProjectData[] = [
         description: "criogen.description",
         links: [
             { label: "buttons.view", url: "https://www.vet-center-trnje.si/criogen", t: true }
+        ]
+    }
+];
+
+const projects: ProjectData[] = [
+    {
+        title: "android.title",
+        image: AndroidLogo.src,
+        alt: "android.logo-alt",
+        description: "android.description",
+        links: [
+            { label: "buttons.view", url: "/projects/android", t: true },
+        ]
+    },
+    {
+        title: "desktop.title",
+        image: DesktopLogo.src,
+        alt: "desktop.logo-alt",
+        description: "desktop.description",
+        links: [
+            { label: "buttons.view", url: "/projects/desktop", t: true },
         ]
     }
 ];
@@ -120,6 +156,8 @@ const adminCards: ({ id: number; title: string; icon: IconDefinition; link: stri
 ];
 
 export {
+    androidProjects,
+    desktopProjects,
     projects,
     contacts,
     cards,

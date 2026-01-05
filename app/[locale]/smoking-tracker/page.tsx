@@ -16,7 +16,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Smoking Tracker - Gašper Pintar",
-    description: "Smoking Tracker is an easy-to-use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
+    description: "Smoking Tracker is an easy to use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
     applicationName: "Smoking Tracker - Gašper Pintar",
 
     keywords: ["Gasper Pintar", "Tracker", "Smoking Tracker", "Application"],
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 
     openGraph: {
         title: "Gašper Pintar",
-        description: "Smoking Tracker is an easy-to-use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
+        description: "Smoking Tracker is an easy to use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
         url: "https://gasperpintar.com/smoking-tracker",
         siteName: "Smoking Tracker - Gašper Pintar",
         type: "website",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Smoking Tracker - Gašper Pintar",
-        description: "Smoking Tracker is an easy-to-use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
+        description: "Smoking Tracker is an easy to use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
         images: ["https://gasperpintar.com/logo/logo192-st.webp"]
     },
 
