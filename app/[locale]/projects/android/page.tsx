@@ -7,9 +7,9 @@ import {getTranslations} from "next-intl/server";
 import ProjectCard from "@/app/[locale]/components/ProjectCard";
 
 export const metadata: Metadata = {
-    title: "Android projects - Gašper Pintar",
-    description: "A collection of Android apps focused on performance, usability and user experience",
-    applicationName: "Android projects - Gašper Pintar",
+    title: "Android applications - Gašper Pintar",
+    description: "A collection of Android applications focused on performance, usability, and user experience",
+    applicationName: "Android applications - Gašper Pintar",
 
     keywords: ["Gasper Pintar", "Android", "Smoking Tracker", "Item Weight Scanner"],
 
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
 
     openGraph: {
         title: "Gašper Pintar",
-        description: "A collection of Android apps focused on performance, usability and user experience",
+        description: "A collection of Android applications focused on performance, usability, and user experience",
         url: "https://gasperpintar.com/projects/android",
-        siteName: "Android projects - Gašper Pintar",
+        siteName: "Android applications - Gašper Pintar",
         type: "website",
         locale: "en",
         images: [
@@ -53,15 +53,15 @@ export const metadata: Metadata = {
                 url: "https://gasperpintar.com/logo/logo192-st.webp",
                 width: 1200,
                 height: 630,
-                alt: "Android projects - Open Graph Image"
+                alt: "Android applications - Open Graph Image"
             }
         ]
     },
 
     twitter: {
         card: "summary_large_image",
-        title: "Android projects - Gašper Pintar",
-        description: "A collection of Android apps focused on performance, usability and user experience",
+        title: "Android applications - Gašper Pintar",
+        description: "A collection of Android applications focused on performance, usability, and user experience",
         images: ["https://gasperpintar.com/logo/logo192.webp"]
     },
 

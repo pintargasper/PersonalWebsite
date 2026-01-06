@@ -7,11 +7,11 @@ import {getTranslations} from "next-intl/server";
 import ProjectCard from "@/app/[locale]/components/ProjectCard";
 
 export const metadata: Metadata = {
-    title: "Desktop projects - Gašper Pintar",
+    title: "Desktop applications - Gašper Pintar",
     description: "A collection of desktop applications focused on performance, usability, and user experience",
-    applicationName: "Desktop projects - Gašper Pintar",
+    applicationName: "Desktop applications - Gašper Pintar",
 
-    keywords: ["Gasper Pintar", "Android", "Smoking Tracker", "Item Weight Scanner"],
+    keywords: ["Gasper Pintar", "Windows", "Linux", "Card Generator", "Criogen"],
 
     authors: [
         { name: "Gašper Pintar", url: "https://gasperpintar.com" }
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
         title: "Gašper Pintar",
         description: "A collection of desktop applications focused on performance, usability, and user experience",
         url: "https://gasperpintar.com/projects/desktop",
-        siteName: "Desktop projects - Gašper Pintar",
+        siteName: "Desktop applications - Gašper Pintar",
         type: "website",
         locale: "en",
         images: [
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
 
     twitter: {
         card: "summary_large_image",
-        title: "Desktop projects - Gašper Pintar",
+        title: "Desktop applications - Gašper Pintar",
         description: "A collection of desktop applications focused on performance, usability, and user experience",
         images: ["https://gasperpintar.com/logo/logo192.webp"]
     },

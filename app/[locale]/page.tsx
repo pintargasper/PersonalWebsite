@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Personal page of Gašper Pintar. Learn about my projects and interests, and connect with me | Signal, LinkedIn, GitHub, Email",
     applicationName: "Personal Website - Gašper Pintar",
 
-    keywords: ["Gasper Pintar", "Portfolio", "Applications", "Personal Website"],
+    keywords: ["Gasper Pintar", "Portfolio", "Android applications", "Desktop applications", "Personal Website"],
 
     authors: [
         { name: "Gašper Pintar", url: "https://gasperpintar.com" }

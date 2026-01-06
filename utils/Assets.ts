@@ -1,5 +1,5 @@
 import SmokingLogo70 from "@/public/images/projects/smoking-tracker/smoking-tracker-photo-size-70x70.webp";
-import ItemWeightScannerLogo70 from "@/public/images/projects/item-weight-scanner/item-weight-scanner-photo-size-320x320.png";
+import ItemWeightScannerLogo70 from "@/public/images/projects/item-weight-scanner/item-weight-scanner-photo-size-320x320.webp";
 import CardLogo70 from "@/public/images/projects/card-generator/card-generator-photo-size-70x70.webp";
 import CriogenLogo70 from "@/public/images/projects/criogen/criogen-logo.webp";
 import AndroidLogo from "@/public/images/projects/images/platform/android-logo.webp";
@@ -15,6 +15,18 @@ import ScreenShotGraphSlovenian from "@/public/images/projects/smoking-tracker/s
 import ScreenShotAnalyticsSlovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/analytics-page-preview.webp";
 import ScreenShotSettingsSlovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/settings-page-preview.webp";
 import ScreenShotCalculatorSlovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/calculator-page-preview.webp";
+
+import ScreenShotIWSHomeEnglish from "@/public/images/projects/item-weight-scanner/screenshots/en/home-page-preview.webp";
+import ScreenShotIWSHistoryEnglish from "@/public/images/projects/item-weight-scanner/screenshots/en/history-page-preview.webp";
+import ScreenShotIWSHistorySingleEnglish from "@/public/images/projects/item-weight-scanner/screenshots/en/history-single-page-preview.webp";
+import ScreenShotIWSEmailEnglish from "@/public/images/projects/item-weight-scanner/screenshots/en/email-page-preview.webp";
+import ScreenShotIWSSettingsEnglish from "@/public/images/projects/item-weight-scanner/screenshots/en/settings-page-preview.webp";
+import ScreenShotIWSHomeSlovenian from "@/public/images/projects/item-weight-scanner/screenshots/sl/home-page-preview.webp";
+import ScreenShotIWSHistorySlovenian from "@/public/images/projects/item-weight-scanner/screenshots/sl/history-page-preview.webp";
+import ScreenShotIWSHistorySingleSlovenian from "@/public/images/projects/item-weight-scanner/screenshots/sl/history-single-page-preview.webp";
+import ScreenShotIWSEmailSlovenian from "@/public/images/projects/item-weight-scanner/screenshots/sl/email-page-preview.webp";
+import ScreenShotIWSSettingsSlovenian from "@/public/images/projects/item-weight-scanner/screenshots/sl/settings-page-preview.webp";
+
 import ScreenshotGeneratorEnglish from "@/public/images/projects/card-generator/screenshots/generator-page-preview-english.webp";
 import ScreenshotGeneratorSlovenian from "@/public/images/projects/card-generator/screenshots/generator-page-preview-slovenian.webp";
 import GetSignal from "@/public/images/projects/images/signal-photo.webp";
@@ -142,6 +154,14 @@ const screenshotsST: Screenshot[] = [
     { title: "screenshots.calculator.title", src: {en: ScreenshotCalculatorEnglish.src, sl: ScreenShotCalculatorSlovenian.src}, alt: "screenshots.calculator.alt", isHorizontal: false },
 ];
 
+const screenshotsIWS: Screenshot[] = [
+    { title: "screenshots.home.title", src: {en: ScreenShotIWSHomeEnglish.src, sl: ScreenShotIWSHomeSlovenian.src}, alt: "screenshots.home.alt", isHorizontal: false },
+    { title: "screenshots.history.title", src: {en: ScreenShotIWSHistoryEnglish.src, sl: ScreenShotIWSHistorySlovenian.src}, alt: "screenshots.history.alt", isHorizontal: false },
+    { title: "screenshots.history-single.title", src: {en: ScreenShotIWSHistorySingleEnglish.src, sl: ScreenShotIWSHistorySingleSlovenian.src}, alt: "screenshots.history-single.alt", isHorizontal: false },
+    { title: "screenshots.email.title", src: {en: ScreenShotIWSEmailEnglish.src, sl: ScreenShotIWSEmailSlovenian.src}, alt: "screenshots.email.alt", isHorizontal: false },
+    { title: "screenshots.settings.title", src: {en: ScreenShotIWSSettingsEnglish.src, sl: ScreenShotIWSSettingsSlovenian.src}, alt: "screenshots.settings.alt", isHorizontal: false },
+];
+
 const screenshotsCG: Screenshot[] = [
     { title: "screenshots.generator-page.title", src: {en: ScreenshotGeneratorEnglish.src, sl: ScreenshotGeneratorSlovenian.src}, alt: "screenshots.generator-page.alt", isHorizontal: true },
 ];
@@ -162,6 +182,7 @@ export {
     contacts,
     cards,
     screenshotsST,
+    screenshotsIWS,
     screenshotsCG,
     adminCards
 }

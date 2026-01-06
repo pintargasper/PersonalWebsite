@@ -90,8 +90,8 @@ const TermsOfService: React.FC = (): JSX.Element => {
                 <h2>Introduction</h2>
                 <p>
                     Welcome to Card Generator. By downloading, installing, and using this application, you agree to comply
-                    with and be bound by the following data of service. Please review these data carefully. If you do
-                    not agree with these data, do not use this application.
+                    with and be bound by the following data of service. Please review these terms carefully. If you do
+                    not agree with these terms, do not use this application.
                 </p>
 
                 <h2>Use of Application</h2>

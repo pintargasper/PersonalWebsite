@@ -107,7 +107,7 @@ const NewsDetailPage: ({ params }: NewsDetailPageProps) => Promise<JSX.Element> 
     const translation: Translation = translations[locale] ?? Object.values(translations)[0];
 
     return (
-        <div className={"container mt-5"}>
+        <div className={"container mt-5 mb-5"}>
             <div className={"row justify-content-center"}>
                 <div className={"col-md-8 col-lg-7"}>
                     <div className={"card shadow-sm p-4"}>

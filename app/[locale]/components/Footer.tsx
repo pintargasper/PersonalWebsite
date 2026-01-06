@@ -14,7 +14,8 @@ const Footer: React.FC = (): JSX.Element => {
 
     const visibleFooterRoutes: string[] = [
         "/smoking-tracker",
-        "/card-generator"
+        "/card-generator",
+        "/item-weight-scanner",
     ];
 
     const isFooterLinksVisible: boolean = pathname ? visibleFooterRoutes.includes(pathname) : false;
