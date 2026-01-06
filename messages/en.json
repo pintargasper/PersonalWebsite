@@ -18,17 +18,17 @@
         "logo-alt": "Smoking Tracker application logo",
         "preview": "Application preview",
         "screenshots": {
-          "home": {
-             "alt": "Home page of Smoking Tracker application",
-             "title": "Home"
+            "home": {
+                "alt": "Home page of Smoking Tracker application",
+                "title": "Home"
             },
             "graph": {
                 "alt": "Graph page of Smoking Tracker application",
                 "title": "Graphs"
             },
             "analytics": {
-              "alt": "Analytics page of Smoking Tracker application",
-              "title": "Analytics"
+                "alt": "Analytics page of Smoking Tracker application",
+                "title": "Analytics"
             },
             "settings": {
                 "alt": "Settings page of Smoking Tracker application",
@@ -68,7 +68,7 @@
                 "title": "History"
             },
             "history-single": {
-                "alt": "Analytics page of Item Weight Scanner application",
+                "alt": "Daily history in the Item Weight Scanner application",
                 "title": "Day details"
             },
             "email": {
