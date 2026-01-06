@@ -234,5 +234,13 @@
         "smoking-tracker": "Pomagajte prevesti aplikacijo Sledilnik Kajenja v vaš jezik!",
         "card-generator": "Pomagajte prevesti aplikacijo Generator Kart v vaš jezik!",
         "status": "Stanje prevoda"
+    },
+    "item-weight-scanner": {
+        "screenshots": {
+            "history-single": {
+                "alt": "History per day page of Item Weight Scanner application",
+                "title": "Podrobnosti dneva"
+            }
+        }
     }
 }
