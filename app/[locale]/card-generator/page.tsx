@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     },
 
     openGraph: {
-        title: "Gašper Pintar",
+        title: "Card Generator - Gašper Pintar",
         description: "Card Generator is a desktop application for creating and generating custom playing cards. Using Excel spreadsheets and customizable fxml templates, you can quickly create entire decks of playing cards without having to design each card individually",
         url: "https://gasperpintar.com/card-generator",
         siteName: "Card Generator - Gašper Pintar",

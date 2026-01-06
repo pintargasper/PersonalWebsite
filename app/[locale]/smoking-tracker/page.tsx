@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     },
 
     openGraph: {
-        title: "Gašper Pintar",
+        title: "Smoking Tracker - Gašper Pintar",
         description: "Smoking Tracker is an easy to use smoking tracking app that helps you understand your habits and progress towards quitting. Every cigarette you smoke is clearly recorded, giving you detailed insight into your daily, weekly and monthly patterns",
         url: "https://gasperpintar.com/smoking-tracker",
         siteName: "Smoking Tracker - Gašper Pintar",

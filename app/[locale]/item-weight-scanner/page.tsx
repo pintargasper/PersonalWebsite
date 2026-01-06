@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     },
 
     openGraph: {
-        title: "Gašper Pintar",
+        title: "Item Weight Scanner - Gašper Pintar",
         description: "Item Weight Scanner is a barcode scanning application that uses a product's barcode to obtain information about its weight and adds up the total weight of all scanned items",
         url: "https://gasperpintar.com/item-weight-scanner",
         siteName: "Item Weight Scanner - Gašper Pintar",
