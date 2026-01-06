@@ -60,7 +60,19 @@
         "navbar": {
             "brand": "Domov",
             "language": "Jezik",
-            "projects": "Pojekti",
+            "projects": {
+                "title": "Projekti",
+                "platforms": {
+                    "android": {
+                        "title": "Android",
+                        "alt": "Logotip Androida"
+                    },
+                    "desktop": {
+                        "title": "Namizje",
+                        "alt": "Ikona namiznega računalnika"
+                    }
+                }
+            },
             "settings": "Nastavitve",
             "news": "Novice",
             "logout": "Odjava"
@@ -233,14 +245,55 @@
     "translation": {
         "smoking-tracker": "Pomagajte prevesti aplikacijo Sledilnik Kajenja v vaš jezik!",
         "card-generator": "Pomagajte prevesti aplikacijo Generator Kart v vaš jezik!",
-        "status": "Stanje prevoda"
+        "status": "Stanje prevoda",
+        "item-weight-scanner": "Pomagajte prevesti aplikacijo Skener Teže Artiklov v vaš jezik!"
     },
     "item-weight-scanner": {
         "screenshots": {
             "history-single": {
-                "alt": "History per day page of Item Weight Scanner application",
+                "alt": "Dnevna zgodovina v aplikaciji Skener Teže Artiklov",
                 "title": "Podrobnosti dneva"
+            },
+            "home": {
+                "alt": "Domača stran aplikacije Skener Teže Artiklov",
+                "title": "Domov"
+            },
+            "history": {
+                "alt": "Stran zgodovine aplikacije Skener Teže Artiklov",
+                "title": "Zgodovina"
+            },
+            "email": {
+                "alt": "E-poštna stran aplikacije Skener Teže Artiklov",
+                "title": "E-pošta"
+            },
+            "settings": {
+                "alt": "Stran z nastavitvami aplikacije Skener Teže Artiklov",
+                "title": "Nastavitve"
             }
+        },
+        "available-on": "Na voljo za Android 8+",
+        "description": "Skener Teže Artiklov je aplikacija za skeniranje črtnih kod, ki uporablja črtno kodo izdelka za pridobivanje informacij o njegovi teži in sešteva skupno težo vseh skeniranih artiklov",
+        "logo-alt": "Logotip aplikacije Skener Teže Artiklov",
+        "preview": "Predogled aplikacije",
+        "title": "Skener Teže Artiklov",
+        "version": "Različica",
+        "what-is": "Kaj je Skener Teže Artiklov?",
+        "description-text-hyper": "Prenesite aplikacijo še danes in si olajšajte skeniranje artiklov!",
+        "features": {
+            "text-1": "Lokalno shranjevanje podatkov za večjo zasebnost",
+            "text-2": "Večjezična podpora: angleščina in slovenščina",
+            "text-3": "Preprost in intuitiven uporabniški vmesnik",
+            "title": "Skener Teže Artiklov: Ključne lastnosti"
         }
+    },
+    "android": {
+        "title": "Android aplikacije",
+        "description": "Zbirka aplikacij za Android, osredotočenih na zmogljivost, uporabnost in uporabniško izkušnjo",
+        "logo-alt": "Logotip Androida"
+    },
+    "desktop": {
+        "title": "Namizne aplikacije",
+        "description": "Zbirka namiznih aplikacij, osredotočenih na zmogljivost, uporabnost in uporabniško izkušnjo",
+        "logo-alt": "Logotip namizja"
     }
 }
