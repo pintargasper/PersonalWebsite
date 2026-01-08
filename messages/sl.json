@@ -281,9 +281,10 @@
         "description-text-hyper": "Prenesite aplikacijo še danes in si olajšajte skeniranje artiklov!",
         "features": {
             "text-1": "Lokalno shranjevanje podatkov za večjo zasebnost",
-            "text-2": "Večjezična podpora: angleščina in slovenščina",
-            "text-3": "Preprost in intuitiven uporabniški vmesnik",
-            "title": "Skener Teže Artiklov: Ključne lastnosti"
+            "text-2": "Samodejne varnostne kopije (odvisno od naprave)",
+            "text-3": "Večjezična podpora: angleščina in slovenščina",
+            "title": "Skener Teže Artiklov: Ključne lastnosti",
+            "text-4": "Preprost in intuitiven uporabniški vmesnik"
         }
     },
     "android": {
