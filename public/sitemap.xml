@@ -38,4 +38,19 @@
         <priority>0.50</priority>
     </url>
 
+    <url>
+        <loc>https://gasperpintar.com/item-weight-scanner</loc>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://gasperpintar.com/item-weight-scanner/terms-of-service</loc>
+        <priority>0.50</priority>
+    </url>
+
+    <url>
+        <loc>https://gasperpintar.com/item-weight-scanner/privacy-policy</loc>
+        <priority>0.50</priority>
+    </url>
+
 </urlset>
