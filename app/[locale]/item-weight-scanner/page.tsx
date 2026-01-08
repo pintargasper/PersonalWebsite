@@ -9,7 +9,7 @@ import {Metadata} from "next";
 import {TranslationFunction} from "@/app/[locale]/layout";
 import {getTranslations} from "next-intl/server";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faDatabase, faGlobe, faMobileScreen} from "@fortawesome/free-solid-svg-icons";
+import {faCloudArrowUp, faDatabase, faGlobe, faMobileScreen} from "@fortawesome/free-solid-svg-icons";
 import PreviewImage from "@/app/[locale]/components/PreviewImage";
 import Link from "next/link";
 
@@ -163,8 +163,9 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
                             <h3 className={"h4 fw-bold mb-3"}>{t("features.title")}</h3>
                             <ul className={"list-group list-group-flush"}>
                                 <li className={"list-group-item"}><FontAwesomeIcon icon={faDatabase} className={"me-2"} /> {t("features.text-1")}</li>
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faGlobe} className={"me-2"} /> {t("features.text-2")}</li>
-                                <li className={"list-group-item"}><FontAwesomeIcon icon={faMobileScreen} className={"me-2"} /> {t("features.text-3")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faCloudArrowUp} className={"me-2"} /> {t("features.text-2")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faGlobe} className={"me-2"} /> {t("features.text-3")}</li>
+                                <li className={"list-group-item"}><FontAwesomeIcon icon={faMobileScreen} className={"me-2"} /> {t("features.text-4")}</li>
                             </ul>
                         </div>
                     </div>

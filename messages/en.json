@@ -54,8 +54,9 @@
         "description-text-hyper": "Download the app today and make product scanning easier!",
         "features": {
             "text-1": "Local data storage for greater privacy",
-            "text-2": "Multi language support: English and Slovenian",
-            "text-3": "Simple and intuitive user interface",
+            "text-2": "Automatic backups (depending on device)",
+            "text-3": "Multi language support: English and Slovenian",
+            "text-4": "Simple and intuitive user interface",
             "title": "Item Weight Scanner: Key features"
         },
         "screenshots": {
