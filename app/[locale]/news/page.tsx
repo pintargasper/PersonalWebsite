@@ -88,7 +88,13 @@ export const metadata: Metadata = {
 const News: () => Promise<JSX.Element> = async (): Promise<JSX.Element> => {
 
     const locale: string = await getLocale();
-    const newsViews: NewsView[] = await getNews(locale);
+    let newsViews: NewsView[];
+
+    try {
+        newsViews = await getNews(locale);
+    } catch {
+        newsViews = [];
+    }
 
     const t: TranslationFunction = await getTranslations("news") as TranslationFunction;
 

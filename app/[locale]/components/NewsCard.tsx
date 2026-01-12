@@ -22,7 +22,7 @@ const NewsCard: React.FC<NewsCardProps> = (props: NewsCardProps): JSX.Element =>
     const t: TranslationFunction = useTranslations("buttons") as TranslationFunction;
 
     return (
-        <Card className={"mb-4 shadow-sm news-container"}>
+        <Card className={"mb-4 shadow-sm news-container h-100"}>
             <Image
                 className={"news-image"}
                 src={fetchImage(news.image)}
@@ -33,10 +33,12 @@ const NewsCard: React.FC<NewsCardProps> = (props: NewsCardProps): JSX.Element =>
                 loading={"eager"}
             />
 
-            <CardBody>
-                <CardTitle className={"truncate-one-line"}>{translation.headline}</CardTitle>
-                <CardText className={"truncate-multi-line"}>{translation.description}</CardText>
-                <div className={"d-flex justify-content-between align-items-center"}>
+            <CardBody className="d-flex flex-column justify-content-between h-100">
+                <div>
+                    <CardTitle className={"truncate-one-line"}>{translation.headline}</CardTitle>
+                    <CardText className={"truncate-multi-line"}>{translation.description}</CardText>
+                </div>
+                <div className={"d-flex justify-content-between align-items-center mt-3"}>
                     <small className={"text-muted"}>
                         {news.publishedAt}
                     </small>

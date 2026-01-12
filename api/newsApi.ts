@@ -157,7 +157,7 @@ const getNews: (locale: string) => Promise<NewsView[]> = async (locale: string):
     if (!response.ok) {
         const errorData: { message?: string; error?: string } = await response
             .json()
-            .catch((): { message?: string; error?: string } => ({}));
+            .catch((): [] => ([]));
         throw new Error(errorData.message || errorData.error);
     }
     return await response.json();
