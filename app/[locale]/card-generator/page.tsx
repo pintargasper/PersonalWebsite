@@ -3,7 +3,7 @@ import React, {JSX} from "react";
 import CardLogo150 from "@/public/images/projects/card-generator/card-generator-photo-size-150x150.webp";
 
 import Image from "next/image";
-import {getLatestVersion} from "@/utils/Utils";
+import {getVersions, VersionEntryObject} from "@/utils/Utils";
 import {screenshotsCG} from "@/utils/Assets";
 import {Metadata, Viewport} from "next";
 import {TranslationFunction} from "@/app/[locale]/layout";
@@ -104,7 +104,7 @@ export const viewport: Viewport = {
 
 const CardGenerator: () => void = async (): Promise<JSX.Element> => {
 
-    const appVersion: string = await getLatestVersion("card-generator");
+    const appVersion: string | VersionEntryObject | "N/A" = await getVersions("card-generator");
 
     const t: TranslationFunction = await getTranslations("card-generator") as TranslationFunction;
     const t1: TranslationFunction = await getTranslations("translation") as TranslationFunction;
@@ -127,7 +127,8 @@ const CardGenerator: () => void = async (): Promise<JSX.Element> => {
                         <div className={"col-md-8"}>
                             <h1 className={"display-5 fw-bold"}>{t("title")}</h1>
                             <p className={"mb-0"}>
-                                {t("version")}: {appVersion}
+                                {t("latest-version")}: {(appVersion as VersionEntryObject).latest}<br/>
+                                {t("version")}: {(appVersion as VersionEntryObject).stable}
                                 <span className={"d-block text-muted"}>{t("available-on")}</span>
                             </p>
                             <CardGeneratorButtons />

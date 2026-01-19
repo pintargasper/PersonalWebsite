@@ -104,7 +104,8 @@
             }
         },
         "title": "Card Generator",
-        "version": "Version",
+        "version": "Stable version",
+        "latest-version": "Latest version",
         "what-is": "What is Card Generator?"
     },
     "criogen": {

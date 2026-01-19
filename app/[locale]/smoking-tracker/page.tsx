@@ -3,7 +3,7 @@ import React, {JSX} from "react";
 import SmokingLogo150 from "@/public/images/projects/smoking-tracker/smoking-tracker-photo-size-150x150.webp";
 
 import Image from "next/image";
-import {getLatestVersion} from "@/utils/Utils";
+import {getVersions} from "@/utils/Utils";
 import {screenshotsST} from "@/utils/Assets";
 import {Metadata} from "next";
 import {TranslationFunction} from "@/app/[locale]/layout";
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
 
 const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
 
-    const appVersion: string = await getLatestVersion("smoking-tracker");
+    const appVersion: string = await getVersions("smoking-tracker");
 
     const t: TranslationFunction = await getTranslations("smoking-tracker") as TranslationFunction;
     const t1: TranslationFunction = await getTranslations("translation") as TranslationFunction;

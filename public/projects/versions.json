@@ -2,6 +2,9 @@
   "versions": {
     "smoking-tracker": "1.3.0",
     "item-weight-scanner": "1.0.0",
-    "card-generator": "1.1.0"
+    "card-generator": {
+      "stable": "1.1.0",
+      "latest": "1.2.0-alpha+1"
+    }
   }
 }

@@ -3,7 +3,7 @@ import React, {JSX} from "react";
 import ItemWeightScannerLogo from "@/public/images/projects/item-weight-scanner/item-weight-scanner-photo-size-320x320.webp";
 
 import Image from "next/image";
-import {getLatestVersion} from "@/utils/Utils";
+import {getVersions} from "@/utils/Utils";
 import {screenshotsIWS} from "@/utils/Assets";
 import {Metadata} from "next";
 import {TranslationFunction} from "@/app/[locale]/layout";
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
 
 const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
 
-    const appVersion: string = await getLatestVersion("item-weight-scanner");
+    const appVersion: string = await getVersions("item-weight-scanner");
 
     const t: TranslationFunction = await getTranslations("item-weight-scanner") as TranslationFunction;
     const t1: TranslationFunction = await getTranslations("translation") as TranslationFunction;
