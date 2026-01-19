@@ -123,8 +123,9 @@
             }
         },
         "title": "Generator Kart",
-        "version": "Različica",
-        "what-is": "Kaj je Generator Kart?"
+        "version": "Stabilna različica",
+        "what-is": "Kaj je Generator Kart?",
+        "latest-version": "Najnovejša različica"
     },
     "not-found": {
         "title": "Izgubljen v vesolju",
