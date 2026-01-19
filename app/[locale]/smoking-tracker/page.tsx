@@ -3,7 +3,7 @@ import React, {JSX} from "react";
 import SmokingLogo150 from "@/public/images/projects/smoking-tracker/smoking-tracker-photo-size-150x150.webp";
 
 import Image from "next/image";
-import {getVersions} from "@/utils/Utils";
+import {getVersions, VersionEntryObject} from "@/utils/Utils";
 import {screenshotsST} from "@/utils/Assets";
 import {Metadata} from "next";
 import {TranslationFunction} from "@/app/[locale]/layout";
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
 
 const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
 
-    const appVersion: string = await getVersions("smoking-tracker");
+    const appVersion: string | VersionEntryObject | "N/A" = await getVersions("smoking-tracker");
 
     const t: TranslationFunction = await getTranslations("smoking-tracker") as TranslationFunction;
     const t1: TranslationFunction = await getTranslations("translation") as TranslationFunction;
@@ -118,7 +118,7 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
                         <div className={"col-md-8"}>
                             <h1 className={"display-5 fw-bold"}>{t("title")}</h1>
                             <p className={"mb-0"}>
-                                {t("version")}: {appVersion}
+                                {t("version")}: {appVersion as string}
                                 <span className={"d-block text-muted"}>{t("available-on")}</span>
                             </p>
                             <SmokingTrackerButtons />
