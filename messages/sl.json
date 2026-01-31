@@ -16,7 +16,7 @@
         "preview": "Predogled aplikacije",
         "description-text-1": "Aplikacija omogoča vizualizacijo podatkov s tedenskimi, mesečnimi in letnimi grafi, tako da lahko hitro prepoznate svoje navade. Na podlagi teh podatkov se lahko bolj informirano odločite o tem, kako zmanjšati ali nadzorovati število pokajenih cigaret",
         "description-text-2": "Vsi podatki so shranjeni lokalno na vaši napravi, kar zagotavlja zasebnost in varnost. Po želji lahko omogočite tudi samodejno varnostno kopiranje, da bodo vaši podatki varni tudi ob menjavi naprave. Aplikacija podpira večjezičnost in je na voljo v slovenščini in angleščini, z intuitivnim uporabniškim vmesnikom, ki je prijazen tako začetnikom kot naprednim uporabnikom",
-        "description-text-3": "Poleg sledenja in vizualizacije napredka, aplikacija zdaj vključuje tudi kalkulator, ki izračunava skupne stroške kajenja, stroške cigaret, povprečne stroške na uro ter čas, porabljen za kajenje. Kalkulator deluje na podlagi podatkov, katere vnese uporabnik, kot so: število cigaret na dan, število cigaret v škatlici, cena škatlice v izbranem obdobju. Na ta način lahko uporabnik hitro dobi jasen pregled nad finančnim in časovnim vplivom svojega kajenja ter sprejema bolj informirane odločitve za boljši nadzor nad svojimi navadami",
+        "description-text-3": "Poleg sledenja in vizualizacije napredka, aplikacija vključuje tudi kalkulator, ki izračunava skupne stroške kajenja, stroške cigaret, povprečne stroške na uro ter čas, porabljen za kajenje. Kalkulator deluje na podlagi podatkov, katere vnese uporabnik, kot so: število cigaret na dan, število cigaret v škatlici, cena škatlice v izbranem obdobju. Na ta način lahko uporabnik hitro dobi jasen pregled nad finančnim in časovnim vplivom svojega kajenja ter sprejema bolj informirane odločitve za boljši nadzor nad svojimi navadami",
         "screenshots": {
             "graph": {
                 "alt": "Stran z Grafi aplikacije Sledilnik Kajenja",
@@ -37,11 +37,20 @@
             "calculator": {
                 "alt": "Stran s kalkulatorjem aplikacije Sledilnik Kajenja",
                 "title": "Kalkulator"
+            },
+            "achievements1": {
+                "alt": "Dosežki - stran za čas brez kajenja v aplikaciji Sledilnik Kajenja",
+                "title": "Čas brez kajenja"
+            },
+            "achievements2": {
+                "alt": "Dosežki - Stran z nepokajenimi cigaretami v aplikaciji Sledilnik Kajenja",
+                "title": "Nepokajene cigarete"
             }
         },
         "title": "Sledilnik Kajenja",
         "version": "Različica",
-        "what-is": "Kaj je Sledilnik Kajenja?"
+        "what-is": "Kaj je Sledilnik Kajenja?",
+        "description-text-4": "Aplikacija vključuje sistem dosežkov, ki vas nagrajuje za obdobja brez kajenja in doseganje osebnih mejnikov. Odklenete lahko dosežke za različna časovna obdobja brez kajenja. Ti dosežki zagotavljajo dodatno motivacijo ter jasen občutek napredka, kar vam pomaga ostati zavezan svojim ciljem. S praznovanjem tako manjših uspehov kot večjih mejnikov aplikacija vašo pot do opustitve kajenja spremeni v bolj privlačno in nagrajujočo izkušnjo"
     },
     "home": {
         "lead-description": "Živijo, sem Gašper iz Slovenije",
