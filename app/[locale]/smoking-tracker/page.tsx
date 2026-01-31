@@ -166,6 +166,10 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
                                 {t("description-text-3")}
                             </p>
 
+                            <p className={"mb-3"}>
+                                {t("description-text-4")}
+                            </p>
+
                             <div className={"text-center"}>
                                 <u className={"mb-3 fw-bold"}>
                                     {t("description-text-hyper")}
