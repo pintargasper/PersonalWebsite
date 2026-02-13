@@ -48,12 +48,13 @@
             }
         },
         "title": "Sledilnik Kajenja",
-        "version": "Različica",
+        "version": "Stabilna različica",
         "what-is": "Kaj je Sledilnik Kajenja?",
-        "description-text-4": "Aplikacija vključuje sistem dosežkov, ki vas nagrajuje za obdobja brez kajenja in doseganje osebnih mejnikov. Odklenete lahko dosežke za različna časovna obdobja brez kajenja. Ti dosežki zagotavljajo dodatno motivacijo ter jasen občutek napredka, kar vam pomaga ostati zavezan svojim ciljem. S praznovanjem tako manjših uspehov kot večjih mejnikov aplikacija vašo pot do opustitve kajenja spremeni v bolj privlačno in nagrajujočo izkušnjo"
+        "description-text-4": "Aplikacija vključuje sistem dosežkov, ki vas nagrajuje za obdobja brez kajenja in doseganje osebnih mejnikov. Odklenete lahko dosežke za različna časovna obdobja brez kajenja. Ti dosežki zagotavljajo dodatno motivacijo ter jasen občutek napredka, kar vam pomaga ostati zavezan svojim ciljem. S praznovanjem tako manjših uspehov kot večjih mejnikov aplikacija vašo pot do opustitve kajenja spremeni v bolj privlačno in nagrajujočo izkušnjo",
+        "latest-version": "Najnovejša različica"
     },
     "home": {
-        "lead-description": "Živijo, sem Gašper iz Slovenije",
+        "lead-description": "Sem razvijalec iz Slovenije, ki ga ženeta radovednost in strast do gradnje smiselne programske opreme. Vsi moji projekti nastajajo v prostem času, kjer raziskujem ideje in razvijam aplikacije, ki rešujejo probleme iz resničnega življenja",
         "lead-text": "Študent na Fakulteti za informacijske študije Novo mesto",
         "profile-picture-alt": "Profilna slika Gašperja Pintarja",
         "projects": "Projekti"
