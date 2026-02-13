@@ -49,7 +49,8 @@
             }
         },
         "title": "Smoking Tracker",
-        "version": "Version",
+        "version": "Stable version",
+        "latest-version": "Latest version",
         "what-is": "What is Smoking Tracker?"
     },
     "item-weight-scanner": {
@@ -123,7 +124,7 @@
         "logo-alt": "Criogen logo"
     },
     "home": {
-        "lead-description": "Hi, I am Gašper from Slovenia",
+        "lead-description": "I'm a developer from Slovenia, driven by curiosity and a passion for building meaningful software. All of my projects are created in my free time, where I explore ideas and develop applications that solve real life problems",
         "lead-text": "Student at faculty of information studies Novo mesto",
         "profile-picture-alt": "Profile picture of Gašper Pintar",
         "projects": "Projects"

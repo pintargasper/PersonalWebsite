@@ -118,7 +118,8 @@ const SmokingTracker: () => void = async (): Promise<JSX.Element> => {
                         <div className={"col-md-8"}>
                             <h1 className={"display-5 fw-bold"}>{t("title")}</h1>
                             <p className={"mb-0"}>
-                                {t("version")}: {appVersion as string}
+                                {t("version")}: {(appVersion as VersionEntryObject).stable}<br/>
+                                {t("latest-version")}: {(appVersion as VersionEntryObject).latest}
                                 <span className={"d-block text-muted"}>{t("available-on")}</span>
                             </p>
                             <SmokingTrackerButtons />
