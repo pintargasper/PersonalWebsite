@@ -2,8 +2,15 @@ import React, { type JSX } from "react";
 import {contacts, TLink} from "@/utils/Assets";
 import Image from "next/image";
 import {Link} from "@/i18n/navigation"
-import GooglePlayButton from "@/app/[locale]/components/GooglePlayButton";
-import GetGitHub from "@/public/images/projects/images/github-photo.webp";
+
+import GetGitHub from "@/public/images/projects/images/badges/github.webp";
+import GetGitHubApp from "@/public/images/projects/images/badges/github-app.webp";
+import GetIzzyOnDroid from "@/public/images/projects/images/badges/izzyondroid.webp";
+import GetEnglish from "@/public/images/projects/images/badges/google-play-english.webp";
+import GetSlovenian from "@/public/images/projects/images/badges/google-play-slovenian.webp";
+
+import StoreButton from "@/app/[locale]/components/GooglePlayButton";
+import {useLocale} from "next-intl";
 
 const ContactButtons: React.FC = (): JSX.Element => {
     return (
@@ -31,30 +38,37 @@ const ContactButtons: React.FC = (): JSX.Element => {
 };
 
 const SmokingTrackerButtons: React.FC = (): JSX.Element => {
+
+    const locale: string = useLocale();
+
     return (
         <div className={"d-flex flex-wrap gap-1 mt-3 justify-content-center justify-content-md-start"}>
-            <Link
-                key={"github"}
+            <StoreButton
                 href={"https://github.com/pintargasper/SmokingTracker/releases/latest"}
-                target={"_blank"}
-                className={"button"}
-            >
-                <Image
-                    src={GetGitHub}
-                    alt={"GitHub logo"}
-                    width={25}
-                    height={25}
-                    className={"img-assets"}
-                />
-                <span>GitHub</span>
-            </Link>
-            <Link
-                key={"GitHub"}
+                imageSource={GetGitHub}
+                altText={"GitHub logo"}
+                width={270}
+                height={90}
+                className={"img-play"}
+            />
+
+            <StoreButton
+                href={"https://apt.izzysoft.de/fdroid/index/apk/com.gasperpintar.smokingtracker"}
+                imageSource={GetIzzyOnDroid}
+                altText={"IzzyOnDroid"}
+                width={270}
+                height={80}
+                className={"img-play"}
+            />
+
+            <StoreButton
                 href={"https://play.google.com/store/apps/details?id=com.gasperpintar.smokingtracker"}
-                target={"_blank"}
-            >
-                <GooglePlayButton />
-            </Link>
+                imageSource={locale === "en" ? GetEnglish : GetSlovenian}
+                altText={"Get it on Google Play"}
+                width={270}
+                height={80}
+                className={"img-play"}
+            />
         </div>
     );
 };
@@ -62,21 +76,14 @@ const SmokingTrackerButtons: React.FC = (): JSX.Element => {
 const CardGeneratorButtons: React.FC = (): JSX.Element => {
     return (
         <div className={"d-flex flex-wrap gap-1 mt-3 justify-content-center justify-content-md-start"}>
-            <Link
-                key={"github"}
+            <StoreButton
                 href={"https://github.com/pintargasper/CardGenerator/releases/latest"}
-                target={"_blank"}
-                className={"button"}
-            >
-                <Image
-                    src={GetGitHub}
-                    alt={"GitHub logo"}
-                    width={25}
-                    height={25}
-                    className={"img-assets"}
-                />
-                <span>GitHub</span>
-            </Link>
+                imageSource={GetGitHubApp}
+                altText={"GitHub logo"}
+                width={270}
+                height={90}
+                className={"img-play"}
+            />
         </div>
     );
 };

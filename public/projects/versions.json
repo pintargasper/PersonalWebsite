@@ -1,8 +1,8 @@
 {
   "versions": {
     "smoking-tracker": {
-      "stable": "1.4.0",
-      "latest": "1.4.1-rc.1"
+      "stable": "1.4.1",
+      "latest": ""
     },
     "item-weight-scanner": "1.0.0",
     "card-generator": {
