@@ -4,7 +4,10 @@
       "stable": "1.4.1",
       "latest": ""
     },
-    "item-weight-scanner": "1.0.0",
+    "item-weight-scanner": {
+        "stable": "1.0.1",
+        "latest": ""
+    },
     "card-generator": {
       "stable": "1.1.0",
       "latest": "1.2.0-alpha+1"
