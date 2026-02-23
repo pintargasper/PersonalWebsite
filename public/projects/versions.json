@@ -1,7 +1,7 @@
 {
   "versions": {
     "smoking-tracker": {
-      "stable": "1.4.1",
+      "stable": "1.4.2",
       "latest": ""
     },
     "item-weight-scanner": {
