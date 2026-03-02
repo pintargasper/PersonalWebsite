@@ -30,10 +30,10 @@
     },
     {
       "src": "/images/manifest/screenshot2.png",
-      "sizes": "1920x909",
+      "sizes": "1080x2098",
       "type": "image/png",
-      "form_factor": "wide",
-      "label": "Desktop application view"
+      "form_factor": "narrow",
+      "label": "Mobile application view"
     }
   ],
   "protocol_handlers": [
