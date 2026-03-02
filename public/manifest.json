@@ -1,0 +1,45 @@
+{
+  "id": "/",
+  "name": "Personal Website - Gašper Pintar | Projects & Applications",
+  "short_name": "Personal Website - Gašper Pintar",
+  "description": "Personal page of Gašper Pintar. Learn about my projects and interests, and connect with me | Signal, LinkedIn, GitHub, Emailu",
+  "start_url": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "background_color": "#ffffff",
+  "theme_color": "#222222",
+  "icons": [
+    {
+      "src": "/logo/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/logo/logo192.webp",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/manifest/screenshot1.png",
+      "sizes": "1914x909",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop application view"
+    },
+    {
+      "src": "/images/manifest/screenshot2.png",
+      "sizes": "1920x909",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop application view"
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "mailto",
+      "url": "mailto/%s"
+    }
+  ]
+}

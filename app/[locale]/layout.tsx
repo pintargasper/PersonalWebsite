@@ -41,6 +41,7 @@ async function RootLayout({children, params}: {
         >
         <head>
             <meta name={"google-site-verification"} content={"ful3dtJx-2GOrhDrAbYsMI2oXsYASfAWbXLXZSj6Gf0"}/>
+            <link rel="manifest" href="/manifest.json" />
         </head>
         <body>
         <NextIntlClientProvider>
