@@ -5,7 +5,7 @@ import { useLocale } from "next-intl";
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCog, faGlobe, faRightFromBracket, faDesktop,  faTabletAndroid} from "@fortawesome/free-solid-svg-icons";
+import { faRightFromBracket, faDesktop,  faTabletAndroid} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "@/i18n/navigation";
 
 import {useTranslations} from "next-intl";
@@ -112,6 +112,7 @@ const Navigation: React.FC = (): JSX.Element => {
                                 id={"project-dropdown"}
                                 show={isProjectDropdownOpen}
                                 onToggle={(isOpen: boolean): void => setIsProjectDropdownOpen(isOpen)}
+                                className={"children"}
                             >
                                 <NavDropdown.Item as={Link} href={"/projects/android"} onClick={closeAll}>
                                     <FontAwesomeIcon icon={faTabletAndroid} className={"me-2"}/>
@@ -128,17 +129,19 @@ const Navigation: React.FC = (): JSX.Element => {
                     <Nav className={"ms-auto"}>
                         <NavDropdown
                             id={"settings-dropdown"}
-                            title={<><FontAwesomeIcon icon={faCog} className={"me-2"}/>{t("navbar.settings")}</>}
+                            title={t("navbar.settings")}
                             align={"end"}
                             show={isSettingsDropdownOpen}
                             onToggle={(isOpen: boolean): void => setIsSettingsDropdownOpen(isOpen)}
+                            className={"children"}
                         >
                             <NavDropdown
                                 id={"language-dropdown"}
-                                title={<><FontAwesomeIcon icon={faGlobe} className={"me-2"}/>{t("navbar.language")}</>}
+                                title={t("navbar.language")}
                                 drop={"start"}
                                 show={isLanguageDropdownOpen}
                                 onToggle={(isOpen: boolean): void => setIsLanguageDropdownOpen(isOpen)}
+                                className={"children"}
                             >
                                 <NavDropdown.Item onClick={(): void => changeLocale("en")}>English</NavDropdown.Item>
                                 <NavDropdown.Item onClick={(): void => changeLocale("sl")}>Slovenščina</NavDropdown.Item>

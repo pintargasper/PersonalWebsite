@@ -79,17 +79,8 @@
     box-shadow: none !important;
 }
 
-.dropdown-item:active,
-.dropdown-item:focus,
-.dropdown-item:focus-visible {
-    background-color: transparent !important;
-    color: inherit !important;
-    box-shadow: none !important;
-    outline: none !important;
-}
-
-.dropdown-toggle {
-    margin-left: 8px;
+.navbar .children {
+    margin: 0 8px;
 }
 
 .dropdown-toggle::before, .dropdown-toggle::after {
