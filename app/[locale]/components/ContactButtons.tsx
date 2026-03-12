@@ -5,13 +5,12 @@ import {Link} from "@/i18n/navigation"
 
 import GetGitHub from "@/public/images/projects/images/badges/github.webp";
 import GetGitHubApp from "@/public/images/projects/images/badges/github-app.webp";
+import GetFDroidPlay from "@/public/images/projects/images/badges/f-droid.webp";
 import GetIzzyOnDroid from "@/public/images/projects/images/badges/izzyondroid.webp";
-import GetOpenApk from "@/public/images/projects/images/badges/open_apk.webp";
-import GetEnglish from "@/public/images/projects/images/badges/google-play-english.webp";
-import GetSlovenian from "@/public/images/projects/images/badges/google-play-slovenian.webp";
+import GetOpenApk from "@/public/images/projects/images/badges/open-apk.webp";
+import GetGooglePlay from "@/public/images/projects/images/badges/google-play.webp";
 
 import PlatformButton from "@/app/[locale]/components/GooglePlayButton";
-import {useLocale} from "next-intl";
 
 const ContactButtons: React.FC = (): JSX.Element => {
     return (
@@ -40,8 +39,6 @@ const ContactButtons: React.FC = (): JSX.Element => {
 
 const SmokingTrackerButtons: React.FC = (): JSX.Element => {
 
-    const locale: string = useLocale();
-
     return (
         <div className={"d-flex flex-wrap gap-1 mt-3 justify-content-center justify-content-md-start"}>
             <PlatformButton
@@ -54,9 +51,18 @@ const SmokingTrackerButtons: React.FC = (): JSX.Element => {
             />
 
             <PlatformButton
+                href={"https://f-droid.org/en/packages/com.gasperpintar.smokingtracker/"}
+                imageSource={GetFDroidPlay}
+                altText={"Download APK from F-droid"}
+                width={270}
+                height={80}
+                className={"img-play"}
+            />
+
+            <PlatformButton
                 href={"https://apt.izzysoft.de/fdroid/index/apk/com.gasperpintar.smokingtracker"}
                 imageSource={GetIzzyOnDroid}
-                altText={"IzzyOnDroid"}
+                altText={"Download APK from IzzyOnDroid"}
                 width={270}
                 height={80}
                 className={"img-play"}
@@ -65,14 +71,14 @@ const SmokingTrackerButtons: React.FC = (): JSX.Element => {
             <PlatformButton
                 href={"https://www.openapk.net/smoking-tracker/com.gasperpintar.smokingtracker/"}
                 imageSource={GetOpenApk}
-                altText={"Get it on OpenApk"}
+                altText={"Get it on OpenAPK"}
                 width={270}
                 height={80}
                 className={"img-play"}
             />
             <PlatformButton
                 href={"https://play.google.com/store/apps/details?id=com.gasperpintar.smokingtracker"}
-                imageSource={locale === "en" ? GetEnglish : GetSlovenian}
+                imageSource={GetGooglePlay}
                 altText={"Get it on Google Play"}
                 width={270}
                 height={80}

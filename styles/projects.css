@@ -45,6 +45,7 @@
 
 .img-play {
     width: auto;
+    max-width: 152px;
     max-height: 45px;
 }
 
