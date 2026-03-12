@@ -125,33 +125,33 @@ const Navigation: React.FC = (): JSX.Element => {
                             </NavDropdown>
                         </Nav>
                     )}
-
                     <Nav className={"ms-auto"}>
                         <NavDropdown
-                            id={"settings-dropdown"}
-                            title={t("navbar.settings")}
+                            id={"language-dropdown"}
+                            title={locale === "en" ? "EN" : "SL"}
                             align={"end"}
-                            show={isSettingsDropdownOpen}
-                            onToggle={(isOpen: boolean): void => setIsSettingsDropdownOpen(isOpen)}
-                            className={"children"}
+                            show={isLanguageDropdownOpen}
+                            onToggle={(isOpen: boolean): void => setIsLanguageDropdownOpen(isOpen)}
                         >
+                            <NavDropdown.Item onClick={(): void => changeLocale("en")}>English</NavDropdown.Item>
+                            <NavDropdown.Item onClick={(): void => changeLocale("sl")}>Slovenščina</NavDropdown.Item>
+                        </NavDropdown>
+
+                        {showAuthenticated && (
                             <NavDropdown
-                                id={"language-dropdown"}
-                                title={t("navbar.language")}
-                                drop={"start"}
-                                show={isLanguageDropdownOpen}
-                                onToggle={(isOpen: boolean): void => setIsLanguageDropdownOpen(isOpen)}
+                                id={"settings-dropdown"}
+                                title={t("navbar.settings")}
+                                align={"end"}
+                                show={isSettingsDropdownOpen}
+                                onToggle={(isOpen: boolean): void => setIsSettingsDropdownOpen(isOpen)}
                                 className={"children"}
                             >
-                                <NavDropdown.Item onClick={(): void => changeLocale("en")}>English</NavDropdown.Item>
-                                <NavDropdown.Item onClick={(): void => changeLocale("sl")}>Slovenščina</NavDropdown.Item>
+
+                                    <NavDropdown.Item onClick={handleLogout}>
+                                        <FontAwesomeIcon icon={faRightFromBracket} className={"me-2"}/> {t("navbar.logout")}
+                                    </NavDropdown.Item>
                             </NavDropdown>
-                            {showAuthenticated && (
-                                <NavDropdown.Item onClick={handleLogout}>
-                                    <FontAwesomeIcon icon={faRightFromBracket} className={"me-2"}/> {t("navbar.logout")}
-                                </NavDropdown.Item>
-                            )}
-                        </NavDropdown>
+                        )}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -138,3 +138,16 @@ a:hover {
 .checkbox:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
+
+.dropdown-menu,
+.dropdown-item:active,
+.dropdown-item:focus,
+.dropdown-item:hover,
+.dropdown-item.show,
+.dropdown-item.open,
+.dropdown-item.active,
+.dropdown-item.focus,
+.dropdown-item.hover {
+    background-color: var(--bg-color) !important;
+    color: inherit !important;
+}

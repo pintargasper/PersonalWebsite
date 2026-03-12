@@ -83,10 +83,6 @@
     margin: 0 8px;
 }
 
-.dropdown-toggle::before, .dropdown-toggle::after {
-    display: none !important;
-}
-
 .content-wrapper {
     padding-top: 50px;
 }
