@@ -45,6 +45,14 @@
             "achievements2": {
                 "alt": "Dosežki - Stran z nepokajenimi cigaretami v aplikaciji Sledilnik Kajenja",
                 "title": "Nepokajene cigarete"
+            },
+            "statistics1": {
+                "alt": "Osnovna statistika aplikacije Sledilnik Kajenja",
+                "title": "Osnovna statistika"
+            },
+            "statistics2": {
+                "alt": "Statistika napovedi aplikacije Sledilnik Kajenja",
+                "title": "Statistika napovedi"
             }
         },
         "title": "Sledilnik Kajenja",
