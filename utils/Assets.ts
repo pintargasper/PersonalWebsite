@@ -12,6 +12,8 @@ import ScreenshotSettingsEnglish from "@/public/images/projects/smoking-tracker/
 import ScreenshotCalculatorEnglish from "@/public/images/projects/smoking-tracker/screenshots/en/5.png";
 import ScreenshotAchievements1English from "@/public/images/projects/smoking-tracker/screenshots/en/6.png";
 import ScreenshotAchievements2English from "@/public/images/projects/smoking-tracker/screenshots/en/7.png";
+import ScreenshotStatistics1English from "@/public/images/projects/smoking-tracker/screenshots/en/8.png";
+import ScreenshotStatistics2English from "@/public/images/projects/smoking-tracker/screenshots/en/9.png";
 import ScreenshotHomeSlovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/1.png";
 import ScreenshotGraphSlovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/2.png";
 import ScreenshotAnalyticsSlovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/3.png";
@@ -19,6 +21,8 @@ import ScreenshotSettingsSlovenian from "@/public/images/projects/smoking-tracke
 import ScreenshotCalculatorSlovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/5.png";
 import ScreenshotAchievements1Slovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/6.png";
 import ScreenshotAchievements2Slovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/7.png";
+import ScreenshotStatistics1Slovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/8.png";
+import ScreenshotStatistics2Slovenian from "@/public/images/projects/smoking-tracker/screenshots/sl/9.png";
 
 import ScreenShotIWSHomeEnglish from "@/public/images/projects/item-weight-scanner/screenshots/en/home-page-preview.webp";
 import ScreenShotIWSHistoryEnglish from "@/public/images/projects/item-weight-scanner/screenshots/en/history-page-preview.webp";
@@ -157,7 +161,9 @@ const screenshotsST: Screenshot[] = [
     { title: "screenshots.settings.title", src: {en: ScreenshotSettingsEnglish.src, sl: ScreenshotSettingsSlovenian.src}, alt: "screenshots.settings.alt", isHorizontal: false },
     { title: "screenshots.calculator.title", src: {en: ScreenshotCalculatorEnglish.src, sl: ScreenshotCalculatorSlovenian.src}, alt: "screenshots.calculator.alt", isHorizontal: false },
     { title: "screenshots.achievements1.title", src: {en: ScreenshotAchievements1English.src, sl: ScreenshotAchievements1Slovenian.src}, alt: "screenshots.achievements1.alt", isHorizontal: false },
-    { title: "screenshots.achievements2.title", src: {en: ScreenshotAchievements2English.src, sl: ScreenshotAchievements2Slovenian.src}, alt: "screenshots.achievements1.alt", isHorizontal: false },
+    { title: "screenshots.achievements2.title", src: {en: ScreenshotAchievements2English.src, sl: ScreenshotAchievements2Slovenian.src}, alt: "screenshots.achievements2.alt", isHorizontal: false },
+    { title: "screenshots.statistics1.title", src: {en: ScreenshotStatistics1English.src, sl: ScreenshotStatistics1Slovenian.src}, alt: "screenshots.statistics1.alt", isHorizontal: false },
+    { title: "screenshots.statistics2.title", src: {en: ScreenshotStatistics2English.src, sl: ScreenshotStatistics2Slovenian.src}, alt: "screenshots.statistics2.alt", isHorizontal: false },
 ];
 
 const screenshotsIWS: Screenshot[] = [

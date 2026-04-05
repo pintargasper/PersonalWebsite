@@ -46,6 +46,14 @@
             "achievements2": {
                 "alt": "Achievements - Cigarettes avoided page of Smoking Tracker application",
                 "title": "Cigarettes avoided"
+            },
+            "statistics1": {
+                "alt": "Basic Statistics of Smoking Tracker application",
+                "title": "Basic statistics"
+            },
+            "statistics2": {
+                "alt": "Forecast Statistics of Smoking Tracker application",
+                "title": "Forecast statistics"
             }
         },
         "title": "Smoking Tracker",
